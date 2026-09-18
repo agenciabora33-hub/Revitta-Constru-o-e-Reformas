@@ -178,10 +178,10 @@ export const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 export const STATS = [
-  { value: "+6", label: "Anos de atuação", detail: "Desde abril de 2020 construindo história na Serra Gaúcha" },
-  { value: "+50", label: "Especialistas", detail: "Eletricistas, encanadores, pedreiros, telhadistas e pintores" },
-  { value: "24h", label: "Emergência", detail: "Pronto atendimento para vazamentos graves e panes elétricas" },
-  { value: "4", label: "Cidades atendidas", detail: "Caxias do Sul, Farroupilha, São Marcos e Flores da Cunha" }
+  { value: "+6", label: "Anos de atuação", detail: "Desde abril de 2020 construindo história e confiança na Serra Gaúcha" },
+  { value: "+1200", label: "Obras & atendimentos", detail: "Casos residenciais, comerciais e prediais concluídos com sucesso" },
+  { value: "+50", label: "Especialistas na equipe", detail: "Eletricistas, encanadores, pedreiros, telhadistas e pintores" },
+  { value: "4", label: "Cidades da Serra", detail: "Caxias do Sul, Farroupilha, São Marcos e Flores da Cunha" }
 ];
 
 export const TESTIMONIALS: ReviewItem[] = [

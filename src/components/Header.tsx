@@ -49,29 +49,37 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, isServicePage })
   return (
     <header 
       id="main-header"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md py-2.5 shadow-md shadow-indigo-950/5 border-b border-indigo-100' 
-          : 'bg-white/90 backdrop-blur-sm py-4 border-b border-indigo-50'
+          ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-indigo-950/5 border-b border-indigo-100/90' 
+          : 'bg-white/90 backdrop-blur-md border-b border-indigo-100/40'
       }`}
     >
-      {/* Emergency banner ticker on top for instant reassurance */}
-      <div className="bg-indigo-950 text-indigo-100 text-[11px] sm:text-xs py-1 px-4 text-center font-medium flex items-center justify-center gap-2">
+      {/* Emergency banner ticker on top for instant reassurance - smoothly compacts on scroll */}
+      <div 
+        className={`bg-indigo-950 text-indigo-100 text-[11px] sm:text-xs text-center font-medium flex items-center justify-center gap-2 transition-all duration-300 overflow-hidden ${
+          isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-9 py-1 px-4 opacity-100'
+        }`}
+      >
         <span className="inline-flex items-center gap-1 text-wa-green font-semibold">
           <span className="w-2 h-2 rounded-full bg-wa-green animate-ping" />
           Plantão 24h:
         </span>
-        <span>Emergência para vazamentos e elétrica na Serra Gaúcha</span>
+        <span>Emergência para vazamentos e elétrica em Caxias do Sul e Serra Gaúcha</span>
         <span className="hidden md:inline text-indigo-300">•</span>
         <span className="hidden md:inline text-indigo-200">Seg–Sex 07h30–20h30 | Sáb 08h–14h30</span>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between mt-1">
+      <div 
+        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? 'py-2 sm:py-2.5' : 'py-3 sm:py-3.5'
+        }`}
+      >
         {/* Brand Logo */}
         <button 
           type="button" 
           onClick={() => handleNavClick('#inicio')}
-          className="focus:outline-none focus:ring-2 focus:ring-indigo-700 rounded-lg text-left cursor-pointer"
+          className="focus:outline-none focus:ring-2 focus:ring-indigo-700 rounded-lg text-left cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
           aria-label="Ir para a página inicial da Revitta"
         >
           <RevittaLogo />

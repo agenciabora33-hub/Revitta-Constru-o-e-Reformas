@@ -15,24 +15,32 @@ export const About: React.FC = () => {
               <div className="absolute -inset-2 bg-indigo-100 rounded-3xl -rotate-1 pointer-events-none" />
               
               <div className="relative bg-indigo-950 rounded-2xl overflow-hidden border border-indigo-900 shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb1861593?auto=format&fit=crop&w=800&q=80"
-                  alt="Equipe técnica Revitta em obra de reforma e construção na Serra Gaúcha"
-                  className="w-full h-80 object-cover object-center opacity-90"
-                  loading="lazy"
-                />
+                <figure className="relative bg-gradient-to-b from-indigo-900/90 to-indigo-950 flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden border-b border-indigo-800/60">
+                  <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl bg-white/5 border border-indigo-700/40 p-3 shadow-xl flex items-center justify-center">
+                    <img
+                      src="https://i.ibb.co/JW3xbYLb/Logo-Revitta.png"
+                      alt="Revitta Reformas e Construção"
+                      className="w-full h-full object-contain filter drop-shadow-md"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/logo-revitta.png";
+                      }}
+                    />
+                  </div>
+                </figure>
+
                 <div className="p-5 bg-indigo-950 text-white space-y-3">
                   <div className="flex items-center justify-between text-xs border-b border-indigo-800 pb-2.5">
                     <span className="text-indigo-300 font-semibold">Empresa Registrada</span>
                     <span className="text-wa-green font-bold">CNPJ 50.463.095/0001-58</span>
                   </div>
-                  <div className="flex items-center justify-between text-xs">
+                  <div className="flex items-center justify-between text-xs border-b border-indigo-800/60 pb-2.5">
                     <span className="text-indigo-300">Fundação</span>
                     <span className="font-bold text-white">Abril de 2020 (Caxias do Sul - RS)</span>
                   </div>
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-indigo-300">Responsável Técnico</span>
-                    <span className="font-bold text-indigo-200">{COMPANY_INFO.technicalManagerPlaceholder}</span>
+                    <span className="text-indigo-300">Atuação Regional</span>
+                    <span className="font-bold text-indigo-200">Caxias do Sul e Serra Gaúcha</span>
                   </div>
                 </div>
               </div>
@@ -60,9 +68,9 @@ export const About: React.FC = () => {
               A Revitta nasceu para transformar a experiência de reformar na Serra Gaúcha
             </h2>
 
-            {/* Paragraph verbatim from PRD §6 */}
+            {/* Paragraph without technical manager citation */}
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
-              A Revitta nasceu em abril de 2020, em Caxias do Sul, com uma missão clara: gestionar obras de reforma com transparência do orçamento à entrega. Hoje somos mais de 50 especialistas entre eletricistas, encanadores, pedreiros, pintores e telhadistas, atendendo residências, comércios e indústrias na Serra Gaúcha. Responsável técnico: <strong className="text-indigo-950 font-semibold">{COMPANY_INFO.technicalManagerPlaceholder}</strong>. Trabalhamos com materiais de alta qualidade, segurança em cada etapa e garantia contratual.
+              A Revitta nasceu em abril de 2020, em Caxias do Sul, com uma missão clara: gestionar obras de reforma com transparência do orçamento à entrega. Hoje somos mais de 50 especialistas entre eletricistas, encanadores, pedreiros, pintores e telhadistas, atendendo residências, comércios e indústrias na Serra Gaúcha. Trabalhamos com materiais de alta qualidade, segurança em cada etapa e garantia contratual.
             </p>
 
             {/* Four Commitment Cards */}
@@ -100,12 +108,12 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-4 flex justify-center">
               <a
                 href={createWhatsAppUrl("Olá! Gostaria de conversar com a equipe técnica da Revitta sobre um projeto.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-3.5 px-6 rounded-xl text-sm transition-all shadow-md"
+                className="inline-flex items-center justify-center gap-2 bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-3.5 px-8 rounded-xl text-sm transition-all shadow-md hover:shadow-lg active:scale-95"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Conversar com a Equipe Técnica</span>

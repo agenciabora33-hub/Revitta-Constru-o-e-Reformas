@@ -122,7 +122,7 @@ export const DETAILED_SERVICES: ServiceDetailed[] = [
         { code: 'ABNT NBR 5410', title: 'Instalações elétricas de baixa tensão' },
         { code: 'NR 10 (MTE)', title: 'Segurança em instalações e serviços em eletricidade' }
       ],
-      technicalResponsibility: 'Dimensionamento de disjuntores, bitolas de condutores e barramentos por responsável técnico',
+      technicalResponsibility: 'Dimensionamento de disjuntores, bitolas de condutores e barramentos por especialistas certificados',
       safetyAndInsurance: 'Instrumentos aferidos (alicates amperímetros True-RMS, megômetros para isolamento e testadores de DR)',
       guaranteePeriod: 'Garantia total de segurança contra sobrecargas e conexões frouxas',
       taxCompliance: 'Documentação fiscal e emissão de notas com especificação de mão de obra técnica'

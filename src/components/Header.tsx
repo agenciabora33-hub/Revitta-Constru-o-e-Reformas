@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, isServicePage })
     { label: 'Início', href: '#inicio' },
     { label: 'Serviços', href: '#servicos' },
     { label: 'Atendimento', href: '#atendimento' },
-    { label: 'Como Funciona', href: '#processo' },
+    { label: 'Processo', href: '#processo' },
     { label: 'Obras', href: '#obras' },
     { label: 'Sobre Nós', href: '#sobre' },
     { label: 'Cidades', href: '#areas' },
@@ -78,13 +78,16 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, isServicePage })
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-[14px] font-semibold text-indigo-950" aria-label="Navegação Principal">
+        <nav 
+          className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-1.5 mx-2 xl:mx-6 text-[13px] xl:text-[13.5px] 2xl:text-[14px] font-semibold text-indigo-950" 
+          aria-label="Navegação Principal"
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="px-3 py-1.5 rounded-lg text-indigo-950/80 hover:text-indigo-700 hover:bg-indigo-100/60 transition-colors cursor-pointer"
+              className="px-2 xl:px-2.5 py-1.5 rounded-lg text-indigo-950/80 hover:text-indigo-700 hover:bg-indigo-50 transition-colors cursor-pointer whitespace-nowrap"
             >
               {link.label}
             </a>

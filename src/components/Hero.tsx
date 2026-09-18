@@ -185,22 +185,22 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* 4 Trust Badges (Selos) from PRD §6 */}
-        <div className="mt-8 sm:mt-10 pt-6 border-t border-indigo-100 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <div className="mt-8 sm:mt-10 pt-6 border-t border-indigo-100 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {trustBadges.map((badge, idx) => {
             const Icon = badge.icon;
             return (
               <div 
                 key={idx}
-                className="bg-white p-4 sm:p-5 rounded-2xl border border-indigo-100/80 shadow-sm flex items-start gap-3.5 hover:border-indigo-200 transition-all"
+                className="bg-white p-3.5 sm:p-5 rounded-2xl border border-indigo-100/80 shadow-sm flex flex-col items-start sm:flex-row sm:items-start gap-2.5 sm:gap-3.5 hover:border-indigo-200 hover:shadow-md transition-all h-full"
               >
-                <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 shrink-0">
-                  <Icon className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 shrink-0">
+                  <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
                 </div>
-                <div className="min-w-0">
-                  <h4 className="text-sm sm:text-base font-bold text-indigo-950 leading-tight">
+                <div className="min-w-0 w-full">
+                  <h4 className="text-xs sm:text-sm lg:text-base font-bold text-indigo-950 leading-snug">
                     {badge.title}
                   </h4>
-                  <p className="text-xs text-gray-600 mt-0.5 leading-snug">
+                  <p className="text-[11px] sm:text-xs text-gray-600 mt-1 sm:mt-0.5 leading-snug">
                     {badge.sub}
                   </p>
                 </div>

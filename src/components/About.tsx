@@ -128,7 +128,7 @@ export const About: React.FC = () => {
               {/* Centered CTA as requested */}
               <div className="pt-6 flex justify-center">
                 <motion.a
-                  href={createWhatsAppUrl("Olá! Gostaria de conversar com a equipe técnica da Revitta sobre um projeto em Caxias do Sul e região.")}
+                  href={createWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03, y: -2 }}

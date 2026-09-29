@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, isServicePage })
           {/* WhatsApp Primary Header CTA - Green conversion only */}
           <a
             id="header-cta-whatsapp"
-            href={createWhatsAppUrl("Olá! Gostaria de um orçamento para obra/reforma com a Revitta. (Vim pelo cabeçalho do site)")}
+            href={createWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-wa-green hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all active:scale-95 shrink-0"
@@ -170,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigateHome, isServicePage })
 
           <div className="pt-4 mt-2 border-t border-indigo-100 flex flex-col gap-2">
             <a
-              href={createWhatsAppUrl("Olá! Gostaria de falar com a equipe da Revitta sobre um orçamento.")}
+              href={createWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleNavClick}

@@ -57,9 +57,7 @@ export const FloatingWhatsApp: React.FC = () => {
     setTooltipDismissed(true);
   };
 
-  const waUrl = createWhatsAppUrl(
-    "Olá! Vim pelo site da Revitta e gostaria de um orçamento sem compromisso."
-  );
+  const waUrl = createWhatsAppUrl();
 
   return (
     <div

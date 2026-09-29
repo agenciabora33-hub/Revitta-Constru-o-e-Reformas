@@ -79,7 +79,7 @@ export const BeforeAfterGallery: React.FC = () => {
 
               {/* Quick action button for this project type */}
               <motion.a
-                href={createWhatsAppUrl(`Olá! Gostaria de um orçamento para um projeto parecido com '${currentItem.title}' em Caxias do Sul e região.`)}
+                href={createWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}

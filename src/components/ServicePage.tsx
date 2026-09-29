@@ -161,10 +161,8 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
   const IconComp = iconComponents[service.iconName] || Building2;
 
-  // Personalized WhatsApp CTA for this service
-  const serviceWhatsAppUrl = createWhatsAppUrl(
-    `Olá! Estava na página de "${service.title}" no site da Revitta e gostaria de um orçamento para a cidade de ${selectedCity}. Poderiam me atender?`
-  );
+  // Ready-made WhatsApp CTA
+  const serviceWhatsAppUrl = createWhatsAppUrl();
 
   // Related services
   const relatedServices = DETAILED_SERVICES.filter(s => 

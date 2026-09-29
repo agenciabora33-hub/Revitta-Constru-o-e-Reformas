@@ -298,14 +298,17 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
   }
 ];
 
+// Ready-made text specified for ALL WhatsApp messages
+export const STANDARD_WHATSAPP_MESSAGE = "Olá! Encontrei a Revitta no Google e gostaria de mais informações.";
+
 // Helper to generate WhatsApp URL with sanitized encoding
-export function createWhatsAppUrl(customMessage?: string): string {
-  const defaultText = "Olá! Vim pelo site da Revitta e gostaria de um orçamento sem compromisso.";
-  const text = customMessage && customMessage.trim().length > 0 ? customMessage : defaultText;
+export function createWhatsAppUrl(_customMessage?: string): string {
+  const text = STANDARD_WHATSAPP_MESSAGE;
   return `https://wa.me/${COMPANY_INFO.phoneRaw}?text=${encodeURIComponent(text)}`;
 }
 
-export function createServiceCityWhatsAppUrl(serviceTitle: string, cityName: string): string {
-  const text = `Olá! Quero um orçamento de ${serviceTitle} em ${cityName}. (Vim pelo site da Revitta.)`;
+export function createServiceCityWhatsAppUrl(_serviceTitle?: string, _cityName?: string): string {
+  const text = STANDARD_WHATSAPP_MESSAGE;
   return `https://wa.me/${COMPANY_INFO.phoneRaw}?text=${encodeURIComponent(text)}`;
 }
+

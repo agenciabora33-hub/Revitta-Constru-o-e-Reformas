@@ -163,8 +163,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map((service, idx) => {
             const IconComponent = iconMap[service.iconName] || Building2;
-            const prefilledMessage = `Olá! Gostaria de um orçamento para ${service.title} em Caxias do Sul e região. (Vim pelo site da Revitta)`;
-            const serviceWaUrl = createWhatsAppUrl(prefilledMessage);
+            const serviceWaUrl = createWhatsAppUrl();
 
             return (
               <motion.div

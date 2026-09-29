@@ -6,9 +6,7 @@ import { MessageSquare, Phone, Clock, ShieldCheck, MapPin } from 'lucide-react';
 import { SectionReveal } from './SectionReveal';
 
 export const CtaFinal: React.FC = () => {
-  const finalWaUrl = createWhatsAppUrl(
-    "Olá! Vim pelo site da Revitta e quero receber meu orçamento sem compromisso para obra em Caxias do Sul e região."
-  );
+  const finalWaUrl = createWhatsAppUrl();
 
   return (
     <section id="contato" className="py-20 sm:py-26 bg-indigo-950 text-white relative overflow-hidden">

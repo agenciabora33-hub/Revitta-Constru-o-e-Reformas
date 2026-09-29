@@ -5,9 +5,7 @@ import { SparkleIcon } from './SparkleIcon';
 import { createWhatsAppUrl } from '../data/revittaData';
 
 export const Hero: React.FC = () => {
-  const heroWhatsAppUrl = createWhatsAppUrl(
-    "Olá! Vim pelo site da Revitta e gostaria de um orçamento para obra/reforma em Caxias do Sul e região."
-  );
+  const heroWhatsAppUrl = createWhatsAppUrl();
 
   const trustBadges = [
     {

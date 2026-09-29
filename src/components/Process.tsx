@@ -93,7 +93,7 @@ export const Process: React.FC = () => {
             </div>
 
             <motion.a
-              href={createWhatsAppUrl("Olá! Gostaria de agendar um atendimento da Revitta para avaliar meu projeto em Caxias do Sul e região.")}
+              href={createWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03, y: -2 }}

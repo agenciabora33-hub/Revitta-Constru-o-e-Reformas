@@ -29,9 +29,7 @@ export const Areas: React.FC = () => {
         {/* 4 Cities Cards with Motion Stagger */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CITIES.map((city, index) => {
-            const cityWaUrl = createWhatsAppUrl(
-              `Olá! Gostaria de agendar um atendimento da Revitta para serviço/reforma em ${city.name} (${city.cep}).`
-            );
+            const cityWaUrl = createWhatsAppUrl();
 
             return (
               <motion.div 

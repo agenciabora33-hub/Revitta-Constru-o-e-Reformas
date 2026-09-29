@@ -3,9 +3,7 @@ import { COMPANY_INFO, createWhatsAppUrl } from '../data/revittaData';
 import { Wrench, CheckCircle2, MessageSquare, ShieldCheck, DollarSign, Navigation } from 'lucide-react';
 
 export const AtendimentoTransparencia: React.FC = () => {
-  const whatsappUrl = createWhatsAppUrl(
-    "Olá! Gostaria de agendar um atendimento da Revitta no meu endereço."
-  );
+  const whatsappUrl = createWhatsAppUrl();
 
   return (
     <section 

@@ -70,7 +70,7 @@ export const FaqSection: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-600 mt-1">Nosso time técnico atende diretamente pelo WhatsApp com respostas rápidas e sem compromisso.</p>
             </div>
             <motion.a
-              href={createWhatsAppUrl("Olá! Tenho uma dúvida sobre uma reforma/obra em Caxias do Sul e gostaria de falar com a Revitta.")}
+              href={createWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}

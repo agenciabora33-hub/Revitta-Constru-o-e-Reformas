@@ -91,6 +91,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectSer
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
+
+            {/* Google Search Profile Badge */}
+            <div className="pt-3">
+              <a
+                href="https://profile.google.com/@example"
+                aria-label="Find us on Google Search"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block transition-transform duration-200 hover:scale-105 active:scale-95 shadow-sm rounded-lg overflow-hidden"
+              >
+                <img src="/path/to/google-search-badge.svg" alt="Google Search" className="h-9 w-auto" />
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Hours & Emergency (3 cols) */}

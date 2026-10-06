@@ -24,17 +24,29 @@ export const Testimonials: React.FC = () => {
               Pontualidade, canteiro limpo e respeito ao orçamento refletidos nas avaliações verificadas de moradores e comerciantes em Caxias do Sul e Serra Gaúcha.
             </p>
 
-            {/* Google rating overall pill */}
-            <div className="inline-flex items-center gap-3 bg-mist px-4 py-2 rounded-full border border-indigo-100 mt-6 shadow-xs">
-              <div className="flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
+            {/* Google rating overall pill & Google Search badge */}
+            <div className="flex flex-wrap items-center justify-center gap-3.5 mt-6">
+              <div className="inline-flex items-center gap-3 bg-mist px-4 py-2 rounded-full border border-indigo-100 shadow-xs">
+                <div className="flex text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="text-xs font-bold text-indigo-950">5.0 / 5.0 estrelas</span>
+                <span className="text-xs text-gray-600 border-l border-indigo-200 pl-2 font-medium">
+                  Avaliações auditadas no Google Meu Negócio
+                </span>
               </div>
-              <span className="text-xs font-bold text-indigo-950">5.0 / 5.0 estrelas</span>
-              <span className="text-xs text-gray-600 border-l border-indigo-200 pl-2 font-medium">
-                Avaliações auditadas no Google Meu Negócio
-              </span>
+
+              <a
+                href="https://profile.google.com/@example"
+                aria-label="Find us on Google Search"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center transition-transform hover:scale-105 active:scale-95 shadow-xs rounded-lg overflow-hidden"
+              >
+                <img src="/path/to/google-search-badge.svg" alt="Google Search" className="h-9 w-auto" />
+              </a>
             </div>
           </div>
         </SectionReveal>

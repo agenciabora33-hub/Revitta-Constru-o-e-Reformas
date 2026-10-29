@@ -97,8 +97,11 @@ export const BeforeAfterGallery: React.FC = () => {
               <img
                 src={currentItem.afterImg}
                 alt={`Depois: ${currentItem.title}`}
+                width={800}
+                height={500}
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 loading="lazy"
+                decoding="async"
               />
               {/* AFTER Tag */}
               <div className="absolute top-4 right-4 bg-indigo-950/85 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-bold border border-white/20 shadow-md">
@@ -113,9 +116,12 @@ export const BeforeAfterGallery: React.FC = () => {
                 <img
                   src={currentItem.beforeImg}
                   alt={`Antes: ${currentItem.title}`}
+                  width={800}
+                  height={500}
                   className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                   style={{ width: '100%', minWidth: '100%' }}
                   loading="lazy"
+                  decoding="async"
                 />
                 {/* BEFORE Tag */}
                 <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl text-xs font-bold border border-white/20 shadow-md">
@@ -180,7 +186,7 @@ export const BeforeAfterGallery: React.FC = () => {
 
         {/* E-E-A-T SOBER Caption & Transparency Notice */}
         <div className="max-w-3xl mx-auto mt-6 text-center">
-          <p className="text-xs text-gray-500 leading-relaxed bg-white/60 p-3 rounded-2xl border border-indigo-50">
+          <p className="text-xs text-gray-700 leading-relaxed bg-white/60 p-3 rounded-2xl border border-indigo-50">
             <span className="font-semibold text-indigo-950">Aviso de transparência:</span> Registros ilustrativos baseados no padrão de acabamento executado pela Revitta. O acervo fotográfico de obras reais é continuamente auditado com autorização dos proprietários na Serra Gaúcha para conformidade E-E-A-T.
           </p>
         </div>

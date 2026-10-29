@@ -25,7 +25,11 @@ export const About: React.FC = () => {
                       <img
                         src="https://i.ibb.co/JW3xbYLb/Logo-Revitta.png"
                         alt="Revitta Reformas e Construção em Caxias do Sul"
+                        width={208}
+                        height={208}
                         className="w-full h-full object-contain filter drop-shadow-md"
+                        loading="lazy"
+                        decoding="async"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = "/logo-revitta.png";
@@ -75,7 +79,7 @@ export const About: React.FC = () => {
                 A Revitta nasceu para transformar a experiência de reformar na Serra Gaúcha
               </h2>
 
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal mt-4">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-normal mt-4">
                 A Revitta nasceu em abril de 2020, em Caxias do Sul, com um compromisso inegociável: gerir reformas com seriedade, pontualidade caxiense e transparência total. Hoje somos mais de 50 especialistas entre eletricistas certificados, encanadores, pedreiros, telhadistas e pintores, atendendo apartamentos, casas e indústrias em toda a Serra Gaúcha. Trabalhamos com materiais de ponta, isolamento adequado e canteiro sempre limpo.
               </p>
 
@@ -87,8 +91,8 @@ export const About: React.FC = () => {
                 >
                   <CheckCircle2 className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-indigo-950">Gestão com Equipe Própria</h4>
-                    <p className="text-xs text-gray-600 mt-1 leading-relaxed">Mais de 50 especialistas uniformizados, com treinamento e foco na segurança do seu imóvel.</p>
+                    <h3 className="text-sm font-bold text-indigo-950">Gestão com Equipe Própria</h3>
+                    <p className="text-xs text-gray-700 mt-1 leading-relaxed">Mais de 50 especialistas uniformizados, com treinamento e foco na segurança do seu imóvel.</p>
                   </div>
                 </motion.div>
 
@@ -98,8 +102,8 @@ export const About: React.FC = () => {
                 >
                   <CheckCircle2 className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-indigo-950">Limpeza e Respeito Diário</h4>
-                    <p className="text-xs text-gray-600 mt-1 leading-relaxed">Isolamento rigoroso de poeira e recolhimento de entulhos diariamente ao final do expediente.</p>
+                    <h3 className="text-sm font-bold text-indigo-950">Limpeza e Respeito Diário</h3>
+                    <p className="text-xs text-gray-700 mt-1 leading-relaxed">Isolamento rigoroso de poeira e recolhimento de entulhos diariamente ao final do expediente.</p>
                   </div>
                 </motion.div>
 
@@ -109,8 +113,8 @@ export const About: React.FC = () => {
                 >
                   <CheckCircle2 className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-indigo-950">Materiais para o Clima Serrano</h4>
-                    <p className="text-xs text-gray-600 mt-1 leading-relaxed">Soluções resistentes ao frio, mofo e umidade com marcas de primeira linha e excelente custo-benefício.</p>
+                    <h3 className="text-sm font-bold text-indigo-950">Materiais para o Clima Serrano</h3>
+                    <p className="text-xs text-gray-700 mt-1 leading-relaxed">Soluções resistentes ao frio, mofo e umidade com marcas de primeira linha e excelente custo-benefício.</p>
                   </div>
                 </motion.div>
 
@@ -120,8 +124,8 @@ export const About: React.FC = () => {
                 >
                   <CheckCircle2 className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-indigo-950">Garantia & Plantão 24h</h4>
-                    <p className="text-xs text-gray-600 mt-1 leading-relaxed">Assistência contínua com canal direto de suporte pós-obra para sua total tranquilidade.</p>
+                    <h3 className="text-sm font-bold text-indigo-950">Garantia & Plantão 24h</h3>
+                    <p className="text-xs text-gray-700 mt-1 leading-relaxed">Assistência contínua com canal direto de suporte pós-obra para sua total tranquilidade.</p>
                   </div>
                 </motion.div>
               </div>
@@ -147,7 +151,7 @@ export const About: React.FC = () => {
                   <span className="text-xs font-bold text-indigo-950 uppercase tracking-wider block">
                     Canais Oficiais & Avaliações da Revitta
                   </span>
-                  <p className="text-xs text-gray-500 mt-0.5">
+                  <p className="text-xs text-gray-700 mt-0.5">
                     Acompanhe nossas obras em tempo real e consulte nossa reputação pública verificada.
                   </p>
                 </div>

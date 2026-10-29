@@ -63,7 +63,7 @@ export const CtaFinal: React.FC = () => {
             <div className="flex items-start gap-3 bg-indigo-900/40 p-4 rounded-2xl border border-indigo-800/40">
               <Clock className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
               <div>
-                <h4 className="text-sm font-bold text-white">Horário Comercial</h4>
+                <h3 className="text-sm font-bold text-white">Horário Comercial</h3>
                 <p className="text-xs text-indigo-300 mt-0.5">Seg–Sex 07:30–20:30 • Sáb 08:00–14:30</p>
               </div>
             </div>
@@ -71,7 +71,7 @@ export const CtaFinal: React.FC = () => {
             <div className="flex items-start gap-3 bg-indigo-900/40 p-4 rounded-2xl border border-indigo-800/40">
               <ShieldCheck className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
               <div>
-                <h4 className="text-sm font-bold text-white">Plantão Emergencial 24h</h4>
+                <h3 className="text-sm font-bold text-white">Plantão Emergencial 24h</h3>
                 <p className="text-xs text-indigo-300 mt-0.5">Vazamentos e panes elétricas de risco</p>
               </div>
             </div>
@@ -79,7 +79,7 @@ export const CtaFinal: React.FC = () => {
             <div className="flex items-start gap-3 bg-indigo-900/40 p-4 rounded-2xl border border-indigo-800/40">
               <MapPin className="w-5 h-5 text-wa-green shrink-0 mt-0.5" />
               <div>
-                <h4 className="text-sm font-bold text-white">Sede em Caxias do Sul</h4>
+                <h3 className="text-sm font-bold text-white">Sede em Caxias do Sul</h3>
                 <p className="text-xs text-indigo-300 mt-0.5">Atendimento em Caxias, Farroupilha, São Marcos e Flores da Cunha</p>
               </div>
             </div>

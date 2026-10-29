@@ -84,17 +84,25 @@ export const Footer: React.FC<FooterProps> = ({
                 rel="noopener noreferrer"
                 className="inline-block transition-transform duration-200 hover:scale-105 active:scale-95 shadow-sm rounded-lg overflow-hidden"
               >
-                <img src="/path/to/google-search-badge.svg" alt="Google Search" className="h-9 w-auto" />
+                <img
+                  src="/path/to/google-search-badge.svg"
+                  alt="Google Search"
+                  width={165}
+                  height={36}
+                  className="h-9 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
             </div>
           </div>
 
           {/* Column 2: Hours & Emergency (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white font-display flex items-center gap-2">
+            <p className="text-sm font-bold uppercase tracking-wider text-white font-display flex items-center gap-2">
               <Clock className="w-4 h-4 text-indigo-400" />
               <span>Horários de Atendimento</span>
-            </h4>
+            </p>
             <ul className="text-xs space-y-2 text-indigo-300">
               <li className="flex flex-col">
                 <span className="font-semibold text-white">Segunda a Sexta:</span>
@@ -113,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <span className="w-2 h-2 rounded-full bg-wa-green animate-pulse" />
                   Emergência 24h
                 </span>
-                <p className="text-[11px] text-indigo-400 mt-0.5">
+                <p className="text-[11px] text-indigo-300 mt-0.5">
                   Vazamentos críticos e riscos elétricos atendidos em regime de plantão.
                 </p>
               </li>
@@ -122,9 +130,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 3: Internal Quick Links (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white font-display">
+            <p className="text-sm font-bold uppercase tracking-wider text-white font-display">
               Navegação do Site
-            </h4>
+            </p>
             <ul className="grid grid-cols-2 gap-y-2 gap-x-3 text-xs">
               {internalLinks.map((link) => (
                 <li key={link.href}>
@@ -153,10 +161,10 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
 
             <div className="pt-3">
-              <h5 className="text-xs font-bold text-white mb-1.5 flex items-center gap-1.5">
+              <p className="text-xs font-bold text-white mb-1.5 flex items-center gap-1.5">
                 <CreditCard className="w-3.5 h-3.5 text-indigo-400" />
                 <span>Formas de Pagamento:</span>
-              </h5>
+              </p>
               <p className="text-[11px] text-indigo-300">
                 PIX, dinheiro, cartões de crédito e débito parcelado.
               </p>
@@ -165,9 +173,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 4: Local Coverage Recap & Partner Portal (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white font-display">
+            <p className="text-sm font-bold uppercase tracking-wider text-white font-display">
               Região Atendida
-            </h4>
+            </p>
             <ul className="text-xs space-y-1.5 text-indigo-300">
               <li>• Caxias do Sul</li>
               <li>• Farroupilha (95180-000)</li>
@@ -215,11 +223,11 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Dedicated Service Pages Directory (SEO, GEO & Architecture Links) */}
         <div className="py-8 border-b border-indigo-900/80">
           <div className="flex items-center justify-between gap-4 mb-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-300 font-display flex items-center gap-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-300 font-display flex items-center gap-2">
               <SparkleIcon className="w-3.5 h-3.5 text-wa-green" />
               <span>Páginas Próprias de Serviços (Otimização SEO, GEO & Normas ABNT)</span>
-            </h4>
-            <span className="text-[11px] text-indigo-400 hidden sm:inline">
+            </p>
+            <span className="text-[11px] text-indigo-300 hidden sm:inline">
               10 especialidades com páginas dedicadas
             </span>
           </div>

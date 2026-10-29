@@ -20,8 +20,11 @@ export const RevittaLogo: React.FC<RevittaLogoProps> = ({
         <img
           src="https://i.ibb.co/JW3xbYLb/Logo-Revitta.png"
           alt="Ícone Revitta"
+          width={40}
+          height={40}
           className="w-full h-full object-contain"
           loading="eager"
+          decoding="async"
           referrerPolicy="no-referrer"
           onError={(e) => {
             (e.target as HTMLImageElement).src = "/favicon.png";
@@ -34,8 +37,11 @@ export const RevittaLogo: React.FC<RevittaLogoProps> = ({
         <img
           src={light ? "/logo-white.png" : "/logo-dark.png"}
           alt="Revitta"
+          width={110}
+          height={24}
           className="h-5 sm:h-6 w-auto object-contain"
           loading="eager"
+          decoding="async"
         />
         {showSubtitle && (
           <span className={`text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase mt-0.5 ${subColor}`}>

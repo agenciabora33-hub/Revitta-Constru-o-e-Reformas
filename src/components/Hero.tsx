@@ -139,11 +139,14 @@ export const Hero: React.FC = () => {
                 {/* Visual Image Banner with Subtle Alive Motion */}
                 <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-indigo-950">
                   <motion.img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=720&q=75&fm=webp"
                     alt="Reforma de alto padrão executada pela Revitta em Caxias do Sul"
+                    width={720}
+                    height={480}
                     className="w-full h-full object-cover object-center"
                     loading="eager"
                     fetchPriority="high"
+                    decoding="async"
                     animate={{
                       scale: [1, 1.035, 1],
                     }}
@@ -185,7 +188,7 @@ export const Hero: React.FC = () => {
                 {/* Scope checklist below image */}
                 <div className="p-5 sm:p-6 space-y-4 bg-white">
                   <div className="flex items-center justify-between border-b border-indigo-50 pb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-600">Equipe Própria Revitta</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-gray-700">Equipe Própria Revitta</span>
                     <span className="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
                       +50 Especialistas
                     </span>
@@ -227,6 +230,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* 4 Trust Badges (Selos) - Mobile First: Icons on top of text on mobile, staggered hover */}
+        <h2 className="sr-only">Diferenciais e Compromisso Revitta em Caxias do Sul</h2>
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-indigo-100/90 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {trustBadges.map((badge, idx) => {
             const Icon = badge.icon;
@@ -244,10 +248,10 @@ export const Hero: React.FC = () => {
                   <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
                 </div>
                 <div className="min-w-0 w-full">
-                  <h4 className="text-xs sm:text-sm lg:text-base font-bold text-indigo-950 leading-snug">
+                  <h3 className="text-xs sm:text-sm lg:text-base font-bold text-indigo-950 leading-snug">
                     {badge.title}
-                  </h4>
-                  <p className="text-[11px] sm:text-xs text-gray-600 mt-1 sm:mt-0.5 leading-snug">
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-gray-700 mt-1 sm:mt-0.5 leading-snug">
                     {badge.sub}
                   </p>
                 </div>

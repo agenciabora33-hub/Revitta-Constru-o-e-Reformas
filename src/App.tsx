@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense, lazy } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
@@ -13,11 +13,19 @@ import { CtaFinal } from './components/CtaFinal';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { CookieBanner } from './components/CookieBanner';
-import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
-import { ServicePage } from './components/ServicePage';
 import { AtendimentoTransparencia } from './components/AtendimentoTransparencia';
-import { TrabalheConosco } from './components/TrabalheConosco';
 import { getServiceBySlugOrId } from './data/servicesDetailedData';
+
+// Dynamic code-splitting for secondary views and modals to optimize initial mobile bundle & FCP/LCP
+const ServicePage = lazy(() =>
+  import('./components/ServicePage').then((module) => ({ default: module.ServicePage }))
+);
+const TrabalheConosco = lazy(() =>
+  import('./components/TrabalheConosco').then((module) => ({ default: module.TrabalheConosco }))
+);
+const PrivacyPolicyModal = lazy(() =>
+  import('./components/PrivacyPolicyModal').then((module) => ({ default: module.PrivacyPolicyModal }))
+);
 
 export default function App() {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
@@ -95,53 +103,62 @@ export default function App() {
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-grow pt-16 sm:pt-20">
-        {isTrabalheConosco ? (
-          /* Dedicated Trabalhe Conosco Page (Prestadores & Profissionais Liberais) */
-          <TrabalheConosco onBackToHome={navigateToHome} />
-        ) : currentService ? (
-          /* Dedicated Service Page (SEO, GEO, XEO & E-E-A-T) */
-          <ServicePage
-            service={currentService}
-            onBackToHome={navigateToHome}
-            onNavigateToService={navigateToService}
-          />
-        ) : (
-          /* Main One-Page Architectural Content Flow (PRD §5) */
-          <>
-            {/* #inicio (Hero with trust badges & primary WhatsApp CTA) */}
-            <Hero />
+        <Suspense
+          fallback={
+            <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center">
+              <div className="w-10 h-10 border-3 border-indigo-700 border-t-transparent rounded-full animate-spin mb-4" />
+              <p className="text-sm font-semibold text-indigo-950">Carregando conteúdo...</p>
+            </div>
+          }
+        >
+          {isTrabalheConosco ? (
+            /* Dedicated Trabalhe Conosco Page (Prestadores & Profissionais Liberais) */
+            <TrabalheConosco onBackToHome={navigateToHome} />
+          ) : currentService ? (
+            /* Dedicated Service Page (SEO, GEO, XEO & E-E-A-T) */
+            <ServicePage
+              service={currentService}
+              onBackToHome={navigateToHome}
+              onNavigateToService={navigateToService}
+            />
+          ) : (
+            /* Main One-Page Architectural Content Flow (PRD §5) */
+            <>
+              {/* #inicio (Hero with trust badges & primary WhatsApp CTA) */}
+              <Hero />
 
-            {/* #numeros (Social proof metrics) */}
-            <Stats />
+              {/* #numeros (Social proof metrics) */}
+              <Stats />
 
-            {/* #servicos (10 service cards with dedicated page links & WhatsApp selector) */}
-            <Services onSelectService={navigateToService} />
+              {/* #servicos (10 service cards with dedicated page links & WhatsApp selector) */}
+              <Services onSelectService={navigateToService} />
 
-            {/* #atendimento (Atendimento a Domicílio & Transparência com o Cliente) */}
-            <AtendimentoTransparencia />
+              {/* #atendimento (Atendimento a Domicílio & Transparência com o Cliente) */}
+              <AtendimentoTransparencia />
 
-            {/* #processo (4 structured steps from evaluation to guaranteed delivery) */}
-            <Process />
+              {/* #processo (4 structured steps from evaluation to guaranteed delivery) */}
+              <Process />
 
-            {/* #obras (Interactive Before/After comparison slider) */}
-            <BeforeAfterGallery />
+              {/* #obras (Interactive Before/After comparison slider) */}
+              <BeforeAfterGallery />
 
-            {/* #sobre (E-E-A-T company foundation, specialists, technical manager) */}
-            <About />
+              {/* #sobre (E-E-A-T company foundation, specialists, technical manager) */}
+              <About />
 
-            {/* #areas (Coverage cards for Caxias do Sul, Farroupilha, São Marcos, Flores da Cunha) */}
-            <Areas />
+              {/* #areas (Coverage cards for Caxias do Sul, Farroupilha, São Marcos, Flores da Cunha) */}
+              <Areas />
 
-            {/* #depoimentos (Verified Google Business Profile reviews) */}
-            <Testimonials />
+              {/* #depoimentos (Verified Google Business Profile reviews) */}
+              <Testimonials />
 
-            {/* #faq (GEO direct answer-first 40-60 words with semantic details accordion) */}
-            <FaqSection />
+              {/* #faq (GEO direct answer-first 40-60 words with semantic details accordion) */}
+              <FaqSection />
 
-            {/* #contato (Final high-converting CTA section) */}
-            <CtaFinal />
-          </>
-        )}
+              {/* #contato (Final high-converting CTA section) */}
+              <CtaFinal />
+            </>
+          )}
+        </Suspense>
       </main>
 
       {/* Footer with full NAP, business hours, emergency info, and dedicated service links */}
@@ -158,10 +175,14 @@ export default function App() {
       <CookieBanner onOpenPrivacyPolicy={() => setPrivacyModalOpen(true)} />
 
       {/* Privacy Policy Modal (/privacidade) */}
-      <PrivacyPolicyModal 
-        isOpen={privacyModalOpen} 
-        onClose={() => setPrivacyModalOpen(false)} 
-      />
+      {privacyModalOpen && (
+        <Suspense fallback={null}>
+          <PrivacyPolicyModal 
+            isOpen={privacyModalOpen} 
+            onClose={() => setPrivacyModalOpen(false)} 
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

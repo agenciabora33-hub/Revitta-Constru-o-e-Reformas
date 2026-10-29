@@ -45,7 +45,15 @@ export const Testimonials: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center transition-transform hover:scale-105 active:scale-95 shadow-xs rounded-lg overflow-hidden"
               >
-                <img src="/path/to/google-search-badge.svg" alt="Google Search" className="h-9 w-auto" />
+                <img
+                  src="/path/to/google-search-badge.svg"
+                  alt="Google Search"
+                  width={165}
+                  height={36}
+                  className="h-9 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
             </div>
           </div>
@@ -85,10 +93,10 @@ export const Testimonials: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-indigo-100/80 flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-bold text-indigo-950">
+                  <h3 className="text-sm font-bold text-indigo-950">
                     {item.name}
-                  </h4>
-                  <div className="flex items-center gap-1.5 text-xs text-gray-600 mt-0.5">
+                  </h3>
+                  <div className="flex items-center gap-1.5 text-xs text-gray-700 mt-0.5">
                     <MapPin className="w-3 h-3 text-indigo-700 shrink-0" />
                     <span>{item.location}</span>
                   </div>
@@ -98,7 +106,7 @@ export const Testimonials: React.FC = () => {
                   <span className="block text-[11px] font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-100/60">
                     {item.service}
                   </span>
-                  <span className="block text-[10px] text-gray-500 mt-1">
+                  <span className="block text-[10px] text-gray-700 mt-1">
                     {item.date}
                   </span>
                 </div>

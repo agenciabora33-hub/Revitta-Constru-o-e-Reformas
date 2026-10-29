@@ -66,8 +66,8 @@ export const FaqSection: React.FC = () => {
         <SectionReveal delay={0.2}>
           <div className="mt-12 p-6 sm:p-8 bg-white rounded-3xl border border-indigo-100 shadow-md text-center flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="text-left">
-              <h4 className="text-base sm:text-lg font-bold text-indigo-950">Ficou com alguma dúvida sobre seu imóvel?</h4>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1">Nosso time técnico atende diretamente pelo WhatsApp com respostas rápidas e sem compromisso.</p>
+              <h3 className="text-base sm:text-lg font-bold text-indigo-950">Ficou com alguma dúvida sobre seu imóvel?</h3>
+              <p className="text-xs sm:text-sm text-gray-700 mt-1">Nosso time técnico atende diretamente pelo WhatsApp com respostas rápidas e sem compromisso.</p>
             </div>
             <motion.a
               href={createWhatsAppUrl()}

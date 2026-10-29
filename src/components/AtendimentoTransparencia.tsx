@@ -9,7 +9,8 @@ export const AtendimentoTransparencia: React.FC = () => {
     <section 
       id="atendimento" 
       aria-labelledby="atendimento-heading"
-      className="bg-[#0b0f17] text-white py-16 sm:py-20 border-y border-indigo-950/80 relative overflow-hidden"
+      className="bg-[#0b0f17] text-white border-y border-indigo-950/80 relative overflow-hidden"
+      style={{ paddingTop: '20px', paddingBottom: '20px', marginTop: '-3px' }}
     >
       {/* Subtle ambient light */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-900/10 rounded-full blur-3xl pointer-events-none" />

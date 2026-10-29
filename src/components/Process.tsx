@@ -9,7 +9,11 @@ export const Process: React.FC = () => {
   const stepIcons = [CalendarCheck, FileText, HardHat, Award];
 
   return (
-    <section id="processo" className="py-20 sm:py-24 bg-white relative overflow-hidden">
+    <section 
+      id="processo" 
+      className="bg-white relative overflow-hidden"
+      style={{ paddingTop: '40px', paddingBottom: '40px' }}
+    >
       {/* Subtle ambient blur */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-indigo-50/50 rounded-full blur-3xl pointer-events-none" />
 

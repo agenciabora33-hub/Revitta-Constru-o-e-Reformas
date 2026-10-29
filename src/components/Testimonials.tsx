@@ -7,7 +7,11 @@ import { SectionReveal } from './SectionReveal';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-20 sm:py-24 bg-white relative overflow-hidden">
+    <section 
+      id="depoimentos" 
+      className="bg-white relative overflow-hidden"
+      style={{ paddingTop: '40px', paddingBottom: '40px' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with Reveal */}

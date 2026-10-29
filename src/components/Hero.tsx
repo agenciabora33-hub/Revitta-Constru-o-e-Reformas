@@ -33,7 +33,8 @@ export const Hero: React.FC = () => {
   return (
     <section 
       id="inicio" 
-      className="relative pt-3 sm:pt-6 lg:pt-8 pb-12 lg:pb-18 overflow-hidden bg-gradient-to-b from-indigo-100/70 via-mist to-mist"
+      className="relative overflow-hidden bg-gradient-to-b from-indigo-100/70 via-mist to-mist"
+      style={{ paddingTop: '30px', paddingBottom: '30px' }}
     >
       {/* Subtle architectural ambient lights */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-indigo-500/10 via-indigo-700/5 to-transparent rounded-full blur-3xl pointer-events-none" />

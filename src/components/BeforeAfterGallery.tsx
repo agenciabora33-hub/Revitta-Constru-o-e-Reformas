@@ -16,7 +16,11 @@ export const BeforeAfterGallery: React.FC = () => {
   };
 
   return (
-    <section id="obras" className="py-20 sm:py-24 bg-mist relative">
+    <section 
+      id="obras" 
+      className="bg-mist relative"
+      style={{ paddingTop: '40px', paddingBottom: '40px' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Reveal */}

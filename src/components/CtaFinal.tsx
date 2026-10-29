@@ -9,7 +9,11 @@ export const CtaFinal: React.FC = () => {
   const finalWaUrl = createWhatsAppUrl();
 
   return (
-    <section id="contato" className="py-20 sm:py-26 bg-indigo-950 text-white relative overflow-hidden">
+    <section 
+      id="contato" 
+      className="bg-indigo-950 text-white relative overflow-hidden"
+      style={{ paddingTop: '40px', paddingBottom: '4px' }}
+    >
       {/* Background glow motifs */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-700/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-wa-green/15 rounded-full blur-3xl pointer-events-none" />

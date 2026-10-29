@@ -7,7 +7,11 @@ import { SectionReveal } from './SectionReveal';
 
 export const Areas: React.FC = () => {
   return (
-    <section id="areas" className="py-20 sm:py-24 bg-mist relative">
+    <section 
+      id="areas" 
+      className="bg-mist relative"
+      style={{ paddingTop: '40px', paddingBottom: '40px' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with Reveal */}

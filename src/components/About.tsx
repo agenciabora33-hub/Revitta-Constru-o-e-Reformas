@@ -8,7 +8,11 @@ import { SectionReveal } from './SectionReveal';
 
 export const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-20 sm:py-24 bg-white relative overflow-hidden">
+    <section 
+      id="sobre" 
+      className="bg-white relative overflow-hidden"
+      style={{ paddingTop: '40px', paddingBottom: '40px' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
@@ -37,16 +41,16 @@ export const About: React.FC = () => {
                     </div>
                   </figure>
 
-                  <div className="p-5 sm:p-6 bg-indigo-950 text-white space-y-3">
-                    <div className="flex items-center justify-between text-xs border-b border-indigo-800/80 pb-2.5">
+                  <div className="p-4 sm:p-5 bg-indigo-950 text-white space-y-1.5">
+                    <div className="flex items-center justify-between text-xs border-b border-indigo-800/70 pb-1.5">
                       <span className="text-indigo-300 font-semibold">Empresa Registrada</span>
                       <span className="text-wa-green font-bold">CNPJ 50.463.095/0001-58</span>
                     </div>
-                    <div className="flex items-center justify-between text-xs border-b border-indigo-800/60 pb-2.5">
+                    <div className="flex items-center justify-between text-xs border-b border-indigo-800/60 pb-1.5">
                       <span className="text-indigo-300">Fundação</span>
                       <span className="font-bold text-white">Abril de 2020 (Caxias do Sul - RS)</span>
                     </div>
-                    <div className="flex items-center justify-between text-xs">
+                    <div className="flex items-center justify-between text-xs pt-0.5">
                       <span className="text-indigo-300">Sede & Atuação Regional</span>
                       <span className="font-bold text-indigo-200">Caxias do Sul e Serra Gaúcha</span>
                     </div>

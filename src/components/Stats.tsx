@@ -7,7 +7,11 @@ import { SectionReveal } from './SectionReveal';
 
 export const Stats: React.FC = () => {
   return (
-    <section id="numeros" className="py-14 sm:py-20 bg-indigo-950 text-white relative overflow-hidden">
+    <section 
+      id="numeros" 
+      className="bg-indigo-950 text-white relative overflow-hidden"
+      style={{ paddingTop: '30px', paddingBottom: '30px' }}
+    >
       {/* Decorative ambient lighting */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-700/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-wa-green/10 rounded-full blur-3xl pointer-events-none" />
@@ -57,10 +61,6 @@ export const Stats: React.FC = () => {
           ))}
         </div>
 
-        {/* Note on data auditability as outlined in PRD §6 */}
-        <p className="text-[11px] text-indigo-400/80 mt-8 text-center sm:text-left">
-          *Dados operacionais consolidados desde abril de 2020 pela Revitta Construção e Reformas (CNPJ 50.463.095/0001-58) em Caxias do Sul e Serra Gaúcha.
-        </p>
       </div>
     </section>
   );

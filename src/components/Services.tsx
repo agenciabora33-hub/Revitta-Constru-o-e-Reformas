@@ -50,7 +50,11 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   const fastWhatsAppUrl = createServiceCityWhatsAppUrl(selectedService, selectedCity);
 
   return (
-    <section id="servicos" className="py-20 sm:py-24 bg-mist relative">
+    <section 
+      id="servicos" 
+      className="bg-mist relative"
+      style={{ paddingTop: '30px', paddingBottom: '30px' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Reveal */}

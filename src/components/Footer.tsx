@@ -3,18 +3,23 @@ import { COMPANY_INFO, createWhatsAppUrl } from '../data/revittaData';
 import { DETAILED_SERVICES } from '../data/servicesDetailedData';
 import { RevittaLogo } from './RevittaLogo';
 import { SparkleIcon } from './SparkleIcon';
+import { SocialLinksRow } from './SocialLogos';
 import { 
   MapPin, Phone, Clock, CreditCard, ShieldCheck, 
-  Instagram, Facebook, Linkedin, ArrowUp, ExternalLink,
-  ChevronRight, ArrowRight
+  ArrowUp, ExternalLink, ChevronRight, ArrowRight
 } from 'lucide-react';
 
 interface FooterProps {
   onOpenPrivacyPolicy: () => void;
   onSelectService?: (serviceId: string) => void;
+  onNavigateTrabalheConosco?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectService }) => {
+export const Footer: React.FC<FooterProps> = ({ 
+  onOpenPrivacyPolicy, 
+  onSelectService,
+  onNavigateTrabalheConosco 
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -29,6 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectSer
     { label: 'Áreas Atendidas', href: '#areas' },
     { label: 'Avaliações GBP', href: '#depoimentos' },
     { label: 'Dúvidas (FAQ)', href: '#faq' },
+    { label: 'Trabalhe Conosco (Prestadores)', href: '#/trabalhe-conosco' },
     { label: 'Fale Conosco', href: '#contato' },
   ];
 
@@ -61,41 +67,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectSer
               </div>
             </div>
 
-            {/* Social Media Links from PRD §3 */}
-            <div className="pt-3 flex items-center gap-3">
-              <a
-                href={COMPANY_INFO.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-indigo-900 hover:bg-indigo-800 text-white flex items-center justify-center transition-colors border border-indigo-800"
-                aria-label="Instagram da Revitta"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={COMPANY_INFO.socials.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-indigo-900 hover:bg-indigo-800 text-white flex items-center justify-center transition-colors border border-indigo-800"
-                aria-label="Facebook da Revitta"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={COMPANY_INFO.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-indigo-900 hover:bg-indigo-800 text-white flex items-center justify-center transition-colors border border-indigo-800"
-                aria-label="LinkedIn da Revitta"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
+            {/* Social Media Links with official logos */}
+            <div className="pt-3 space-y-2">
+              <span className="text-[11px] font-bold text-indigo-300 uppercase tracking-wider block">
+                Redes Sociais & Perfil Oficial:
+              </span>
+              <SocialLinksRow variant="footer" showLabels={true} />
             </div>
 
             {/* Google Search Profile Badge */}
-            <div className="pt-3">
+            <div className="pt-2">
               <a
-                href="https://profile.google.com/@example"
+                href={COMPANY_INFO.socials.google}
                 aria-label="Find us on Google Search"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -147,9 +130,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectSer
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-indigo-300 hover:text-white transition-colors"
+                    onClick={(e) => {
+                      if (link.href === '#/trabalhe-conosco') {
+                        e.preventDefault();
+                        if (onNavigateTrabalheConosco) {
+                          onNavigateTrabalheConosco();
+                        } else {
+                          window.location.hash = '#/trabalhe-conosco';
+                        }
+                      }
+                    }}
+                    className={`transition-colors ${
+                      link.href === '#/trabalhe-conosco'
+                        ? 'text-wa-green font-semibold hover:text-white flex items-center gap-1'
+                        : 'text-indigo-300 hover:text-white'
+                    }`}
                   >
-                    {link.label}
+                    <span>{link.label}</span>
                   </a>
                 </li>
               ))}
@@ -166,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectSer
             </div>
           </div>
 
-          {/* Column 4: Local Coverage Recap (2 cols) */}
+          {/* Column 4: Local Coverage Recap & Partner Portal (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white font-display">
               Região Atendida
@@ -178,7 +175,31 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacyPolicy, onSelectSer
               <li>• Flores da Cunha (95270-000)</li>
             </ul>
 
-            <div className="pt-4">
+            {/* Dedicated Partner Callout in Footer */}
+            <div className="pt-2">
+              <a
+                href="#/trabalhe-conosco"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigateTrabalheConosco) {
+                    onNavigateTrabalheConosco();
+                  } else {
+                    window.location.hash = '#/trabalhe-conosco';
+                  }
+                }}
+                className="block p-3 rounded-xl bg-indigo-900/60 hover:bg-indigo-900 border border-indigo-800/80 hover:border-indigo-700 transition-all text-xs group cursor-pointer"
+              >
+                <div className="text-wa-green font-bold flex items-center justify-between">
+                  <span>Trabalhe Conosco</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform text-white">→</span>
+                </div>
+                <p className="text-[11px] text-indigo-200 mt-1">
+                  Seja um prestador parceiro e receba obras contínuas.
+                </p>
+              </a>
+            </div>
+
+            <div className="pt-2">
               <button
                 type="button"
                 onClick={scrollToTop}

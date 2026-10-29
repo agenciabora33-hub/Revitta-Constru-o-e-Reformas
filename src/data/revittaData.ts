@@ -18,11 +18,14 @@ export const COMPANY_INFO = {
   hoursSaturday: "Sábado: 08h00 às 14h30",
   hoursSunday: "Domingo: Fechado (Plantão Emergencial 24h)",
   emergency: "Atendimento emergencial 24h para vazamentos e falhas elétricas",
+  email: "comercialrevitta@gmail.com",
+  partnerEmail: "comercialrevitta@gmail.com",
   payments: ["PIX", "Dinheiro", "Cartões de Débito", "Cartões de Crédito parcelado"],
   socials: {
     instagram: "https://www.instagram.com/revittacaxias/",
-    facebook: "https://www.facebook.com/revittarevittacaxias",
-    linkedin: "https://www.linkedin.com/company/revittacaxias/"
+    facebook: "https://www.facebook.com/revittacaxias",
+    linkedin: "https://www.linkedin.com/company/revittacaxias/",
+    google: "https://share.google/ucyC2x8xcNpm4zoXG"
   },
   technicalManagerPlaceholder: "[NOME + REGISTRO CREA/CFT]"
 };

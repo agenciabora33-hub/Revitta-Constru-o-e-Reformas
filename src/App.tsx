@@ -16,24 +16,34 @@ import { CookieBanner } from './components/CookieBanner';
 import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
 import { ServicePage } from './components/ServicePage';
 import { AtendimentoTransparencia } from './components/AtendimentoTransparencia';
+import { TrabalheConosco } from './components/TrabalheConosco';
 import { getServiceBySlugOrId } from './data/servicesDetailedData';
 
 export default function App() {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const [currentServiceId, setCurrentServiceId] = useState<string | null>(null);
+  const [isTrabalheConosco, setIsTrabalheConosco] = useState(false);
 
-  // Sync route from URL hash (e.g. #/servicos/instalacoes-eletricas)
+  // Sync route from URL hash (e.g. #/servicos/instalacoes-eletricas or #/trabalhe-conosco)
   const parseRouteFromHash = useCallback(() => {
     const hash = window.location.hash;
+    if (hash === '#/trabalhe-conosco' || hash === '#trabalhe-conosco') {
+      setIsTrabalheConosco(true);
+      setCurrentServiceId(null);
+      return;
+    }
+
     const match = hash.match(/^#\/servicos\/([a-zA-Z0-9-_]+)/);
     if (match && match[1]) {
       const found = getServiceBySlugOrId(match[1]);
       if (found) {
         setCurrentServiceId(found.id);
+        setIsTrabalheConosco(false);
         return;
       }
     }
     setCurrentServiceId(null);
+    setIsTrabalheConosco(false);
   }, []);
 
   useEffect(() => {
@@ -52,13 +62,22 @@ export default function App() {
     if (service) {
       window.location.hash = `#/servicos/${service.slug}`;
       setCurrentServiceId(service.id);
+      setIsTrabalheConosco(false);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const navigateToTrabalheConosco = () => {
+    window.location.hash = '#/trabalhe-conosco';
+    setIsTrabalheConosco(true);
+    setCurrentServiceId(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToHome = () => {
     window.location.hash = '';
     setCurrentServiceId(null);
+    setIsTrabalheConosco(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -69,12 +88,17 @@ export default function App() {
       {/* Sticky Header with adaptive navigation */}
       <Header 
         onNavigateHome={navigateToHome} 
+        onNavigateTrabalheConosco={navigateToTrabalheConosco}
         isServicePage={Boolean(currentService)}
+        isTrabalheConosco={isTrabalheConosco}
       />
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-grow pt-16 sm:pt-20">
-        {currentService ? (
+        {isTrabalheConosco ? (
+          /* Dedicated Trabalhe Conosco Page (Prestadores & Profissionais Liberais) */
+          <TrabalheConosco onBackToHome={navigateToHome} />
+        ) : currentService ? (
           /* Dedicated Service Page (SEO, GEO, XEO & E-E-A-T) */
           <ServicePage
             service={currentService}
@@ -124,6 +148,7 @@ export default function App() {
       <Footer 
         onOpenPrivacyPolicy={() => setPrivacyModalOpen(true)} 
         onSelectService={navigateToService}
+        onNavigateTrabalheConosco={navigateToTrabalheConosco}
       />
 
       {/* Fixed WhatsApp Floating Conversion Button with gentle pulse and tooltip (PRD §8) */}

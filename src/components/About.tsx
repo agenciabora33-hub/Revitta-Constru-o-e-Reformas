@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { COMPANY_INFO, createWhatsAppUrl } from '../data/revittaData';
 import { SparkleIcon } from './SparkleIcon';
+import { SocialLinksRow } from './SocialLogos';
 import { ShieldCheck, HardHat, FileCheck2, Sparkles, Building, CheckCircle2, MessageSquare } from 'lucide-react';
 import { SectionReveal } from './SectionReveal';
 
@@ -138,6 +139,19 @@ export const About: React.FC = () => {
                   <MessageSquare className="w-4.5 h-4.5 text-wa-green" />
                   <span>Conversar com a Equipe Técnica no WhatsApp</span>
                 </motion.a>
+              </div>
+
+              {/* Official Social Channels & Google Profile Cards */}
+              <div className="pt-8 border-t border-indigo-100/90 mt-4">
+                <div className="mb-3 text-left">
+                  <span className="text-xs font-bold text-indigo-950 uppercase tracking-wider block">
+                    Canais Oficiais & Avaliações da Revitta
+                  </span>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Acompanhe nossas obras em tempo real e consulte nossa reputação pública verificada.
+                  </p>
+                </div>
+                <SocialLinksRow variant="cards" />
               </div>
             </SectionReveal>
           </div>

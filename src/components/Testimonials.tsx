@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { TESTIMONIALS } from '../data/revittaData';
+import { TESTIMONIALS, COMPANY_INFO } from '../data/revittaData';
 import { SparkleIcon } from './SparkleIcon';
 import { Star, MapPin, CheckCircle } from 'lucide-react';
 import { SectionReveal } from './SectionReveal';
@@ -39,7 +39,7 @@ export const Testimonials: React.FC = () => {
               </div>
 
               <a
-                href="https://profile.google.com/@example"
+                href={COMPANY_INFO.socials.google}
                 aria-label="Find us on Google Search"
                 target="_blank"
                 rel="noopener noreferrer"

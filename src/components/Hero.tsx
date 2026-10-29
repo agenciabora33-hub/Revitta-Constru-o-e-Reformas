@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Top eyebrow with sparkle motif */}
+            {/* Top eyebrow */}
             <motion.div 
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,17 +67,17 @@ export const Hero: React.FC = () => {
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-900/10 border border-indigo-700/20 text-indigo-900 text-xs sm:text-sm font-semibold tracking-wide shadow-sm"
             >
               <SparkleIcon className="w-3.5 h-3.5 text-indigo-700" />
-              <span>Caxias do Sul • Farroupilha • Flores da Cunha • São Marcos</span>
+              <span>Caxias do Sul e Região</span>
             </motion.div>
 
-            {/* H1 Title with local SEO and luxury agency presence */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] font-bold text-indigo-950 leading-[1.16] tracking-tight font-display">
-              Reformas e construção de alto padrão em <span className="text-indigo-700 underline decoration-wa-green/60 decoration-wavy decoration-2 underline-offset-4">Caxias do Sul</span> com gestão completa.
+            {/* Exact H1 requested with font-display */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.1rem] font-bold text-indigo-950 leading-[1.15] tracking-tight font-display">
+              Reformas e Construção em <span className="text-indigo-700">Caxias do Sul</span>
             </h1>
 
-            {/* Subtitle addressing local realities: Serra Gaúcha climate, punctuality, clean jobsite */}
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl font-normal">
-              Desde abril de 2020, a Revitta transforma imóveis residenciais, comerciais e industriais na Serra Gaúcha. Equipe própria com mais de 50 especialistas em elétrica, hidráulica, telhados e acabamentos resistentes ao frio e umidade da serra. Canteiro limpo, orçamento transparente e pontualidade rigorosa.
+            {/* Reduced supporting line highlighting key points */}
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl font-normal">
+              Obras residenciais e comerciais com <strong className="font-bold text-indigo-950">equipe própria</strong>, <strong className="font-bold text-indigo-950">prazo garantido em contrato</strong> e <strong className="font-bold text-indigo-950">orçamento transparente</strong> na Serra Gaúcha.
             </p>
 
             {/* Dual CTAs: Primary Green WhatsApp + Secondary Explore Services */}

@@ -71,7 +71,7 @@ export const FloatingWhatsApp: React.FC = () => {
           className="relative hidden sm:flex items-center gap-2 bg-indigo-950 text-white text-xs font-semibold py-2 px-3.5 rounded-xl shadow-xl border border-indigo-800 animate-in fade-in slide-in-from-right-3 duration-300 select-none max-w-xs"
           role="status"
         >
-          <span>Orçamento grátis no WhatsApp</span>
+          <span>Orçamento no WhatsApp</span>
           <button
             type="button"
             onClick={handleDismissTooltip}

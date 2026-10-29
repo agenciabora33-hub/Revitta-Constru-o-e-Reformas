@@ -134,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
             aria-label="Pedir orçamento no WhatsApp"
           >
             <MessageSquare className="w-4 h-4 fill-white text-white" />
-            <span className="whitespace-nowrap">Orçamento Grátis</span>
+            <span className="whitespace-nowrap">Orçamento</span>
           </a>
 
           {/* Universal Menu Toggle Button for all screen sizes */}

@@ -18,14 +18,13 @@ export const RevittaLogo: React.FC<RevittaLogoProps> = ({
       {/* Visual Architectural Monogram Mark from official favicon / logo */}
       <div className="relative flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-950 shadow-md shadow-indigo-950/20 shrink-0 overflow-hidden border border-indigo-700/40 p-0.5">
         <img
-          src="https://i.ibb.co/JW3xbYLb/Logo-Revitta.png"
+          src="/logo-revitta.png"
           alt="Ícone Revitta"
           width={40}
           height={40}
           className="w-full h-full object-contain"
           loading="eager"
           decoding="async"
-          referrerPolicy="no-referrer"
           onError={(e) => {
             (e.target as HTMLImageElement).src = "/favicon.png";
           }}

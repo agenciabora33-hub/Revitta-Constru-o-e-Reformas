@@ -32,13 +32,17 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- Preconnect & DNS-Prefetch for External Critical Domains -->
+    <!-- Preconnect & DNS-Prefetch for External Critical Domains (Max 3-4 origins per PageSpeed) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.ibb.co" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
     <link rel="dns-prefetch" href="https://i.ibb.co" />
+
+    <!-- Preload Critical Logo Asset -->
+    <link rel="preload" as="image" href="/logo-revitta.png" />
 
     <!-- Google Fonts: Asynchronous Non-Render-Blocking Loading with Font Display Swap -->
     <link

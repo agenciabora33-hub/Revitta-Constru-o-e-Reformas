@@ -14,10 +14,9 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-40px' });
-  const [displayValue, setDisplayValue] = useState<string>('0');
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || !ref.current) return;
 
     // Check for plus prefix
     const hasPlus = value.startsWith('+');
@@ -26,7 +25,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
     const num = parseInt(digitsOnly, 10);
 
     if (isNaN(num)) {
-      setDisplayValue(value);
+      if (ref.current) ref.current.textContent = value;
       return;
     }
 
@@ -38,11 +37,13 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       duration,
       ease: [0.16, 1, 0.3, 1], // Luxury deceleration curve
       onUpdate: (latest) => {
-        const rounded = Math.round(latest);
-        const formatted = rounded >= 1000 
-          ? rounded.toLocaleString('pt-BR')
-          : rounded.toString();
-        setDisplayValue(`${hasPlus ? '+' : ''}${formatted}${suffix}`);
+        if (ref.current) {
+          const rounded = Math.round(latest);
+          const formatted = rounded >= 1000 
+            ? rounded.toLocaleString('pt-BR')
+            : rounded.toString();
+          ref.current.textContent = `${hasPlus ? '+' : ''}${formatted}${suffix}`;
+        }
       }
     });
 
@@ -51,7 +52,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 
   return (
     <span ref={ref} className={className}>
-      {displayValue}
+      {value}
     </span>
   );
 };

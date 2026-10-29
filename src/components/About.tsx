@@ -23,16 +23,15 @@ export const About: React.FC = () => {
                   <figure className="relative bg-gradient-to-b from-indigo-900/95 to-indigo-950 flex flex-col items-center justify-center p-6 sm:p-8 overflow-hidden border-b border-indigo-800/60">
                     <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl bg-white/5 border border-indigo-700/40 p-3 shadow-xl flex items-center justify-center">
                       <img
-                        src="https://i.ibb.co/JW3xbYLb/Logo-Revitta.png"
+                        src="/logo-revitta.png"
                         alt="Revitta Reformas e Construção em Caxias do Sul"
                         width={208}
                         height={208}
                         className="w-full h-full object-contain filter drop-shadow-md"
                         loading="lazy"
                         decoding="async"
-                        referrerPolicy="no-referrer"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = "/logo-revitta.png";
+                          (e.target as HTMLImageElement).src = "/logo.png";
                         }}
                       />
                     </div>

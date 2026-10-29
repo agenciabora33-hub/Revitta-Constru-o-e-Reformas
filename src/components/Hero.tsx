@@ -136,37 +136,25 @@ export const Hero: React.FC = () => {
               <div className="absolute -inset-2 bg-gradient-to-tr from-indigo-700/20 via-indigo-500/15 to-wa-green/20 rounded-3xl blur-2xl pointer-events-none" />
 
               <div className="relative bg-white rounded-3xl border border-indigo-100 shadow-2xl shadow-indigo-950/10 overflow-hidden">
-                {/* Visual Image Banner with Subtle Alive Motion */}
+                {/* Visual Image Banner */}
                 <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-indigo-950">
-                  <motion.img
+                  <img
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=720&q=75&fm=webp"
                     alt="Reforma de alto padrão executada pela Revitta em Caxias do Sul"
                     width={720}
                     height={480}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out hover:scale-105"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
-                    animate={{
-                      scale: [1, 1.035, 1],
-                    }}
-                    transition={{
-                      duration: 12,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/95 via-indigo-950/35 to-transparent" />
                   
-                  {/* Floating badge inside image with subtle float */}
-                  <motion.div 
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-indigo-950 shadow-md flex items-center gap-1.5 border border-white/60"
-                  >
+                  {/* Floating badge inside image */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-indigo-950 shadow-md flex items-center gap-1.5 border border-white/60">
                     <Sparkles className="w-3.5 h-3.5 text-indigo-700" />
                     <span>Padrão Serra Gaúcha • No Prazo</span>
-                  </motion.div>
+                  </div>
 
                   {/* 24h Emergency Badge */}
                   <div className="absolute top-4 right-4 bg-indigo-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl text-xs font-bold text-white border border-indigo-500/40 flex items-center gap-1.5 shadow-sm">

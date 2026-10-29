@@ -272,8 +272,8 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
     category: "Residencial",
     location: "Centro, Caxias do Sul",
     description: "Eliminação de parede divisória, forro tabicado de gesso com iluminação cênica e piso laminado de alta resistência.",
-    beforeImg: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80",
-    afterImg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=720&q=70&fm=webp",
+    afterImg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=720&q=70&fm=webp",
     beforeLabel: "Antes (Estado original desgastado)",
     afterLabel: "Depois (Entrega Revitta com garantia)"
   },
@@ -283,8 +283,8 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
     category: "Acabamentos",
     location: "Bairro Cinquentenário, Caxias do Sul",
     description: "Substituição completa de encanamento antigo por tubulações PPR, nicho embutido esculpido e porcelanato 90x90 retificado.",
-    beforeImg: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=70",
-    afterImg: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=720&q=70&fm=webp",
+    afterImg: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=720&q=70&fm=webp",
     beforeLabel: "Antes (Tubulação aparente e cerâmica antiga)",
     afterLabel: "Depois (Nicho iluminado e porcelanato acetinado)"
   },
@@ -294,8 +294,8 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
     category: "Comercial",
     location: "Farroupilha - RS",
     description: "Divisórias em drywall acústico com lã de vidro, nova fiação trifásica e pintura corporativa de alta durabilidade.",
-    beforeImg: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=70",
-    afterImg: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=720&q=70&fm=webp",
+    afterImg: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=720&q=70&fm=webp",
     beforeLabel: "Antes (Galpão desestruturado)",
     afterLabel: "Depois (Escritório executivo pronto para uso)"
   }

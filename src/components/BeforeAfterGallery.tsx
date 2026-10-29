@@ -108,18 +108,17 @@ export const BeforeAfterGallery: React.FC = () => {
                 Depois (Revitta)
               </div>
 
-              {/* BEFORE Image (Clipped overlay layer) */}
+              {/* BEFORE Image (Clipped overlay layer with GPU compositor clip-path) */}
               <div
-                className="absolute inset-0 overflow-hidden"
-                style={{ width: `${sliderPosition}%` }}
+                className="absolute inset-0 overflow-hidden will-change-[clip-path]"
+                style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
               >
                 <img
                   src={currentItem.beforeImg}
                   alt={`Antes: ${currentItem.title}`}
                   width={800}
                   height={500}
-                  className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
-                  style={{ width: '100%', minWidth: '100%' }}
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
                 />

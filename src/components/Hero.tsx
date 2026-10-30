@@ -82,15 +82,10 @@ export const Hero: React.FC = () => {
           <source src="/assets/aistudio/V_deo_Banheiro_7127e1ad.mp4" type="video/mp4" />
         </video>
 
-        {/* Multi-stage luxury gradient scrims to ensure 100% WCAG legibility while letting the video shine */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/50 lg:to-slate-950/35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-transparent to-slate-950" />
-        <div className="absolute inset-0 bg-indigo-950/35 mix-blend-multiply" />
+        {/* Balanced cinematic scrim to ensure crystal-clear video visibility while maintaining text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/50 to-slate-950/15 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950/65" />
       </div>
-
-      {/* Subtle ambient lighting orbs */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-indigo-600/15 rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-wa-green/10 rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Top Video Status & Controls Bar */}
@@ -147,12 +142,12 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Exact H1 requested with font-display */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.12] tracking-tight font-display drop-shadow-md">
-              Reformas e Construção em <span className="text-wa-green">Caxias do Sul</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.12] tracking-tight font-display drop-shadow-lg">
+              Reformas e Construção em <span className="text-wa-green drop-shadow-md">Caxias do Sul</span>
             </h1>
 
             {/* Reduced supporting line highlighting key points */}
-            <p className="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal drop-shadow-xs">
+            <p className="text-base sm:text-lg md:text-xl text-slate-100 leading-relaxed max-w-2xl font-medium drop-shadow-md">
               Obras residenciais e comerciais com <strong className="font-bold text-white">equipe própria</strong>, <strong className="font-bold text-white">prazo garantido em contrato</strong> e <strong className="font-bold text-white">orçamento transparente</strong> na Serra Gaúcha.
             </p>
 

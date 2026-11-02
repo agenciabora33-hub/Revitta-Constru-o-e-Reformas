@@ -177,36 +177,62 @@ export const ServicePage: React.FC<ServicePageProps> = ({
       {/* Top Breadcrumb & Back Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-indigo-200/60 text-xs sm:text-sm">
-          <nav aria-label="Breadcrumbs" className="flex items-center gap-1.5 text-gray-600">
-            <button 
-              type="button"
-              onClick={onBackToHome}
-              className="hover:text-indigo-700 font-medium transition-colors cursor-pointer"
-            >
-              Início
-            </button>
-            <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
-            <button 
-              type="button"
-              onClick={onBackToHome}
-              className="hover:text-indigo-700 font-medium transition-colors cursor-pointer"
-            >
-              Serviços
-            </button>
-            <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
-            <span className="font-semibold text-indigo-950 truncate max-w-[200px] sm:max-w-none">
-              {service.title}
-            </span>
+          <nav aria-label="breadcrumb" className="text-gray-600">
+            <ol className="flex items-center gap-1.5 list-none p-0 m-0" itemScope itemType="https://schema.org/BreadcrumbList">
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="inline-flex items-center gap-1.5">
+                <a 
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onBackToHome();
+                  }}
+                  className="hover:text-indigo-700 font-medium transition-colors"
+                  itemProp="item"
+                >
+                  <span itemProp="name">Início</span>
+                </a>
+                <meta itemProp="position" content="1" />
+                <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+              </li>
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="inline-flex items-center gap-1.5">
+                <a 
+                  href="/#servicos"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onBackToHome();
+                    setTimeout(() => {
+                      const el = document.querySelector('#servicos');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 150);
+                  }}
+                  className="hover:text-indigo-700 font-medium transition-colors"
+                  itemProp="item"
+                >
+                  <span itemProp="name">Serviços</span>
+                </a>
+                <meta itemProp="position" content="2" />
+                <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+              </li>
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="inline-flex items-center">
+                <span className="font-semibold text-indigo-950 truncate max-w-[200px] sm:max-w-none" itemProp="name">
+                  {service.title}
+                </span>
+                <meta itemProp="position" content="3" />
+              </li>
+            </ol>
           </nav>
 
-          <button
-            type="button"
-            onClick={onBackToHome}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onBackToHome();
+            }}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-indigo-50 border border-indigo-200 text-indigo-900 font-semibold text-xs transition-colors shadow-xs"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-indigo-700" />
             <span>Voltar para a página inicial</span>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -704,14 +730,17 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                       </p>
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={() => onNavigateToService(rel.id)}
+                    <a
+                      href={`/${rel.slug}/`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onNavigateToService(rel.id);
+                      }}
                       className="mt-4 pt-3 border-t border-indigo-50 text-xs font-bold text-indigo-700 hover:text-indigo-950 flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>Ver página completa</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </a>
                   </div>
                 );
               })}

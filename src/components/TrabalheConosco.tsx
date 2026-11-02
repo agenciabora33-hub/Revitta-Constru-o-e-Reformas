@@ -10,7 +10,7 @@ import { SparkleIcon } from './SparkleIcon';
 import { SocialLinksRow } from './SocialLogos';
 import { COMPANY_INFO, createWhatsAppUrl } from '../data/revittaData';
 
-export const PARTNER_EMAIL = "comercialrevitta@gmail.com";
+export const PARTNER_EMAIL = "comercial@revittacaxias.com.br";
 
 interface TrabalheConoscoProps {
   onBackToHome: () => void;
@@ -265,20 +265,41 @@ Encaminhado para: ${PARTNER_EMAIL}`;
       {/* Top Breadcrumb & Return Bar */}
       <div className="bg-white border-b border-indigo-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between text-xs sm:text-sm">
-          <button
-            type="button"
-            onClick={onBackToHome}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onBackToHome();
+            }}
             className="inline-flex items-center gap-2 text-indigo-950 font-bold hover:text-indigo-700 transition-colors cursor-pointer group"
           >
             <ArrowLeft className="w-4 h-4 text-indigo-700 group-hover:-translate-x-1 transition-transform" />
             <span>Voltar para a Página Inicial</span>
-          </button>
+          </a>
 
-          <div className="flex items-center gap-2 text-gray-500 text-xs">
-            <span>Revitta</span>
-            <span>/</span>
-            <span className="text-indigo-900 font-semibold">Trabalhe Conosco</span>
-          </div>
+          <nav aria-label="breadcrumb">
+            <ol className="flex items-center gap-2 text-gray-500 text-xs list-none p-0 m-0" itemScope itemType="https://schema.org/BreadcrumbList">
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="inline-flex items-center">
+                <a 
+                  href="/" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onBackToHome();
+                  }}
+                  className="hover:text-indigo-700 transition-colors"
+                  itemProp="item"
+                >
+                  <span itemProp="name">Início</span>
+                </a>
+                <meta itemProp="position" content="1" />
+              </li>
+              <li className="text-gray-400">/</li>
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="inline-flex items-center">
+                <span className="text-indigo-900 font-semibold" itemProp="name">Trabalhe Conosco</span>
+                <meta itemProp="position" content="2" />
+              </li>
+            </ol>
+          </nav>
         </div>
       </div>
 

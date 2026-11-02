@@ -1,7 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
+Disallow: /*?*utm_*=
 
-# GEO & AI Assistants Crawlers
+# AI Crawlers & Assistants
 User-agent: GPTBot
 Allow: /
 

@@ -14,151 +14,198 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { CookieBanner } from './components/CookieBanner';
 import { AtendimentoTransparencia } from './components/AtendimentoTransparencia';
+import { ServicePage } from './components/ServicePage';
+import { TrabalheConosco } from './components/TrabalheConosco';
+import { NotFoundPage } from './components/NotFoundPage';
 import { getServiceBySlugOrId } from './data/servicesDetailedData';
 
-// Dynamic code-splitting for secondary views and modals to optimize initial mobile bundle & FCP/LCP
-const ServicePage = lazy(() =>
-  import('./components/ServicePage').then((module) => ({ default: module.ServicePage }))
-);
-const TrabalheConosco = lazy(() =>
-  import('./components/TrabalheConosco').then((module) => ({ default: module.TrabalheConosco }))
-);
 const PrivacyPolicyModal = lazy(() =>
   import('./components/PrivacyPolicyModal').then((module) => ({ default: module.PrivacyPolicyModal }))
 );
 
-export default function App() {
+interface AppProps {
+  ssrPath?: string;
+}
+
+export default function App({ ssrPath }: AppProps) {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
-  const [currentServiceId, setCurrentServiceId] = useState<string | null>(null);
-  const [isTrabalheConosco, setIsTrabalheConosco] = useState(false);
 
-  // Sync route from URL hash (e.g. #/servicos/instalacoes-eletricas or #/trabalhe-conosco)
-  const parseRouteFromHash = useCallback(() => {
-    const hash = window.location.hash;
-    if (hash === '#/trabalhe-conosco' || hash === '#trabalhe-conosco') {
-      setIsTrabalheConosco(true);
-      setCurrentServiceId(null);
-      return;
-    }
-
-    const match = hash.match(/^#\/servicos\/([a-zA-Z0-9-_]+)/);
-    if (match && match[1]) {
-      const found = getServiceBySlugOrId(match[1]);
-      if (found) {
-        setCurrentServiceId(found.id);
-        setIsTrabalheConosco(false);
-        return;
+  // Helper to resolve route from current pathname or SSR path
+  const resolveCurrentRoute = useCallback(() => {
+    let rawPath = '';
+    if (ssrPath) {
+      rawPath = ssrPath;
+    } else if (typeof window !== 'undefined') {
+      // Check if user came with legacy hash router like #/servicos/... or #/trabalhe-conosco
+      const hash = window.location.hash || '';
+      if (hash.startsWith('#/servicos/')) {
+        const slug = hash.replace('#/servicos/', '').split('?')[0].split('/')[0];
+        const srv = getServiceBySlugOrId(slug);
+        if (srv) {
+          try {
+            window.history.replaceState(null, '', `/${srv.slug}/`);
+            rawPath = `/${srv.slug}/`;
+          } catch {
+            rawPath = `/${srv.slug}/`;
+          }
+        }
+      } else if (hash === '#/trabalhe-conosco' || hash === '#trabalhe-conosco') {
+        try {
+          window.history.replaceState(null, '', '/trabalhe-conosco/');
+          rawPath = '/trabalhe-conosco/';
+        } catch {
+          rawPath = '/trabalhe-conosco/';
+        }
       }
-    }
-    setCurrentServiceId(null);
-    setIsTrabalheConosco(false);
-  }, []);
 
+      if (!rawPath) {
+        rawPath = window.location.pathname || '/';
+      }
+    } else {
+      rawPath = '/';
+    }
+
+    // Normalize path
+    const trimmed = rawPath.replace(/^\/+|\/+$/g, '').trim();
+
+    if (!trimmed || trimmed === 'index.html') {
+      return { type: 'home' as const, serviceId: null };
+    }
+
+    if (trimmed === 'trabalhe-conosco') {
+      return { type: 'trabalhe-conosco' as const, serviceId: null };
+    }
+
+    if (trimmed === '404' || trimmed === '404.html') {
+      return { type: '404' as const, serviceId: null };
+    }
+
+    // Check service
+    const foundService = getServiceBySlugOrId(trimmed);
+    if (foundService) {
+      return { type: 'service' as const, serviceId: foundService.id };
+    }
+
+    // Unknown route
+    return { type: '404' as const, serviceId: null };
+  }, [ssrPath]);
+
+  const [routeState, setRouteState] = useState(() => resolveCurrentRoute());
+
+  // Listen to browser back/forward and hash changes
   useEffect(() => {
-    parseRouteFromHash();
-    window.addEventListener('hashchange', parseRouteFromHash);
-    window.addEventListener('popstate', parseRouteFromHash);
+    const handleLocationChange = () => {
+      setRouteState(resolveCurrentRoute());
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
 
     return () => {
-      window.removeEventListener('hashchange', parseRouteFromHash);
-      window.removeEventListener('popstate', parseRouteFromHash);
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
     };
-  }, [parseRouteFromHash]);
+  }, [resolveCurrentRoute]);
 
   const navigateToService = (serviceId: string) => {
-    const service = getServiceBySlugOrId(serviceId);
-    if (service) {
-      window.location.hash = `#/servicos/${service.slug}`;
-      setCurrentServiceId(service.id);
-      setIsTrabalheConosco(false);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const srv = getServiceBySlugOrId(serviceId);
+    if (srv) {
+      if (typeof window !== 'undefined') {
+        window.history.pushState(null, '', `/${srv.slug}/`);
+      }
+      setRouteState({ type: 'service', serviceId: srv.id });
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
   };
 
   const navigateToTrabalheConosco = () => {
-    window.location.hash = '#/trabalhe-conosco';
-    setIsTrabalheConosco(true);
-    setCurrentServiceId(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.history.pushState(null, '', '/trabalhe-conosco/');
+    }
+    setRouteState({ type: 'trabalhe-conosco', serviceId: null });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const navigateToHome = () => {
-    window.location.hash = '';
-    setCurrentServiceId(null);
-    setIsTrabalheConosco(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.history.pushState(null, '', '/');
+    }
+    setRouteState({ type: 'home', serviceId: null });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
-  const currentService = currentServiceId ? getServiceBySlugOrId(currentServiceId) : null;
+  const currentService = routeState.type === 'service' && routeState.serviceId 
+    ? getServiceBySlugOrId(routeState.serviceId) 
+    : null;
 
   return (
     <div className="min-h-screen flex flex-col bg-mist text-indigo-950 font-sans selection:bg-indigo-200 selection:text-indigo-950 relative">
-      {/* Sticky Header with adaptive navigation */}
+      {/* Sticky Header with universal navigation */}
       <Header 
         onNavigateHome={navigateToHome} 
         onNavigateTrabalheConosco={navigateToTrabalheConosco}
-        isServicePage={Boolean(currentService)}
-        isTrabalheConosco={isTrabalheConosco}
+        isServicePage={routeState.type === 'service'}
+        isTrabalheConosco={routeState.type === 'trabalhe-conosco'}
       />
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-grow pt-16 sm:pt-20">
-        <Suspense
-          fallback={
-            <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center">
-              <div className="w-10 h-10 border-3 border-indigo-700 border-t-transparent rounded-full animate-spin mb-4" />
-              <p className="text-sm font-semibold text-indigo-950">Carregando conteúdo...</p>
-            </div>
-          }
-        >
-          {isTrabalheConosco ? (
-            /* Dedicated Trabalhe Conosco Page (Prestadores & Profissionais Liberais) */
-            <TrabalheConosco onBackToHome={navigateToHome} />
-          ) : currentService ? (
-            /* Dedicated Service Page (SEO, GEO, XEO & E-E-A-T) */
-            <ServicePage
-              service={currentService}
-              onBackToHome={navigateToHome}
-              onNavigateToService={navigateToService}
-            />
-          ) : (
-            /* Main One-Page Architectural Content Flow (PRD §5) */
-            <>
-              {/* #inicio (Hero with trust badges & primary WhatsApp CTA) */}
-              <Hero />
+        {routeState.type === 'trabalhe-conosco' ? (
+          /* Dedicated Trabalhe Conosco Page */
+          <TrabalheConosco onBackToHome={navigateToHome} />
+        ) : routeState.type === 'service' && currentService ? (
+          /* Dedicated Service Page */
+          <ServicePage
+            service={currentService}
+            onBackToHome={navigateToHome}
+            onNavigateToService={navigateToService}
+          />
+        ) : routeState.type === '404' ? (
+          /* Real 404 Not Found Page */
+          <NotFoundPage />
+        ) : (
+          /* Main Architectural One-Page Content Flow */
+          <>
+            {/* #inicio (Hero with trust badges & primary WhatsApp CTA) */}
+            <Hero />
 
-              {/* #numeros (Social proof metrics) */}
-              <Stats />
+            {/* #numeros (Social proof metrics) */}
+            <Stats />
 
-              {/* #servicos (10 service cards with dedicated page links & WhatsApp selector) */}
-              <Services onSelectService={navigateToService} />
+            {/* #servicos (11 service cards with dedicated page links & WhatsApp selector) */}
+            <Services onSelectService={navigateToService} />
 
-              {/* #atendimento (Atendimento a Domicílio & Transparência com o Cliente) */}
-              <AtendimentoTransparencia />
+            {/* #atendimento (Atendimento no Endereço do Cliente & Transparência) */}
+            <AtendimentoTransparencia />
 
-              {/* #processo (4 structured steps from evaluation to guaranteed delivery) */}
-              <Process />
+            {/* #processo (4 structured steps from evaluation to guaranteed delivery) */}
+            <Process />
 
-              {/* #obras (Interactive Before/After comparison slider) */}
-              <BeforeAfterGallery />
+            {/* #obras (Interactive Before/After comparison slider) */}
+            <BeforeAfterGallery />
 
-              {/* #sobre (E-E-A-T company foundation, specialists, technical manager) */}
-              <About />
+            {/* #sobre (E-E-A-T company foundation, specialists, technical manager) */}
+            <About />
 
-              {/* #areas (Coverage cards for Caxias do Sul, Farroupilha, São Marcos, Flores da Cunha) */}
-              <Areas />
+            {/* #areas (Coverage cards for Caxias do Sul, Farroupilha, São Marcos, Flores da Cunha) */}
+            <Areas />
 
-              {/* #depoimentos (Verified Google Business Profile reviews) */}
-              <Testimonials />
+            {/* #depoimentos (Verified Google Business Profile reviews) */}
+            <Testimonials />
 
-              {/* #faq (GEO direct answer-first 40-60 words with semantic details accordion) */}
-              <FaqSection />
+            {/* #faq (GEO direct answer-first with semantic accordion) */}
+            <FaqSection />
 
-              {/* #contato (Final high-converting CTA section) */}
-              <CtaFinal />
-            </>
-          )}
-        </Suspense>
+            {/* #contato (Final high-converting CTA section) */}
+            <CtaFinal />
+          </>
+        )}
       </main>
 
       {/* Footer with full NAP, business hours, emergency info, and dedicated service links */}
@@ -168,13 +215,13 @@ export default function App() {
         onNavigateTrabalheConosco={navigateToTrabalheConosco}
       />
 
-      {/* Fixed WhatsApp Floating Conversion Button with gentle pulse and tooltip (PRD §8) */}
+      {/* Fixed WhatsApp Floating Conversion Button */}
       <FloatingWhatsApp />
 
-      {/* LGPD Cookie Consent Banner (Compact, discrete, bottom-left) */}
+      {/* LGPD Cookie Consent Banner */}
       <CookieBanner onOpenPrivacyPolicy={() => setPrivacyModalOpen(true)} />
 
-      {/* Privacy Policy Modal (/privacidade) */}
+      {/* Privacy Policy Modal */}
       {privacyModalOpen && (
         <Suspense fallback={null}>
           <PrivacyPolicyModal 

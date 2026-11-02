@@ -1,0 +1,120 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/pedreiro-em-caxias-do-sul",
+      "destination": "/pedreiro-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/pedreiro-alvenaria-caxias-do-sul",
+      "destination": "/pedreiro-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/reformas-comerciais-em-caxias-do-sul-lojas-escritorios-e-salas-or-revitta",
+      "destination": "/reformas-comerciais-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/reforma-comercial-em-caxias-do-sul-agilidade-e-projetos",
+      "destination": "/reformas-comerciais-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/manutencao-eletrica-caxias-do-sul",
+      "destination": "/eletricista-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/reformas-residenciais-comerciais",
+      "destination": "/reformas-residenciais-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/instalacoes-eletricas",
+      "destination": "/eletricista-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/encanamento-hidraulica",
+      "destination": "/encanador-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/reforma-telhados",
+      "destination": "/conserto-telhado-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/pisos-e-acabamentos",
+      "destination": "/piso-vinilico-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/drywall-e-forros",
+      "destination": "/drywall-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/drywall-forros",
+      "destination": "/drywall-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/pintura-completa",
+      "destination": "/pintor-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/alvenaria-pedreiro",
+      "destination": "/pedreiro-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/manutencao-predial",
+      "destination": "/manutencao-predial-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/faz-tudo-reparos",
+      "destination": "/faz-tudo-caxias-do-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/servicos/:slug",
+      "destination": "/:slug/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}

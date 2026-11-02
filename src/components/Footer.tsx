@@ -25,17 +25,17 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   const internalLinks = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Serviços', href: '#servicos' },
-    { label: 'Atendimento a Domicílio', href: '#atendimento' },
-    { label: 'Como Funciona', href: '#processo' },
-    { label: 'Obras Antes/Depois', href: '#obras' },
-    { label: 'Sobre Nós (E-E-A-T)', href: '#sobre' },
-    { label: 'Áreas Atendidas', href: '#areas' },
-    { label: 'Avaliações GBP', href: '#depoimentos' },
-    { label: 'Dúvidas (FAQ)', href: '#faq' },
-    { label: 'Trabalhe Conosco (Prestadores)', href: '#/trabalhe-conosco' },
-    { label: 'Fale Conosco', href: '#contato' },
+    { label: 'Início', href: '/' },
+    { label: 'Serviços', href: '/#servicos' },
+    { label: 'Atendimento a Domicílio', href: '/#atendimento' },
+    { label: 'Como Funciona', href: '/#processo' },
+    { label: 'Obras Antes/Depois', href: '/#obras' },
+    { label: 'Sobre Nós (E-E-A-T)', href: '/#sobre' },
+    { label: 'Áreas Atendidas', href: '/#areas' },
+    { label: 'Avaliações GBP', href: '/#depoimentos' },
+    { label: 'Dúvidas (FAQ)', href: '/#faq' },
+    { label: 'Trabalhe Conosco (Prestadores)', href: '/trabalhe-conosco/' },
+    { label: 'Fale Conosco', href: '/#contato' },
   ];
 
   return (
@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="lg:col-span-4 space-y-4">
             <RevittaLogo light showSubtitle />
             <p className="text-xs sm:text-sm text-indigo-300/90 leading-relaxed max-w-sm">
-              Soluções integradas em construção civil, reformas residenciais e comerciais, instalações elétricas, hidráulica e acabamentos de alto padrão.
+              Soluções integradas em reformas residenciais e comerciais, manutenção predial, instalações elétricas, hidráulica e acabamentos de alto padrão em Caxias do Sul e Serra Gaúcha.
             </p>
 
             <div className="pt-2 space-y-2 text-xs text-indigo-200">
@@ -75,24 +75,17 @@ export const Footer: React.FC<FooterProps> = ({
               <SocialLinksRow variant="footer" showLabels={true} />
             </div>
 
-            {/* Google Search Profile Badge */}
+            {/* Google Business Profile Verified Badge */}
             <div className="pt-2">
               <a
                 href={COMPANY_INFO.socials.google}
-                aria-label="Find us on Google Search"
+                aria-label="Perfil da Revitta Caxias no Google"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block transition-transform duration-200 hover:scale-105 active:scale-95 shadow-sm rounded-lg overflow-hidden"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-900/80 hover:bg-indigo-900 border border-indigo-800 text-xs text-indigo-200 hover:text-white transition-all shadow-xs"
               >
-                <img
-                  src="/path/to/google-search-badge.svg"
-                  alt="Google Search"
-                  width={165}
-                  height={36}
-                  className="h-9 w-auto"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <span className="font-semibold text-white">Google</span>
+                <span className="text-[11px] text-wa-green font-bold">Perfil da Empresa Verificado</span>
               </a>
             </div>
           </div>
@@ -139,17 +132,17 @@ export const Footer: React.FC<FooterProps> = ({
                   <a
                     href={link.href}
                     onClick={(e) => {
-                      if (link.href === '#/trabalhe-conosco') {
+                      if (link.href === '/trabalhe-conosco/') {
                         e.preventDefault();
                         if (onNavigateTrabalheConosco) {
                           onNavigateTrabalheConosco();
                         } else {
-                          window.location.hash = '#/trabalhe-conosco';
+                          window.location.href = '/trabalhe-conosco/';
                         }
                       }
                     }}
                     className={`transition-colors ${
-                      link.href === '#/trabalhe-conosco'
+                      link.href === '/trabalhe-conosco/'
                         ? 'text-wa-green font-semibold hover:text-white flex items-center gap-1'
                         : 'text-indigo-300 hover:text-white'
                     }`}
@@ -186,13 +179,13 @@ export const Footer: React.FC<FooterProps> = ({
             {/* Dedicated Partner Callout in Footer */}
             <div className="pt-2">
               <a
-                href="#/trabalhe-conosco"
+                href="/trabalhe-conosco/"
                 onClick={(e) => {
                   e.preventDefault();
                   if (onNavigateTrabalheConosco) {
                     onNavigateTrabalheConosco();
                   } else {
-                    window.location.hash = '#/trabalhe-conosco';
+                    window.location.href = '/trabalhe-conosco/';
                   }
                 }}
                 className="block p-3 rounded-xl bg-indigo-900/60 hover:bg-indigo-900 border border-indigo-800/80 hover:border-indigo-700 transition-all text-xs group cursor-pointer"
@@ -225,18 +218,18 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center justify-between gap-4 mb-4">
             <p className="text-xs font-bold uppercase tracking-wider text-indigo-300 font-display flex items-center gap-2">
               <SparkleIcon className="w-3.5 h-3.5 text-wa-green" />
-              <span>Páginas Próprias de Serviços (Otimização SEO, GEO & Normas ABNT)</span>
+              <span>Páginas de Serviços Especializados em Caxias do Sul</span>
             </p>
             <span className="text-[11px] text-indigo-300 hidden sm:inline">
-              10 especialidades com páginas dedicadas
+              11 especialidades com páginas dedicadas
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 text-xs">
             {DETAILED_SERVICES.map((s) => (
               <a
                 key={s.id}
-                href={`#/servicos/${s.slug}`}
+                href={`/${s.slug}/`}
                 onClick={(e) => {
                   if (onSelectService) {
                     e.preventDefault();

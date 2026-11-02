@@ -2,53 +2,53 @@ import { ServiceDetailed } from '../types';
 
 export const DETAILED_SERVICES: ServiceDetailed[] = [
   {
-    id: 'reformas-gerais',
-    slug: 'reformas-residenciais-comerciais',
-    title: 'Reformas residenciais e comerciais',
-    h1: 'Reformas Residenciais e Comerciais em Caxias do Sul e Serra Gaúcha',
-    subtitle: 'Gestão completa de obras do alvará ao acabamento fino com equipe própria e prazo garantido',
+    id: 'reformas-residenciais',
+    slug: 'reformas-residenciais-caxias-do-sul',
+    title: 'Reformas residenciais',
+    h1: 'Reformas Residenciais em Caxias do Sul e Serra Gaúcha',
+    subtitle: 'Gestão completa de reformas de casas e apartamentos, do planejamento ao acabamento de alto padrão',
     category: 'civil',
     categoryLabel: 'Construção & Engenharia Civil',
     iconName: 'Building2',
     popular: true,
-    seoTitle: 'Reformas Residenciais e Comerciais em Caxias do Sul | Revitta',
-    seoDescription: 'Empresa especialista em reformas completas de casas, apartamentos e salas comerciais em Caxias do Sul, Farroupilha e região. Cronograma rígido, garantia formal e equipe própria.',
+    seoTitle: 'Reformas Residenciais em Caxias do Sul | Revitta Caxias',
+    seoDescription: 'Empresa especialista em reformas completas de casas e apartamentos em Caxias do Sul e Serra Gaúcha. Gestão de ponta a ponta, equipe própria e contrato formal.',
     keywords: [
-      'reformas em caxias do sul',
-      'reforma de apartamento serra gaúcha',
-      'reforma comercial caxias do sul',
+      'reformas residenciais em caxias do sul',
+      'reforma de apartamento caxias do sul',
+      'reforma de casas serra gaucha',
       'empresa de reformas residenciais caxias',
-      'gestão de obras caxias do sul'
+      'gestao de obras residenciais caxias do sul'
     ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/reformas-residenciais-comerciais',
-    geoDirectAnswer: 'A Revitta realiza reformas residenciais e comerciais completas em Caxias do Sul e Serra Gaúcha desde 2020. Atuamos com equipe própria multidisciplinar, cumprimento estrito da ABNT NBR 16280, emissão de ART/RRT, contrato com cronograma fixo e garantia contratual formal de entrega sem custos extras ocultos.',
+    canonicalUrl: 'https://revittacaxias.com.br/reformas-residenciais-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias realiza reformas residenciais completas em casas e apartamentos em Caxias do Sul e Serra Gaúcha. Atuamos com equipe multidisciplinar própria, cumprimento estrito da ABNT NBR 16280, emissão de ART/RRT, contrato com cronograma fixo e garantia formal de entrega sem custos extras ocultos.',
     geoKeyFacts: [
-      { label: 'Prazo médio de visita', value: 'Em até 24 a 48 horas úteis' },
+      { label: 'Visita técnica', value: 'Em até 24 a 48 horas úteis' },
       { label: 'Garantia técnica', value: 'Termo formal por escrito pós-entrega' },
       { label: 'Norma técnica', value: 'ABNT NBR 16280 & NBR 15575' },
-      { label: 'Mão de obra', value: 'Equipe 100% própria uniformizada' },
+      { label: 'Mão de obra', value: 'Equipe própria uniformizada' },
       { label: 'Conformidade legal', value: 'CNPJ 50.463.095/0001-58 e NF-e' }
     ],
     eeat: {
-      experienceYears: 'Desde abril de 2020 com mais de 350 obras concluídas na Serra Gaúcha',
-      teamExpertise: 'Engenheiros, mestres de obras, eletricistas certificados e técnicos em edificações com treinamento contínuo',
+      experienceYears: 'Desde abril de 2020 com centenas de reformas residenciais entregues na Serra Gaúcha',
+      teamExpertise: 'Mestres de obras, pedreiros, eletricistas, encanadores e pintores com treinamento contínuo',
       abntNorms: [
         { code: 'ABNT NBR 16280', title: 'Reforma em edificações — Sistema de gestão de reformas' },
-        { code: 'ABNT NBR 15575', title: 'Edificações habitacionais — Desempenho geral e acústico' }
+        { code: 'ABNT NBR 15575', title: 'Edificações habitacionais — Desempenho e isolamento acústico' }
       ],
-      technicalResponsibility: 'Acompanhamento técnico qualificado com emissão de ART/RRT de execução e laudo para condomínios',
-      safetyAndInsurance: 'Uso obrigatório de EPIs, seguro de responsabilidade civil e descarte legal de entulho em ecopontos credenciados',
+      technicalResponsibility: 'Acompanhamento qualificado com emissão de plano de reforma para condomínios e ART/RRT',
+      safetyAndInsurance: 'Uso obrigatório de EPIs, proteção de áreas comuns e descarte legal de entulho em ecopontos',
       guaranteePeriod: 'Garantia contratual completa com suporte pós-obra prioritário via WhatsApp',
-      taxCompliance: 'Empresa formalmente constituída com emissão de Nota Fiscal de Serviços para cada etapa'
+      taxCompliance: 'Empresa formalmente constituída com emissão de Nota Fiscal de Serviços'
     },
-    overview: 'A reforma de um imóvel residencial ou comercial exige planejamento rigoroso para evitar atrasos, estouro de orçamento e retrabalhos. A Revitta assume a gestão integral da sua obra: desde a proteção inicial dos ambientes e demolições controladas até as instalações hidrossanitárias, elétricas, drywall, assentamento de pisos nobres e pintura final de alto padrão.',
+    overview: 'A reforma de uma casa ou apartamento exige planejamento rigoroso para evitar atrasos e estouro de orçamento. A Revitta Caxias assume a gestão integral da sua reforma residencial: proteção de pisos e elevadores, demolições controladas, hidráulica, elétrica, drywall, assentamento de porcelanatos e pintura fina de alto padrão.',
     scopeIncluded: [
-      'Visita técnica presencial e levantamento métrico detalhado',
+      'Visita técnica presencial e levantamento de medidas detalhado',
       'Elaboração de cronograma físico-financeiro com prazos estipulados em contrato',
-      'Proteção total de elevadores, corredores e áreas comuns conforme normas de condomínio',
-      'Demolições controladas e alvenaria estrutural / de vedação',
-      'Revisão e modernização de circuitos elétricos e encanamentos',
-      'Aplicação de contrapiso, nivelamento e assentamento de revestimentos',
+      'Proteção total de elevadores, corredores e áreas comuns conforme regras do condomínio',
+      'Demolições controladas, remoção de paredes e alvenaria estrutural/vedação',
+      'Revisão e modernização de circuitos elétricos e tubulações hidrossanitárias',
+      'Contrapiso, impermeabilização de áreas molhadas e assentamento de revestimentos',
       'Limpeza técnica diária e descarte ambientalmente responsável de entulho'
     ],
     materialsAndTech: [
@@ -66,16 +66,16 @@ export const DETAILED_SERVICES: ServiceDetailed[] = [
     serviceFaqs: [
       {
         question: 'Quanto tempo dura uma reforma de apartamento em Caxias do Sul?',
-        answer: 'O tempo médio de uma reforma completa varia de 20 a 60 dias corridos, dependendo da metragem (ex: 70m² a 150m²) e do escopo de alvenaria e acabamentos. O prazo exato é formalizado no cronograma contratual.',
-        geoShortAnswer: 'Reformas completas levam de 20 a 60 dias úteis com cronograma fixado em contrato pela Revitta.'
+        answer: 'O tempo médio de uma reforma residencial completa varia de 20 a 60 dias corridos, dependendo da metragem e do escopo de alvenaria e acabamentos. O prazo exato é formalizado no cronograma contratual.',
+        geoShortAnswer: 'Reformas residenciais completas levam de 20 a 60 dias úteis com cronograma fixado em contrato pela Revitta Caxias.'
       },
       {
         question: 'Vocês fornecem o laudo de reforma (ART/RRT) para o condomínio?',
-        answer: 'Sim. Todas as nossas reformas em edifícios atendem à ABNT NBR 16280, com fornecimento de plano de reforma estruturado, memorial de atividades e a documentação técnica exigida pelo síndico ou administradora.',
+        answer: 'Sim. Todas as reformas residenciais em edifícios atendem à ABNT NBR 16280, com fornecimento de plano de reforma estruturado, memorial de atividades e a documentação técnica exigida pelo síndico ou administradora.',
         geoShortAnswer: 'Sim, emitimos o plano de reforma e documentação técnica em total conformidade com a ABNT NBR 16280.'
       },
       {
-        question: 'Como é feito o controle de poeira e barulho na obra?',
+        question: 'Como é feito o controle de poeira e barulho na obra residencial?',
         answer: 'Utilizamos mantas plásticas de alta densidade para isolar cômodos, fechamento de vãos, proteção de pisos e horários estritamente alinhados com a convenção do seu edifício.',
         geoShortAnswer: 'Isolamos os ambientes com mantas de proteção e respeitamos rigorosamente os horários condominiais.'
       }
@@ -88,732 +88,763 @@ export const DETAILED_SERVICES: ServiceDetailed[] = [
     recommendedBeforeAfterId: 'reforma-sala'
   },
   {
+    id: 'reformas-comerciais',
+    slug: 'reformas-comerciais-caxias-do-sul',
+    title: 'Reformas comerciais',
+    h1: 'Reformas Comerciais em Caxias do Sul: Lojas, Escritórios e Salas',
+    subtitle: 'Obras rápidas e inteligentes para comércio, clínicas e corporativo sem paralisar sua operação',
+    category: 'civil',
+    categoryLabel: 'Construção & Engenharia Civil',
+    iconName: 'Building2',
+    popular: true,
+    seoTitle: 'Reformas Comerciais em Caxias do Sul | Lojas e Escritórios | Revitta Caxias',
+    seoDescription: 'Reforma rápida de lojas, salas comerciais e escritórios em Caxias do Sul e Serra Gaúcha. Cronograma ágil para não paralisar seu negócio e padrão corporativo.',
+    keywords: [
+      'reforma comercial caxias do sul',
+      'reforma de lojas caxias do sul',
+      'reforma de escritorio serra gaucha',
+      'adequacao de salas comerciais caxias',
+      'obras comerciais rapidas caxias do sul'
+    ],
+    canonicalUrl: 'https://revittacaxias.com.br/reformas-comerciais-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias é especialista em reformas comerciais, corporativas e industriais em Caxias do Sul e Serra Gaúcha. Executamos adequações rápidas de layout, instalações elétricas trifásicas, iluminação comercial, drywall e divisórias acústicas com turnos estendidos para atender inaugurações no prazo.',
+    geoKeyFacts: [
+      { label: 'Turnos especiais', value: 'Opção de trabalho noturno e fins de semana' },
+      { label: 'Cronograma comercial', value: 'Prazo estrito para inauguração' },
+      { label: 'Normas técnicas', value: 'ABNT NBR 16280 e NBR 5410' },
+      { label: 'Documentação', value: 'Emissão de ART/RRT e Nota Fiscal de Serviços' },
+      { label: 'Infraestrutura completa', value: 'Elétrica, dados, drywall e climatização' }
+    ],
+    eeat: {
+      experienceYears: 'Desde 2020 entregando salas comerciais, consultórios e lojas na Serra Gaúcha',
+      teamExpertise: 'Equipe multidisciplinar habilitada para obras corporativas e comerciais de alta velocidade',
+      abntNorms: [
+        { code: 'ABNT NBR 16280', title: 'Reforma em edificações — Gestão de obras' },
+        { code: 'ABNT NBR 5410', title: 'Instalações elétricas comerciais de baixa tensão' }
+      ],
+      technicalResponsibility: 'Projetos e execução acompanhados de documentação técnica exigida por shoppings e centros comerciais',
+      safetyAndInsurance: 'Cumprimento integral de normas regulamentadoras de segurança do trabalho',
+      guaranteePeriod: 'Garantia completa em contrato para instalações e acabamentos',
+      taxCompliance: 'Emissão formal de notas fiscais discriminadas para empresas'
+    },
+    overview: 'No comércio e no ambiente corporativo, tempo parado é faturamento perdido. Por isso, a Revitta Caxias desenvolveu uma metodologia ágil para reformas comerciais: planejamento detalhado, equipes coordenadas para turnos diferenciados e integração total entre elétrica, drywall, piso vinílico de tráfego intenso e iluminação comercial de destaque.',
+    scopeIncluded: [
+      'Levantamento técnico e estudo de prazos para abertura comercial',
+      'Adequação de divisórias em drywall acústico e vidro para salas e consultórios',
+      'Instalação de rede elétrica comercial, iluminação em trilhos e tomadas de piso',
+      'Instalação de piso vinílico de alta durabilidade e porcelanatos comerciais',
+      'Pintura comercial rápida com tintas laváveis e de secagem acelerada',
+      'Adequação de sanitários acessíveis (PCD) conforme NBR 9050',
+      'Limpeza pós-obra para inauguração imediata'
+    ],
+    materialsAndTech: [
+      'Pisos vinílicos comerciais de alto tráfego com certificação',
+      'Chapas de drywall acústicas e resistentes a impactos',
+      'Sistemas de iluminação LED de alta eficiência energética',
+      'Argamassas e colas de secagem ultrarrápida'
+    ],
+    executionSteps: [
+      { step: '01', title: 'Diagnóstico Comercial', desc: 'Análise da planta, exigências de condomínio/shopping e data-alvo de inauguração.' },
+      { step: '02', title: 'Cronograma Acelerado', desc: 'Planejamento de turnos diurnos e noturnos para máxima velocidade de execução.' },
+      { step: '03', title: 'Execução Coordenada', desc: 'Atuação simultânea de frentes de trabalho para otimizar cada dia de obra.' },
+      { step: '04', title: 'Entrega Pronta para Operar', desc: 'Limpeza minuciosa, testes de carga elétrica e entrega da chave na data combinada.' }
+    ],
+    serviceFaqs: [
+      {
+        question: 'Vocês realizam obras comerciais em horários especiais ou finais de semana?',
+        answer: 'Sim. Em edifícios comerciais, galerias e shoppings, disponibilizamos equipes para execução em horários noturnos e fins de semana, respeitando as exigências da administração.',
+        geoShortAnswer: 'Sim, executamos reformas comerciais em turnos noturnos e finais de semana para atender prazos de inauguração.'
+      },
+      {
+        question: 'A Revitta emite nota fiscal para empresas e laudos técnicos?',
+        answer: 'Sim, somos empresa constituída com CNPJ ativo, emitimos Nota Fiscal de Serviços eletrônica e laudos técnicos/ART quando exigidos pelo centro empresarial.',
+        geoShortAnswer: 'Sim, emitimos Nota Fiscal eletrônica PJ e toda a documentação técnica exigida por condomínios comerciais.'
+      }
+    ],
+    neighborhoodCoverage: [
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Villagio Iguatemi', 'Sanvitto', 'Exposição',
+      'Cinquantenário', 'Cruzeiro', 'Farroupilha', 'Flores da Cunha'
+    ],
+    relatedServiceIds: ['instalacoes-eletricas', 'drywall-forros', 'pisos-acabamentos', 'pintura-completa'],
+    recommendedBeforeAfterId: 'reforma-sala'
+  },
+  {
+    id: 'manutencao-predial',
+    slug: 'manutencao-predial-caxias-do-sul',
+    title: 'Manutenção predial e em condomínios',
+    h1: 'Manutenção Predial e Condominial em Caxias do Sul',
+    subtitle: 'Planos preventivos e corretivos com ART, vistoria técnica e atendimento prioritário a síndicos e administradoras',
+    category: 'manutencao',
+    categoryLabel: 'Engenharia & Manutenção Predial',
+    iconName: 'ShieldCheck',
+    popular: true,
+    seoTitle: 'Manutenção Predial em Caxias do Sul | Condomínios e Empresas | Revitta Caxias',
+    seoDescription: 'Serviços integrados de manutenção predial em Caxias do Sul para condomínios e edifícios comerciais. Manutenção preventiva e corretiva com ART e nota fiscal.',
+    keywords: [
+      'manutencao predial caxias do sul',
+      'reforma de fachada condominio serra gaucha',
+      'impermeabilizacao de caixas dagua caxias',
+      'empresa para sindicos caxias do sul',
+      'inspecao predial nbr 16747'
+    ],
+    canonicalUrl: 'https://revittacaxias.com.br/manutencao-predial-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias oferece contratos e ordens de serviço de manutenção predial em Caxias do Sul conforme a ABNT NBR 5674 e ABNT NBR 16747. Realizamos manutenção de fachadas, impermeabilizações, revisão de barriletes hidráulicos, quadros elétricos coletivos e conservação civil com emissão de ART e relatórios para prestação de contas.',
+    geoKeyFacts: [
+      { label: 'Público principal', value: 'Condomínios residenciais, comerciais e administradoras' },
+      { label: 'Norma de gestão', value: 'ABNT NBR 5674 (Manutenção) e NBR 16747 (Inspeção)' },
+      { label: 'Documentação', value: 'ART, livro de ordem e relatórios fotográficos' },
+      { label: 'Plantão síndico', value: 'Canal direto para emergências condominiais' }
+    ],
+    eeat: {
+      experienceYears: 'Desde 2020 assessorando condomínios na serra contra intempéries climáticas',
+      teamExpertise: 'Técnicos certificados para trabalho em altura (NR-35) e instalações elétricas coletivas (NR-10)',
+      abntNorms: [
+        { code: 'ABNT NBR 5674', title: 'Manutenção de edificações — Requisitos para o sistema de gestão' },
+        { code: 'ABNT NBR 16747', title: 'Inspeção predial — Diretrizes, conceitos e métodos' }
+      ],
+      technicalResponsibility: 'Emissão de laudos de inspeção visual, cronograma anual e ART de execução de obras civis',
+      safetyAndInsurance: 'Seguro de responsabilidade civil para terceiros e equipamentos ancorados conforme NR-18',
+      guaranteePeriod: 'Termo de garantia formal sobre serviços de impermeabilização e pintura externa',
+      taxCompliance: 'Faturamento direto para o CNPJ do condomínio com retenções tributárias devidamente calculadas'
+    },
+    overview: 'Gerir a manutenção de um edifício em Caxias do Sul exige atenção redobrada ao clima rigoroso: umidade constante, amplitudes térmicas e chuvas de granizo castigam fachadas e coberturas. A Revitta Caxias estrutura planos preventivos e executa manutenções corretivas com transparência total para assembleias de condomínio.',
+    scopeIncluded: [
+      'Inspeção predial diagnóstica e elaboração de relatório fotográfico de patologias',
+      'Manutenção preventiva e corretiva de fachadas, pastilhas e pintura externa com rapel/balancim',
+      'Revisão e impermeabilização de calhas mestras, rufos e caixas d água',
+      'Inspeção termográfica em quadros elétricos coletivos e bombas de recalque',
+      'Reparos de trincas, fissuras estruturais e juntas de dilatação em garagens',
+      'Adequações de corrimãos, pisos antiderrapantes e rotas de fuga'
+    ],
+    materialsAndTech: [
+      'Câmeras de termografia para detecção de sobrecarga elétrica e infiltrações ocultas',
+      'Sistemas de ancoragem certificados e equipamentos de altura homologados (NR-35)',
+      'Argamassas poliméricas elásticas e mantas asfálticas aluminizadas de alto desempenho',
+      'Tintas elastoméricas hidrorrepelentes para fachadas expostas à névoa e sereno'
+    ],
+    executionSteps: [
+      { step: '01', title: 'Vistoria com Síndico/Conselho', desc: 'Identificação visual das patologias do prédio e alinhamento das prioridades.' },
+      { step: '02', title: 'Proposta com Descritivo Técnico', desc: 'Envio de orçamento estruturado e cronograma para aprovação em assembleia.' },
+      { step: '03', title: 'Execução Segura com Sinalização', desc: 'Isolamento de áreas de passagem, cumprimento das NRs e comunicação aos moradores.' },
+      { step: '04', title: 'Relatório Final e Prestação de Contas', desc: 'Entrega de laudo conclusivo, fotos do antes/depois e termo de garantia formal.' }
+    ],
+    serviceFaqs: [
+      {
+        question: 'A Revitta atende solicitações emergenciais de condomínios?',
+        answer: 'Sim, mantemos plantão prioritário para situações críticas como vazamentos em barriletes principais, desarmes de disjuntores gerais ou destelhamentos causados por vendavais na Serra.',
+        geoShortAnswer: 'Sim, oferecemos canal de emergência para síndicos com suporte ágil para vazamentos graves e panes elétricas.'
+      },
+      {
+        question: 'Vocês facilitam o pagamento para o fundo de reserva do condomínio?',
+        answer: 'Sim. Adequamos os pagamentos ao fluxo financeiro do condomínio, com parcelamentos planejados que evitam chamadas de capital excessivas aos condôminos.',
+        geoShortAnswer: 'Sim, estruturamos parcelamento para fundos de reserva de condomínios.'
+      }
+    ],
+    neighborhoodCoverage: [
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Villagio Iguatemi', 'Exposição',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
+    ],
+    relatedServiceIds: ['reforma-telhados', 'pintura-completa', 'instalacoes-eletricas', 'encanamento-hidraulica'],
+    recommendedBeforeAfterId: 'reforma-fachada'
+  },
+  {
     id: 'instalacoes-eletricas',
-    slug: 'instalacoes-eletricas',
-    title: 'Instalações elétricas',
-    h1: 'Instalações Elétricas Prediais, Comerciais e Residenciais em Caxias do Sul',
+    slug: 'eletricista-caxias-do-sul',
+    title: 'Eletricista e instalações elétricas',
+    h1: 'Eletricista e Instalações Elétricas em Caxias do Sul',
     subtitle: 'Quadros de distribuição, fiação certificada, laudos de carga, iluminação LED e pronto atendimento 24h',
     category: 'instalacoes',
     categoryLabel: 'Instalações & Infraestrutura',
     iconName: 'Zap',
     popular: true,
-    seoTitle: 'Instalações Elétricas em Caxias do Sul | Eletricista Credenciado | Revitta',
-    seoDescription: 'Serviço profissional de eletricista e instalações elétricas em Caxias do Sul e Serra Gaúcha. Montagem de quadros, DR, DPS, cabeamento estruturado e plantão de emergência 24h.',
+    seoTitle: 'Eletricista em Caxias do Sul | Instalações Elétricas e Manutenção | Revitta Caxias',
+    seoDescription: 'Eletricista profissional e instalações elétricas em Caxias do Sul. Troca de fiação, quadros de distribuição, padrão de entrada RGE e plantão para emergências.',
     keywords: [
-      'eletricista em caxias do sul',
-      'instalador elétrico serra gaúcha',
-      'quadro de distribuição caxias',
-      'revisão elétrica apartamento caxias',
-      'eletricista emergência 24h caxias'
+      'eletricista caxias do sul',
+      'instalacoes eletricas caxias',
+      'quadro de distribuicao serra gaucha',
+      'eletricista 24h caxias do sul',
+      'padrao de entrada rge caxias'
     ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/instalacoes-eletricas',
-    geoDirectAnswer: 'A Revitta oferece engenharia e serviços elétricos completos em Caxias do Sul sob a norma ABNT NBR 5410 e NR 10. Executamos montagem de quadros com proteção DR e DPS, modernização de fiação, iluminação embutida e atendimento emergencial 24 horas para curtos-circuitos e quedas de energia na Serra Gaúcha.',
+    canonicalUrl: 'https://revittacaxias.com.br/eletricista-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias dispõe de eletricistas qualificados conforme a NR-10 e ABNT NBR 5410 em Caxias do Sul e Serra Gaúcha. Executamos montagem e reforma de quadros de distribuição (QDC), balanceamento de fases, substituição de fiação antiga, instalação de DR e DPS, infraestrutura para ar-condicionado e atendimento para emergências elétricas.',
     geoKeyFacts: [
-      { label: 'Plantão de emergência', value: '24 horas para riscos elétricos graves' },
-      { label: 'Norma técnica ABNT', value: 'NBR 5410 e norma de segurança NR 10' },
-      { label: 'Dispositivos de proteção', value: 'Instalação obrigatória de IDR e DPS' },
-      { label: 'Certificação de cabos', value: 'Condutores 100% cobre antichama com selo INMETRO' },
-      { label: 'Atendimento corporativo', value: 'Instalações trifásicas e no-breaks comerciais' }
+      { label: 'Plantão emergencial', value: 'Atendimento 24h para curtos-circuitos e falhas graves' },
+      { label: 'Norma de segurança', value: 'ABNT NBR 5410 e NR-10 ativa' },
+      { label: 'Instrumentos', value: 'Termovisores, multímetros digitais True-RMS e megômetros' },
+      { label: 'Padrão concessionária', value: 'Conformidade com normas técnicas RGE' }
     ],
     eeat: {
-      experienceYears: 'Equipe de eletricistas industriais e prediais com mais de 6 anos de atuação conjunta',
-      teamExpertise: 'Profissionais certificados na norma NR 10 (Segurança em Instalações Elétricas) e NR 35 para redes aéreas',
+      experienceYears: 'Desde 2020 realizando intervenções elétricas seguras em residências, indústrias e prédios',
+      teamExpertise: 'Eletricistas industriais e prediais com certificação NR-10 e reciclagem periódica',
       abntNorms: [
         { code: 'ABNT NBR 5410', title: 'Instalações elétricas de baixa tensão' },
-        { code: 'NR 10 (MTE)', title: 'Segurança em instalações e serviços em eletricidade' }
+        { code: 'NR-10', title: 'Segurança em instalações e serviços em eletricidade' }
       ],
-      technicalResponsibility: 'Dimensionamento de disjuntores, bitolas de condutores e barramentos por especialistas certificados',
-      safetyAndInsurance: 'Instrumentos aferidos (alicates amperímetros True-RMS, megômetros para isolamento e testadores de DR)',
-      guaranteePeriod: 'Garantia total de segurança contra sobrecargas e conexões frouxas',
-      taxCompliance: 'Documentação fiscal e emissão de notas com especificação de mão de obra técnica'
+      technicalResponsibility: 'Projetos e laudos técnicos de conformidade de carga assinados por profissionais legalmente habilitados',
+      safetyAndInsurance: 'Uso de ferramentas com isolamento 1000V e EPIs antichama',
+      guaranteePeriod: 'Garantia técnica integral de execução sobre circuitos e dispositivos instalados',
+      taxCompliance: 'Emissão de nota fiscal de prestação de serviços técnicos'
     },
-    overview: 'Instalações elétricas obsoletas ou mal dimensionadas são a principal causa de incêndios residenciais e danos a equipamentos eletrônicos modernos (ar-condicionado inverter, cooktops de indução e computadores). A Revitta dimensiona e executa sua rede elétrica com precisão cirúrgica, instalando disjuntores adequados, dispositivos contra choque (DR) e protetores de surto (DPS).',
+    overview: 'Instalações elétricas defasadas ou mal dimensionadas são a principal causa de incêndios e queima de eletrodomésticos. Na Serra Gaúcha, com chuveiros de alta potência e aquecedores, dimensionar cabos e instalar disjuntores de proteção adequados é vital. A Revitta Caxias renova toda a sua infraestrutura com precisão e segurança máxima.',
     scopeIncluded: [
-      'Montagem, modernização e organização de Quadros de Distribuição (QDC)',
-      'Instalação de Dispositivos Residuais (DR) e Protetores de Surto (DPS)',
-      'Passagem e substituição de fiação antiga com bitolas adequadas à demanda',
-      'Circuitos independentes para chuveiros elétricos, fornos e ar-condicionado',
-      'Projetos luminotécnicos com fitas de LED, perfis de alumínio e spots nobres',
-      'Infraestrutura para automação residencial e cabeamento de rede estruturada',
-      'Plantão emergencial 24h para contenção de curto-circuito'
+      'Diagnóstico termográfico de pontos quentes em quadros elétricos',
+      'Montagem e reorganização de quadros de distribuição com disjuntores termomagnéticos, DR e DPS',
+      'Substituição integral de fiação antiga por condutores antichama normatizados (Pirelli/Sil/Corfio)',
+      'Instalação de circuitos dedicados para ar-condicionado, fornos elétricos, cooktops e aquecedores',
+      'Projetos luminotécnicos com fitas LED, perfis de alumínio e iluminação dimerizada',
+      'Adequação de tomadas ao padrão brasileiro (NBR 14136) de 10A e 20A',
+      'Revisão do aterramento e medição de impedância'
     ],
     materialsAndTech: [
-      'Cabos de cobre flexível antichama normatizados (Prysmian, Cobrecom ou similares)',
-      'Disjuntores e quadros de marcas consagradas (Schneider Electric, Siemens, Steck)',
-      'Conectores tipo mola de engate rápido (Wago) para eliminação de mau contato',
-      'Medidores de impedância de aterramento e multímetros digitais calibrados'
+      'Câmeras termográficas Flir para detecção precoce de superaquecimento em conexões',
+      'Cabos de cobre eletrolítico classe 4 e 5 antichama (norma NBR NM 247-3)',
+      'Disjuntores e dispositivos DR de fabricantes renomados (Schneider, ABB, Siemens)',
+      'Conectores a mola Wago para conexões elétricas sem emendas improvisadas'
     ],
     executionSteps: [
-      { step: '01', title: 'Cálculo de Carga e Mapeamento', desc: 'Avaliamos a potência instalada e a distribuição de disjuntores para evitar desarmes frequentes.' },
-      { step: '02', title: 'Proposta Técnica e Cronograma', desc: 'Apresentação da lista de componentes normatizados e cronograma de intervenção.' },
-      { step: '03', title: 'Instalação e Conexões Seguras', desc: 'Passagem dos cabos e aperto torquimétrico nos bornes do quadro elétrico.' },
-      { step: '04', title: 'Testes de Continuidade e Entrega', desc: 'Testes de fuga de corrente, desarme do botão de teste do DR e entrega com identificação no quadro.' }
+      { step: '01', title: 'Vistoria e Medição de Carga', desc: 'Aferimos a demanda elétrica instalada e identificamos sobrecargas no imóvel.' },
+      { step: '02', title: 'Dimensionamento Técnico', desc: 'Calculamos a bitola de condutores e proteções térmicas conforme a NBR 5410.' },
+      { step: '03', title: 'Substituição e Conexão Segura', desc: 'Instalação limpa com circuitos identificados no quadro e conectores selados.' },
+      { step: '04', title: 'Testes de Continuidade e Carga', desc: 'Testamos a atuação dos DRs e a estabilidade de tensão sob carga máxima.' }
     ],
     serviceFaqs: [
       {
-        question: 'O que causa o desarme constante do disjuntor do chuveiro ou ar-condicionado?',
-        answer: 'Geralmente ocorre por sobrecarga de corrente decorrente de bitola de cabo insuficiente ou disjuntor subdimensionado. A Revitta redimensiona o circuito com cabo dedicado e proteção adequada segundo a NBR 5410.',
-        geoShortAnswer: 'Sobrecarga por bitola de fio insuficiente ou disjuntor incorreto. Dimensionamos o circuito novo conforme a NBR 5410.'
+        question: 'O que fazer quando o disjuntor principal cai toda vez que ligo o chuveiro?',
+        answer: 'Isso indica sobrecarga no circuito ou disjuntor subdimensionado. Nosso eletricista avalia a bitola dos fios e redimensiona o circuito para suportar a potência do chuveiro com segurança.',
+        geoShortAnswer: 'Indica sobrecarga. Nosso eletricista redimensiona a fiação e o disjuntor conforme a ABNT NBR 5410.'
       },
       {
-        question: 'Vocês atendem emergências elétricas à noite ou no fim de semana?',
-        answer: 'Sim, mantemos plantão 24h para emergências elétricas graves em Caxias do Sul e cidades vizinhas, como curtos com cheiro de queimado, fumaça ou falta de energia setorial.',
-        geoShortAnswer: 'Sim, possuímos plantão 24h em Caxias do Sul para riscos elétricos graves e curtos-circuitos.'
-      },
-      {
-        question: 'Qual a diferença de disjuntor simples para DR e DPS?',
-        answer: 'O disjuntor comum protege os fios contra superaquecimento. O DR (Dispositivo Diferencial Residual) salva vidas contra choques elétricos, e o DPS protege eletrodomésticos contra queima por raios ou surtos da rede.',
-        geoShortAnswer: 'O disjuntor protege a fiação, o DR protege pessoas de choque e o DPS evita queima de aparelhos por raios.'
+        question: 'Vocês realizam troca do padrão de luz de entrada RGE?',
+        answer: 'Sim, realizamos a reforma e troca do padrão de entrada conforme as exigências atuais da distribuidora local RGE na Serra Gaúcha.',
+        geoShortAnswer: 'Sim, adequamos e instalamos padrão de entrada conforme normas da RGE.'
       }
     ],
     neighborhoodCoverage: [
-      'Centro', 'São Pelegrino', 'Kayser', 'Sanvitto', 'Interlagos', 'Sagrada Família',
-      'Nossa Senhora de Lourdes', 'Ana Rech', 'Farroupilha', 'Flores da Cunha'
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Cruzeiro', 'Pio X', 'Santa Catarina',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
     ],
-    relatedServiceIds: ['reformas-gerais', 'manutencao-predial', 'faz-tudo-reparos', 'drywall-forros'],
+    relatedServiceIds: ['manutencao-predial', 'faz-tudo-reparos', 'reformas-residenciais', 'drywall-forros'],
     recommendedBeforeAfterId: 'reforma-sala'
   },
   {
     id: 'encanamento-hidraulica',
-    slug: 'encanamento-hidraulica',
-    title: 'Encanamento e hidráulica',
-    h1: 'Serviços de Encanador e Instalações Hidráulicas em Caxias do Sul',
-    subtitle: 'Caça-vazamentos, redes de água quente (PPR/PEX), esgoto, caixas d’água e plantão 24 horas',
+    slug: 'encanador-caxias-do-sul',
+    title: 'Encanador e instalações hidráulicas',
+    h1: 'Encanador e Hidráulica em Caxias do Sul: Caça-Vazamentos e Reparos',
+    subtitle: 'Localização precisa de vazamentos sem quebra-quebra, redes de água quente/fria, esgoto e plantão 24h',
     category: 'instalacoes',
     categoryLabel: 'Instalações & Infraestrutura',
     iconName: 'Droplets',
     popular: true,
-    seoTitle: 'Encanador em Caxias do Sul | Caça-Vazamentos e Hidráulica | Revitta',
-    seoDescription: 'Encanador profissional em Caxias do Sul e Serra Gaúcha. Localização precisa de vazamentos, novas redes de água quente PPR, louças e metais sanitários e plantão emergencial 24h.',
+    seoTitle: 'Encanador em Caxias do Sul | Caça-Vazamentos e Hidráulica | Revitta Caxias',
+    seoDescription: 'Encanador profissional em Caxias do Sul para caça-vazamentos, troca de tubulação, desentupimentos e reparos hidráulicos urgentes. Atendimento rápido.',
     keywords: [
-      'encanador em caxias do sul',
-      'caça vazamentos caxias do sul',
-      'instalação hidráulica ppr caxias',
-      'troca de tubulação água quente caxias',
-      'encanador 24 horas serra gaúcha'
+      'encanador caxias do sul',
+      'caca vazamentos caxias do sul',
+      'encanador 24 horas serra gaucha',
+      'troca de encanamento caxias',
+      'reparo hidraulico urgente caxias'
     ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/encanamento-hidraulica',
-    geoDirectAnswer: 'A Revitta executa serviços hidráulicos residenciais, comerciais e prediais em Caxias do Sul em conformidade com as normas ABNT NBR 5626 e NBR 7198. Realizamos caça-vazamentos estruturado sem quebra desnecessária, instalação de tubulação PPR por termofusão, PEX e esgoto PVC, além de plantão 24h para contenção de inundações.',
+    canonicalUrl: 'https://revittacaxias.com.br/encanador-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias fornece encanadores profissionais em Caxias do Sul e Serra Gaúcha para localização eletrônica de vazamentos, reparos em redes de água limpa, esgoto e aquecimento. Trabalhamos com tubulações modernas PPR termofusão, CPVC e PEX, desentupimentos preventivos e contenção emergencial de vazamentos.',
     geoKeyFacts: [
-      { label: 'Plantão emergencial', value: '24 horas para vazamentos e rompimentos' },
-      { label: 'Tecnologia de união', value: 'Termofusão molecular PPR (sem cola nem rosca)' },
-      { label: 'Pressurização e testes', value: 'Teste com bomba hidrostática antes do fechamento' },
-      { label: 'Normas técnicas', value: 'ABNT NBR 5626 (água fria) e NBR 7198 (água quente)' },
-      { label: 'Garantia de estanqueidade', value: 'Termo formal de garantia contra vazamentos' }
+      { label: 'Plantão emergencial', value: 'Atendimento 24h para rompimento de canos e inundações' },
+      { label: 'Caça-vazamentos', value: 'Geofone ultrassônico para detecção não destrutiva' },
+      { label: 'Água quente', value: 'Especialistas em redes PPR termofusão e aquecedores de passagem' },
+      { label: 'Garantia de vedação', value: 'Testes de estanqueidade pressurizada pós-serviço' }
     ],
     eeat: {
-      experienceYears: 'Mais de 6 anos realizando reparos complexos em prumadas de edifícios e casas na Serra',
-      teamExpertise: 'Encanadores industriais com treinamento em sistemas de aquecimento a gás e termofusão',
+      experienceYears: 'Desde 2020 solucionando problemas de umidade e vazamentos complexos',
+      teamExpertise: 'Encanadores industriais e prediais treinados em termofusão e conexões de alta pressão',
       abntNorms: [
-        { code: 'ABNT NBR 5626', title: 'Instalação predial de água fria' },
-        { code: 'ABNT NBR 7198', title: 'Projeto e execução de instalações prediais de água quente' }
+        { code: 'ABNT NBR 5626', title: 'Instalação predial de água fria e água quente' },
+        { code: 'ABNT NBR 8160', title: 'Sistemas prediais de esgoto sanitário' }
       ],
-      technicalResponsibility: 'Testes de pressão hidrostática documentados com manômetros de precisão',
-      safetyAndInsurance: 'Detecção acústica e termográfica para evitar demolição aleatória de alvenarias',
-      guaranteePeriod: 'Garantia integral sobre as tubulações e conexões instaladas',
-      taxCompliance: 'Emissão de nota fiscal com discriminação de materiais e serviços hidráulicos'
+      technicalResponsibility: 'Emissão de laudo técnico de estanqueidade para concessionárias e companhias de seguro',
+      safetyAndInsurance: 'Testes de pressurização com manômetro calibrado antes do fechamento de paredes',
+      guaranteePeriod: 'Garantia formal contra novos vazamentos nos pontos reparados',
+      taxCompliance: 'Nota fiscal discriminada de serviços para fins de ressarcimento com condomínios'
     },
-    overview: 'Vazamentos ocultos podem deteriorar a estrutura do imóvel, causar mofo profundo e inflar a conta de água municipal (Samae). A Revitta aplica métodos modernos para diagnosticar a origem exata do problema e renovar tubulações com materiais resistentes às baixas temperaturas da Serra Gaúcha, que evitam rompimentos por congelamento ou ressecamento.',
+    overview: 'Infiltrações e vazamentos ocultos provocam contas de água abusivas, mofo nas paredes e até danos estruturais graves. Em Caxias do Sul, com oscilações térmicas e congelamentos esporádicos no inverno, canos antigos de ferro ou PVC ressecado rompem com facilidade. A Revitta Caxias diagnostica com exatidão sem danificar seu piso ou revestimento.',
     scopeIncluded: [
-      'Localização pontual de vazamentos em paredes, pisos e lajes',
-      'Instalação de novas tubulações de água fria e água quente (PPR, CPVC e PEX)',
-      'Substituição de barriletes, registros gerais e colunas prediais',
-      'Instalação e regulagem de pressurizadores de água e bombas de recirculação',
-      'Montagem de louças sanitárias, caixas acopladas, cubas, misturadores e duchas higiênicas',
-      'Higienização, impermeabilização e manutenção de caixas d’água',
-      'Desentupimentos mecânicos e contenção emergencial 24h'
+      'Detecção eletrônica de vazamentos ocultos com geofone e sensor acústico',
+      'Substituição de redes antigas de ferro galvanizado por tubulação moderna PPR termofundida',
+      'Instalação e manutenção de caixas d água, boias de alta vazão e registros gerais',
+      'Troca de válvulas de descarga Hydra, caixas acopladas, sifões e torneiras monocomando',
+      'Instalação de bombas pressurizadoras para chuveiros de alto desempenho',
+      'Desobstrução e desentupimento de ralos, pias, vasos sanitários e caixas de gordura',
+      'Recomposição do acabamento civil (azulejos e massa) após intervenções'
     ],
     materialsAndTech: [
-      'Tubos e conexões Tigre, Amanco ou Docol com certificados de qualidade',
-      'Termofusoras digitais para solda molecular de tubos PPR',
-      'Manômetros de teste de pressão para estanqueidade absoluta',
-      'Vedações em elastômeros de alta durabilidade resistentes ao cloro'
+      'Geofones eletrônicos digitais com filtros de ruído para detecção exata do ponto de fuga',
+      'Máquinas de termofusão digitais para união molecular de tubos PPR de água quente',
+      'Manômetros de alta precisão para ensaio de pressão estática e dinâmica',
+      'Conexões de latão forjado e ligas de alta durabilidade'
     ],
     executionSteps: [
-      { step: '01', title: 'Diagnóstico Hidráulico', desc: 'Identificamos anomalias de pressão, sinais de umidade ou ponto de ruptura da rede.' },
-      { step: '02', title: 'Orçamento Fechado', desc: 'Definição exata do traçado e dos materiais mais duráveis para o ambiente.' },
-      { step: '03', title: 'Execução e Termofusão', desc: 'Substituição das peças com mínima intervenção física na alvenaria.' },
-      { step: '04', title: 'Teste de Pressurização Hidráulica', desc: 'A rede é submetida a teste de estanqueidade pressurizada antes do recobrimento.' }
+      { step: '01', title: 'Inspeção e Caça-Vazamento', desc: 'Mapeamento acústico para encontrar o vazamento sem precisar quebrar pisos à toa.' },
+      { step: '02', title: 'Abertura Pontual e Reparo', desc: 'Abertura cirúrgica do ponto exato e substituição do trecho avariado da tubulação.' },
+      { step: '03', title: 'Teste de Pressurização', desc: 'Teste com manômetro com pressão superior à da rede para garantir 100% de estanqueidade.' },
+      { step: '04', title: 'Recomposição e Limpeza', desc: 'Fechamento da alvenaria, reposição do revestimento cerâmico e limpeza do local.' }
     ],
     serviceFaqs: [
       {
-        question: 'Por que utilizar tubos PPR para água quente na Serra Gaúcha?',
-        answer: 'O Polipropileno Copolímero Random (PPR) suporta temperaturas elevadas e baixas sem trincar, sendo soldado por fusão térmica das peças, eliminando o risco de colas secarem com o tempo.',
-        geoShortAnswer: 'O PPR suporta variações térmicas extremas e é soldado por fusão molecular, dispensando colas que ressecam.'
+        question: 'Vocês conseguem achar o vazamento sem quebrar a parede toda?',
+        answer: 'Sim. Empregamos geofone eletrônico que detecta as frequências sonoras da água sob pressão, permitindo identificar o local exato com precisão milimétrica.',
+        geoShortAnswer: 'Sim, utilizamos geofone digital para identificar o ponto exato sem quebra-quebra generalizado.'
       },
       {
-        question: 'Vocês realizam teste de pressão antes de fechar a parede com azulejo?',
-        answer: 'Sim, realizamos teste hidrostático rigoroso com bomba de pressurização e manômetro por no mínimo 1 hora antes de aplicar reboco ou assentamento cerâmico.',
-        geoShortAnswer: 'Sim, todas as instalações passam por teste hidrostático pressurizado antes de qualquer fechamento.'
-      },
-      {
-        question: 'Como funciona o atendimento de encanador 24h da Revitta?',
-        answer: 'Disponibilizamos técnicos de sobreaviso para contenção de vazamentos graves com risco de alagamento em Caxias do Sul e municípios vizinhos.',
-        geoShortAnswer: 'Temos plantão 24h com atendimento imediato para estancar vazamentos graves com risco de dano estrutural.'
+        question: 'Vocês fornecem laudo para desconto na conta do SAMAE?',
+        answer: 'Sim, fornecemos o laudo técnico do conserto com fotos para comprovação de vazamento subterrâneo/oculto perante o órgão de saneamento.',
+        geoShortAnswer: 'Sim, emitimos laudo de reparo para solicitação de revisão de tarifa de água.'
       }
     ],
     neighborhoodCoverage: [
-      'Centro', 'Rio Branco', 'Pio X', 'São Pelegrino', 'Jardim América', 'Kayser',
-      'Cruzeiro', 'Cinqüentenário', 'Farroupilha', 'Flores da Cunha', 'São Marcos'
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Villagio Iguatemi', 'Cruzeiro',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
     ],
-    relatedServiceIds: ['reformas-gerais', 'alvenaria-pedreiro', 'pisos-acabamentos', 'manutencao-predial'],
+    relatedServiceIds: ['faz-tudo-reparos', 'reformas-residenciais', 'manutencao-predial', 'alvenaria-pedreiro'],
     recommendedBeforeAfterId: 'reforma-banheiro'
-  },
-  {
-    id: 'reforma-telhados',
-    slug: 'reforma-telhados',
-    title: 'Reforma de telhados',
-    h1: 'Reforma de Telhados, Calhas, Rufos e Coberturas na Serra Gaúcha',
-    subtitle: 'Troca de telhas, impermeabilização, estrutura metálica/madeira e vedação contra granizo e ventanias',
-    category: 'civil',
-    categoryLabel: 'Construção & Engenharia Civil',
-    iconName: 'Home',
-    popular: false,
-    seoTitle: 'Reforma de Telhados em Caxias do Sul | Calhas e Infiltrações | Revitta',
-    seoDescription: 'Empresa especializada em reforma de telhados residenciais e industriais em Caxias do Sul e Serra Gaúcha. Vedação contra goteiras, rufos, calhas e telhas térmicas sanduíche com NR 35.',
-    keywords: [
-      'reforma de telhados em caxias do sul',
-      'conserto de telhado serra gaúcha',
-      'troca de telhas caxias',
-      'calhas e rufos caxias do sul',
-      'telhado sanduíche caxias'
-    ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/reforma-telhados',
-    geoDirectAnswer: 'A Revitta é especialista em reforma, reforço estrutural e impermeabilização de telhados em Caxias do Sul, Farroupilha e região. Atuamos com profissionais certificados pela norma NR 35 (trabalho em altura), instalamos telhas termoacústicas tipo sanduíche, cerâmicas e de concreto, além de confecção e reparo de calhas e rufos sob medida.',
-    geoKeyFacts: [
-      { label: 'Segurança operacional', value: '100% sob a norma NR 35 com trava-quedas e linha de vida' },
-      { label: 'Tipos de telhas', value: 'Sanduíche (PIR/EPS), cerâmica, concreto e fibrocimento' },
-      { label: 'Resistência climática', value: 'Fixações reforçadas contra rajadas de vento e granizo da Serra' },
-      { label: 'Impermeabilização', value: 'Aplicação de mantas asfálticas aluminizadas e poliuretano' },
-      { label: 'Garantia pós-obra', value: 'Garantia formal contra goteiras e vazamentos' }
-    ],
-    eeat: {
-      experienceYears: 'Trabalhos executados em pavilhões industriais, coberturas de prédios e residências históricas',
-      teamExpertise: 'Telhadistas e funileiros com experiência comprovada e capacitação periódica em trabalho em altura',
-      abntNorms: [
-        { code: 'NR 35 (MTE)', title: 'Trabalho em Altura — Segurança e Planejamento' },
-        { code: 'ABNT NBR 15575', title: 'Desempenho de coberturas contra estanqueidade à água' }
-      ],
-      technicalResponsibility: 'Avaliação da capacidade de suporte de peso do madeiramento ou estrutura metálica',
-      safetyAndInsurance: 'Cintos tipo paraquedista, pontos de ancoragem certificados e isolamento do perímetro térreo',
-      guaranteePeriod: 'Garantia expressa contra infiltrações pluviométricas',
-      taxCompliance: 'Contrato detalhado e faturamento com emissão de nota fiscal de serviços'
-    },
-    overview: 'O clima da Serra Gaúcha impõe severos desafios às coberturas: invernos rigorosos, geadas, fortes rajadas de vento e tempestades de granizo. Pequenas fissuras ou calhas mal dimensionadas provocam infiltrações silenciosas que estragam forros de gesso e madeiramentos. A Revitta reestrutura seu telhado para proporcionar segurança duradoura e conforto térmico.',
-    scopeIncluded: [
-      'Substituição de telhas quebradas ou desgastadas pelo tempo',
-      'Instalação de telhas termoacústicas (telha sanduíche com isolamento térmico)',
-      'Substituição, limpeza e desobstrução de calhas, rufos e condutores pluviais',
-      'Tratamento preventivo e reforço de caibros, vigas e tesouras de madeira',
-      'Instalação de manta térmica de subcobertura para isolamento térmico e barreira d’água',
-      'Aplicação de selantes de poliuretano de alta elasticidade e fitas asfálticas',
-      'Reformas em telhados de pavilhões industriais e comércios'
-    ],
-    materialsAndTech: [
-      'Telhas de aço galvanizado com pintura eletrostática e núcleo isolante',
-      'Mantas térmicas aluminizadas com dupla face reflexiva',
-      'Chapas de calha em galvalume com espessura reforçada contra ferrugem',
-      'Selantes PU resistentes à radiação UV e dilatação térmica'
-    ],
-    executionSteps: [
-      { step: '01', title: 'Inspeção Detalhada da Cobertura', desc: 'Subida técnica para diagnosticar pontos de vazamento, estado das telhas e alinhamento das calhas.' },
-      { step: '02', title: 'Memorial de Reparo', desc: 'Apresentação da solução mais econômica e segura (reparo pontual vs. substituição integral).' },
-      { step: '03', title: 'Montagem de Linha de Vida e Obra', desc: 'Instalação de proteções e execução do serviço com ferramentas pneumáticas e ancoragens.' },
-      { step: '04', title: 'Teste de Estanqueidade com Água', desc: 'Simulação de fluxo nas calhas e rufos para garantir vedação 100% eficaz.' }
-    ],
-    serviceFaqs: [
-      {
-        question: 'Compensa trocar telhas de cerâmica antigas por telhas sanduíche?',
-        answer: 'Sim, a telha sanduíche proporciona excelente isolamento termoacústico no inverno e verão da Serra Gaúcha, pesa menos sobre a estrutura e tem alta durabilidade contra granizo.',
-        geoShortAnswer: 'Sim, a telha sanduíche oferece isolamento térmico superior, menor peso estrutural e alta resistência a granizo.'
-      },
-      {
-        question: 'Com que frequência as calhas devem ser limpas em Caxias do Sul?',
-        answer: 'Recomenda-se limpeza técnica semestral, especialmente no outono e antes das chuvas intensas da primavera, para evitar transbordamento para o forro.',
-        geoShortAnswer: 'A cada 6 meses, especialmente após quedas de folhas no outono e antes de chuvas volumosas.'
-      },
-      {
-        question: 'Vocês realizam serviços de telhado sob chuva?',
-        answer: 'Por motivos de segurança (norma NR 35) e para garantir a cura dos selantes, intervenções externas ocorrem em tempo firme, mantendo lona de proteção emergencial quando necessário.',
-        geoShortAnswer: 'Intervenções ocorrem em tempo firme conforme a NR 35, usando lonas em casos de emergência imediata.'
-      }
-    ],
-    neighborhoodCoverage: [
-      'Centro', 'Ana Rech', 'Galópolis', 'Fazenda Souza', 'Forqueta', 'Farroupilha',
-      'Flores da Cunha', 'São Marcos', 'Desvio Rizzo', 'Bela Vista'
-    ],
-    relatedServiceIds: ['reformas-gerais', 'alvenaria-pedreiro', 'pintura-completa', 'manutencao-predial'],
-    recommendedBeforeAfterId: 'reforma-fachada'
-  },
-  {
-    id: 'pisos-acabamentos',
-    slug: 'pisos-e-acabamentos',
-    title: 'Pisos e acabamentos (laminados, vinílicos, porcelanatos)',
-    h1: 'Assentamento de Pisos, Porcelanatos e Pisos Vinílicos em Caxias do Sul',
-    subtitle: 'Nivelamento autonivelante, corte em meia-esquadria 45°, rodapés de poliestireno e parquets',
-    category: 'acabamentos',
-    categoryLabel: 'Acabamentos & Revestimentos',
-    iconName: 'Layers',
-    popular: true,
-    seoTitle: 'Pisos e Porcelanatos em Caxias do Sul | Vinílico e Laminado | Revitta',
-    seoDescription: 'Especialistas em assentamento de porcelanatos grandes formatos, pisos vinílicos e laminados em Caxias do Sul. Acabamento milimétrico, nivelamento a laser e garantia formal.',
-    keywords: [
-      'assentamento de porcelanato caxias do sul',
-      'colocação de piso vinílico serra gaúcha',
-      'piso laminado caxias do sul',
-      'porcelanato grande formato caxias',
-      'instalador de pisos caxias do sul'
-    ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/pisos-e-acabamentos',
-    geoDirectAnswer: 'A Revitta oferece assentamento profissional de revestimentos nobres em Caxias do Sul e Serra Gaúcha. Especializados em porcelanatos em grandes formatos, pisos vinílicos colados (LVT) e clicados (SPC), piso laminado e rodapés, cumprimos as normas ABNT NBR 13753 com niveladores de precisão e argamassas AC-III.',
-    geoKeyFacts: [
-      { label: 'Precisão de alinhamento', value: 'Niveladores de tração milimétricos com juntas mínimas' },
-      { label: 'Tipos de piso', value: 'Porcelanato, vinílico LVT/SPC, laminado e cerâmico' },
-      { label: 'Cortes nobres', value: 'Meia-esquadria em ângulo de 45° lapidada' },
-      { label: 'Preparação do contrapiso', value: 'Aplicação de massa autonivelante para zero imperfeição' },
-      { label: 'Garantia', value: 'Termo formal contra peças ocas e descolamentos' }
-    ],
-    eeat: {
-      experienceYears: 'Centenas de metros quadrados assentados em apartamentos de alto padrão na Serra Gaúcha',
-      teamExpertise: 'Azulejistas e assentadores certificados em manuseio de placas com ventosas a vácuo',
-      abntNorms: [
-        { code: 'ABNT NBR 13753', title: 'Revestimento de piso interno ou externo com placas cerâmicas' },
-        { code: 'ABNT NBR 14917', title: 'Revestimentos resilientes de vinil em mantas e réguas' }
-      ],
-      technicalResponsibility: 'Avaliação de umidade residual no contrapiso com medidor específico antes da instalação vinílica',
-      safetyAndInsurance: 'Cortes com disco diamantado com refrigeração para supressão de poeira respirável',
-      guaranteePeriod: 'Garantia formal contra peças com dente ou som de oco',
-      taxCompliance: 'Orçamentos transparentes com emissão de nota fiscal'
-    },
-    overview: 'O piso é um dos investimentos mais visíveis de qualquer ambiente e exige técnica impecável: um contrapiso desnivelado ou juntas desalinhadas arruínam materiais nobres. A Revitta prepara a base com compostos autonivelantes e utiliza espaçadores niveladores de alta precisão para garantir superfície plana, juntas uniformes e rodapés milimetricamente ajustados.',
-    scopeIncluded: [
-      'Remoção de pisos antigos e regularização mecânica do contrapiso',
-      'Aplicação de primer promotor de aderência e massa autonivelante',
-      'Assentamento de porcelanatos retificados e grandes formatos (120x120cm ou maiores)',
-      'Instalação de pisos vinílicos colados (LVT) ou sistema clicado rápido (SPC)',
-      'Colocação de pisos laminados com manta acústica e redutora de impacto',
-      'Execução de nichos embutidos para banheiros com cantoneiras ou 45 graus',
-      'Instalação de rodapés em poliestireno (Santa Luzia ou similar) e MDF'
-    ],
-    materialsAndTech: [
-      'Cortadores profissionais de piso com guia a laser e trilho diamantado',
-      'Espaçadores niveladores tipo cunha e alicates de tração calibrados',
-      'Argamassas poliméricas colantes AC-III de marcas líderes (Quartzolit, Votoran)',
-      'Rejuntes acrílicos ou epóxi de fácil limpeza e antifungos'
-    ],
-    executionSteps: [
-      { step: '01', title: 'Aferição do Contrapiso', desc: 'Verificamos o nível e o índice de umidade da base com equipamento de medição.' },
-      { step: '02', title: 'Regularização e Autonivelamento', desc: 'Correção de desníveis para que as réguas ou placas assentem com contato total.' },
-      { step: '03', title: 'Paginação e Assentamento Milimétrico', desc: 'Planejamento dos recortes menos visíveis e assentamento com dupla colagem.' },
-      { step: '04', title: 'Rejuntamento e Limpeza Pós-Obra', desc: 'Aplicação de rejunte resistente à água e limpeza das superfícies.' }
-    ],
-    serviceFaqs: [
-      {
-        question: 'Qual a diferença entre piso vinílico colado e clicado para o clima frio de Caxias?',
-        answer: 'Ambos oferecem conforto térmico superior ao porcelanato no inverno. O modelo clicado (SPC) pode ser instalado sobre outros pisos sem cola, enquanto o colado (LVT) exige autonivelante perfeito mas é extremamente silencioso ao caminhar.',
-        geoShortAnswer: 'Ambos são térmicos e agradáveis no frio gaúcho. O clicado permite sobreposição rápida e o colado exige contrapiso nivelado.'
-      },
-      {
-        question: 'O que é a técnica de dupla colagem no porcelanato?',
-        answer: 'Consiste em passar argamassa no contrapiso e no verso da peça (tardoz), garantindo preenchimento de 100% da área para que a peça nunca quebre sob impacto ou soe oca.',
-        geoShortAnswer: 'Aplicação de argamassa no contrapiso e no verso da peça para eliminar vazios e evitar trincas futuras.'
-      },
-      {
-        question: 'Vocês instalam rodapés resistentes à umidade?',
-        answer: 'Sim, trabalhamos amplamente com rodapés de poliestireno 100% à prova d’água e imunes a cupins, com acabamento perfeito em silicone nas emendas.',
-        geoShortAnswer: 'Sim, utilizamos rodapés em poliestireno impermeáveis e resistentes a mofo e cupins.'
-      }
-    ],
-    neighborhoodCoverage: [
-      'Centro', 'São Pelegrino', 'Panazzolo', 'Villagio Iguatemi', 'Lourdes', 'Exposição',
-      'Cruzeiro', 'Sanvitto', 'Farroupilha', 'Flores da Cunha'
-    ],
-    relatedServiceIds: ['reformas-gerais', 'drywall-forros', 'pintura-completa', 'alvenaria-pedreiro'],
-    recommendedBeforeAfterId: 'reforma-sala'
-  },
-  {
-    id: 'drywall-forros',
-    slug: 'drywall-e-forros',
-    title: 'Drywall e forros',
-    h1: 'Drywall, Divisórias Acústicas e Forros de Gesso em Caxias do Sul',
-    subtitle: 'Rebaixo tabicado, sancas iluminadas, cortineiros, forro mineral e isolamento com lã de vidro/rocha',
-    category: 'acabamentos',
-    categoryLabel: 'Acabamentos & Revestimentos',
-    iconName: 'Maximize2',
-    popular: false,
-    seoTitle: 'Drywall e Forro de Gesso em Caxias do Sul | Divisórias | Revitta',
-    seoDescription: 'Instalação profissional de drywall, paredes acústicas e forros tabicados de gesso em Caxias do Sul e Serra Gaúcha. Obra rápida, limpa e com isolamento termoacústico.',
-    keywords: [
-      'drywall em caxias do sul',
-      'forro de gesso acartonado caxias',
-      'divisória drywall serra gaúcha',
-      'sanca iluminada caxias do sul',
-      'isolamento acústico drywall caxias'
-    ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/drywall-e-forros',
-    geoDirectAnswer: 'A Revitta instala paredes, divisórias e forros em drywall em Caxias do Sul segundo a norma ABNT NBR 15758. Atuamos com perfis de aço galvanizado, chapas resistentes a umidade (RU) para banheiros, isolamento acústico em lã mineral e acabamento liso pronto para pintura em projetos residenciais e corporativos.',
-    geoKeyFacts: [
-      { label: 'Velocidade de montagem', value: 'Até 4x mais rápida que alvenaria convencional' },
-      { label: 'Isolamento acústico', value: 'Opções com lã de vidro ou lã de rocha de alta densidade' },
-      { label: 'Tipos de chapas', value: 'Chapas Standard (ST), Resistentes à Umidade (RU - verde) e Fogo (RF - rosa)' },
-      { label: 'Norma técnica', value: 'ABNT NBR 15758 (Sistemas de gesso acartonado)' },
-      { label: 'Garantia estrutural', value: 'Estruturação metálica rígida com tirantes e tabicas metálicas' }
-    ],
-    eeat: {
-      experienceYears: 'Centenas de salas comerciais, consultórios médicos e apartamentos entregues na Serra',
-      teamExpertise: 'Gesseiros e montadores de drywall experientes com fitamento e tratamento de juntas sem trincas',
-      abntNorms: [
-        { code: 'ABNT NBR 15758', title: 'Sistemas construtivos em chapas de gesso para drywall — Projeto e montagem' }
-      ],
-      technicalResponsibility: 'Dimensionamento de espaçamento de montantes (40cm ou 60cm) conforme a altura do pé-direito',
-      safetyAndInsurance: 'Uso de parafusadeiras com limitador de profundidade e perfis galvanizados de espessura normatizada',
-      guaranteePeriod: 'Garantia formal contra trincas nas emendas e empenamento de forros',
-      taxCompliance: 'Fornecimento com nota fiscal e descrição discriminada de serviços'
-    },
-    overview: 'O sistema drywall revolucionou a arquitetura de interiores pela agilidade, peso estrutural reduzido e ausência de entulho molhado. Permite criar divisões de salas, ocultar fiação elétrica, embutir caixas de som e criar sancas iluminadas sofisticadas. A Revitta utiliza perfis galvanizados espessos e técnicas avançadas de amarração para que suas paredes sejam sólidas e sem trincas.',
-    scopeIncluded: [
-      'Execução de forros tabicados em gesso acartonado com cortineiros embutidos',
-      'Paredes divisórias para separação de ambientes, escritórios e consultórios',
-      'Instalação de chapas verdes (RU) resistentes a vapores em banheiros e cozinhas',
-      'Preenchimento interno com lã de vidro ou rocha para barreira de som',
-      'Criação de nichos, sancas invertidas para iluminação indireta e shafts técnicos',
-      'Tratamento minucioso de juntas com fitas microperfuradas e massa específica',
-      'Forros modulares termoacústicos e minerais para lojas e indústrias'
-    ],
-    materialsAndTech: [
-      'Chapas de gesso acartonado de marcas líderes (Placo, Knauf ou Gypsum)',
-      'Perfis estruturais em aço galvanizado Z275 anticorrosão',
-      'Fitas de papel microperfuradas anti-bolha e massas de secagem controlada',
-      'Lãs minerais com densidade acústica certificada para atenuação em decibéis'
-    ],
-    executionSteps: [
-      { step: '01', title: 'Nivelamento a Laser do Perímetro', desc: 'Marcação a laser das tabicas e guias para garantir prumo e alinhamento milimétrico.' },
-      { step: '02', title: 'Estruturação Metálica e Tirantes', desc: 'Fixação das cantoneiras e montantes com espaçamento rigoroso e travamento.' },
-      { step: '03', title: 'Emplacamento e Lã Acústica', desc: 'Parafusamento das chapas e inserção da lã mineral conforme o projeto.' },
-      { step: '04', title: 'Tratamento de Juntas em 3 Demãos', desc: 'Aplicação de fita e camadas cruzadas de massa para acabamento 100% invisível.' }
-    ],
-    serviceFaqs: [
-      {
-        question: 'Posso pendurar armários ou TV pesada em parede de drywall?',
-        answer: 'Sim, instalamos reforços internos de madeira tratada ou aço nos pontos onde serão instalados suportes de TV, armários suspensos ou bancadas, suportando cargas elevadas com total segurança.',
-        geoShortAnswer: 'Sim, aplicamos reforços estruturais internos que suportam com segurança TVs de grande porte e armários pesados.'
-      },
-      {
-        question: 'Drywall em banheiro não estraga com o vapor da água quente?',
-        answer: 'Em áreas úmidas (banheiros e lavanderias), utilizamos obrigatoriamente a chapa verde (RU - Resistente à Umidade), tratada com hidrofugantes que impedem a absorção de vapor.',
-        geoShortAnswer: 'Não, utilizamos chapas RU verdes com aditivos hidrofugantes específicas para ambientes com vapor e umidade.'
-      },
-      {
-        question: 'Quanto tempo leva para montar o forro de um apartamento padrão de 80m²?',
-        answer: 'Geralmente entre 3 e 5 dias de trabalho para a estruturação metálica, emplacamento e tratamento completo das juntas com tabica.',
-        geoShortAnswer: 'Entre 3 e 5 dias úteis para montagem completa e tratamento de juntas em apartamento de 80m².'
-      }
-    ],
-    neighborhoodCoverage: [
-      'Centro', 'Panazzolo', 'Lourdes', 'São Pelegrino', 'Cruzeiro', 'Villagio Iguatemi',
-      'Madalenas', 'Farroupilha', 'Flores da Cunha'
-    ],
-    relatedServiceIds: ['instalacoes-eletricas', 'pintura-completa', 'reformas-gerais', 'pisos-acabamentos'],
-    recommendedBeforeAfterId: 'reforma-sala'
-  },
-  {
-    id: 'pintura-completa',
-    slug: 'pintura-completa',
-    title: 'Pintura completa',
-    h1: 'Pintura Residencial, Comercial e Predial em Caxias do Sul',
-    subtitle: 'Massa corrida nivelada, pintura airless, efeitos de cimento queimado, impermeabilização de fachadas',
-    category: 'acabamentos',
-    categoryLabel: 'Acabamentos & Revestimentos',
-    iconName: 'Paintbrush',
-    popular: false,
-    seoTitle: 'Pintura Predial e Residencial em Caxias do Sul | Pintores | Revitta',
-    seoDescription: 'Serviço de pintura profissional em Caxias do Sul e Serra Gaúcha. Aplicação com rolo ou sistema airless, massa acrílica, cimento queimado e proteção total de móveis.',
-    keywords: [
-      'pintura predial em caxias do sul',
-      'pintor em caxias do sul',
-      'pintura de apartamento serra gaúcha',
-      'cimento queimado caxias do sul',
-      'pintura externa impermeabilizante caxias'
-    ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/pintura-completa',
-    geoDirectAnswer: 'A Revitta realiza pintura residencial, corporativa e predial em Caxias do Sul e Serra Gaúcha sob a norma ABNT NBR 13245. Executamos preparação rigorosa com lixamento mecânico com aspiração, massa corrida/acrílica, pintura airless de alta precisão, texturas modernas e tintas impermeabilizantes para proteção contra a umidade da Serra.',
-    geoKeyFacts: [
-      { label: 'Proteção de ambientes', value: 'Isolamento com lonas plásticas, papel kraft e fitas crepe especiais' },
-      { label: 'Tecnologia de pintura', value: 'Pintura com rolos de microfibra anti-respingo ou sistema mecanizado Airless' },
-      { label: 'Pintura de fachadas', value: 'Tintas elásticas emborrachadas contra fissuras e intempéries' },
-      { label: 'Efeitos decorativos', value: 'Cimento queimado, marmorizado, linho e texturas rústicas' },
-      { label: 'Limpeza de entrega', value: 'Entrega do ambiente perfeitamente aspirado e limpo' }
-    ],
-    eeat: {
-      experienceYears: 'Equipe de pintores profissionais atuando desde 2020 em reformas de médio e alto padrão',
-      teamExpertise: 'Mestres de pintura com domínio de técnicas de lixamento com iluminação tangencial (luz rasante)',
-      abntNorms: [
-        { code: 'ABNT NBR 13245', title: 'Tintas para construção civil — Execução de pinturas em edificações não industriais' }
-      ],
-      technicalResponsibility: 'Análise de patologias de paredes (umidade ascendente, mofo, descascamento) antes da pintura',
-      safetyAndInsurance: 'Equipamentos de proteção respiratória para solventes e poeiras, além de andaimes travados',
-      guaranteePeriod: 'Garantia contra descolamento precoce e manchas de cobertura',
-      taxCompliance: 'Contrato transparente com emissão de nota fiscal'
-    },
-    overview: 'A pintura é o acabamento que define a percepção estética do imóvel. O segredo de uma pintura durável e sedosa está em 80% na preparação da superfície e 20% na demão de tinta. A Revitta trata trincas com telas elásticas, elimina mofos com produtos fungicidas e aplica massas niveladas com iluminação especial para zero marcas de emenda.',
-    scopeIncluded: [
-      'Proteção completa de pisos, rodapés, portas, esquadrias e tomadas',
-      'Raspagem mecânica de tintas soltas e aplicação de fundo preparador',
-      'Aplicação de massa corrida PVA para áreas secas e massa acrílica para áreas molhadas',
-      'Lixamento com lixadeiras orbitais conectadas a aspiradores de alta capacidade',
-      'Pintura de paredes e tetos com tintas acrílicas laváveis (Suvinil, Coral, Sherwin-Williams)',
-      'Aplicação de efeitos decorativos como cimento queimado perolizado ou fosco',
-      'Pintura de esquadrias metálicas, corrimãos, grades e portas de madeira com esmalte sintético',
-      'Pintura externa e impermeabilização elástica de fachadas prediais'
-    ],
-    materialsAndTech: [
-      'Tintas acrílicas laváveis Premium sem cheiro e com baixo COV',
-      'Equipamentos de pulverização Airless para acabamento ultra-liso e produtivo',
-      'Lixadeiras elétricas tipo girafa com iluminação LED 360° embutida',
-      'Fundos preparadores e seladores de base solvente ou água de alta penetração'
-    ],
-    executionSteps: [
-      { step: '01', title: 'Proteção Integral do Mobiliário', desc: 'Cobrimos minuciosamente todos os bens e o piso antes de abrir qualquer lata de massa ou tinta.' },
-      { step: '02', title: 'Cura de Patologias e Massa', desc: 'Tratamento de fissuras com sela-trinca elástico e aplicação de demãos cruzadas de massa.' },
-      { step: '03', title: 'Lixamento com Luz Rasante', desc: 'Conferência visual com holofotes rasantes para garantir planicidade impecável.' },
-      { step: '04', title: 'Pintura Final e Desmascaramento', desc: 'Aplicação das demãos de acabamento uniforme e retirada cuidadosa das proteções.' }
-    ],
-    serviceFaqs: [
-      {
-        question: 'O lixamento mecânico realmente não suja a casa toda?',
-        answer: 'Nossas lixadeiras são acopladas diretamente a aspiradores industriais com filtros HEPA, capturando mais de 90% do pó no próprio disco de lixa durante o trabalho.',
-        geoShortAnswer: 'Usamos lixadeiras com aspiração integrada que retêm mais de 90% da poeira gerada.'
-      },
-      {
-        question: 'Qual tinta é recomendada para combater o mofo comum no inverno da Serra Gaúcha?',
-        answer: 'Recomendamos tintas acrílicas com aditivos bactericidas e fungicidas de alta performance, associadas a um tratamento prévio da alvenaria com soluções antiumidade.',
-        geoShortAnswer: 'Tintas acrílicas Premium com fungicidas e tratamento prévio de neutralização da umidade na parede.'
-      },
-      {
-        question: 'Vocês pintam portas de madeira e grades externas?',
-        answer: 'Sim, realizamos lixamento, fundo convertedor de ferrugem em metais e pintura com esmalte sintético ou epóxi acetinado, brilhante ou fosco.',
-        geoShortAnswer: 'Sim, realizamos pintura de esquadrias, portas e portões com esmaltes de alta resistência.'
-      }
-    ],
-    neighborhoodCoverage: [
-      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Kayser', 'Bela Vista',
-      'Madalenas', 'Farroupilha', 'Flores da Cunha', 'São Marcos'
-    ],
-    relatedServiceIds: ['drywall-forros', 'pisos-acabamentos', 'reformas-gerais', 'alvenaria-pedreiro'],
-    recommendedBeforeAfterId: 'reforma-sala'
   },
   {
     id: 'alvenaria-pedreiro',
-    slug: 'alvenaria-pedreiro',
-    title: 'Alvenaria e pedreiro',
-    h1: 'Serviços de Pedreiro e Alvenaria em Caxias do Sul e Região',
-    subtitle: 'Abertura de vãos, demolição controlada, contrapisos nivelados, rebocos no prumo e reforço estrutural',
+    slug: 'pedreiro-caxias-do-sul',
+    title: 'Pedreiro e alvenaria',
+    h1: 'Pedreiro em Caxias do Sul: Alvenaria, Muros, Reboco e Construção',
+    subtitle: 'Mão de obra especializada em alvenaria estrutural, muros de contenção, reboco e reformas civis pontuais',
     category: 'civil',
     categoryLabel: 'Construção & Engenharia Civil',
     iconName: 'Hammer',
-    popular: false,
-    seoTitle: 'Pedreiro em Caxias do Sul | Alvenaria e Contrapiso | Revitta',
-    seoDescription: 'Mão de obra especializada de pedreiro em Caxias do Sul. Demolições controladas, abertura de portas, contrapisos sarrafeados, rebocos e muros com rapidez e limpeza.',
+    popular: true,
+    seoTitle: 'Pedreiro em Caxias do Sul | Alvenaria, Muros e Reformas | Revitta Caxias',
+    seoDescription: 'Serviço de pedreiro experiente em Caxias do Sul. Construção de muros, alvenaria, reboco, contrapiso e reformas estruturais com garantia e pontualidade.',
     keywords: [
-      'pedreiro em caxias do sul',
-      'alvenaria caxias do sul',
-      'contrapiso sarrafeado caxias',
-      'abertura de vãos alvenaria serra gaúcha',
-      'reforma de alvenaria caxias'
+      'pedreiro caxias do sul',
+      'alvenaria e reboco caxias',
+      'construcao de muros serra gaucha',
+      'pedreiro confiavel caxias do sul',
+      'contrapiso e nivelamento caxias'
     ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/alvenaria-pedreiro',
-    geoDirectAnswer: 'A Revitta oferece serviços completos de pedreiro e alvenaria em Caxias do Sul e Serra Gaúcha conforme as normas ABNT NBR 15961 e NBR 6118. Realizamos demolição controlada com descarte legal, assentamento de blocos e tijolos com prumo e esquadro, contrapisos sarrafeados e reforços estruturais com segurança comprovada.',
+    canonicalUrl: 'https://revittacaxias.com.br/pedreiro-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias conta com pedreiros e mestres de obras experientes em Caxias do Sul e Serra Gaúcha. Executamos levantamento de alvenarias de vedação e estruturais, muros de divisa, reboco com prumo e esquadro perfeitos, contrapisos nivelados a laser, demolições controladas e assentamento de churrasqueiras.',
     geoKeyFacts: [
-      { label: 'Precisão dimensional', value: 'Alvenarias no prumo, esquadro e nível perfeitos' },
-      { label: 'Gestão de resíduos', value: 'Caçambas credenciadas e descarte legal ambiental' },
-      { label: 'Segurança estrutural', value: 'Inspeção prévia para não danificar vigas e pilares' },
-      { label: 'Traço de argamassa', value: 'Controle de dosagem para resistência mecânica e sem trincas' },
-      { label: 'Garantia de solidez', value: 'Termo formal de garantia do serviço executado' }
+      { label: 'Precisão técnica', value: 'Alinhamento e prumo conferidos a laser rotativo' },
+      { label: 'Compromisso', value: 'Início e término com datas registradas em contrato' },
+      { label: 'Norma de execução', value: 'ABNT NBR 8545 e NBR 13749' },
+      { label: 'Canteiro limpo', value: 'Remoção diária de entulhos e proteção de pisos' }
     ],
     eeat: {
-      experienceYears: 'Mestres de obras e pedreiros com mais de duas décadas de experiência na construção civil gaúcha',
-      teamExpertise: 'Conhecimento prático avançado em amarração de alvenaria e compatibilização com instalações prediais',
+      experienceYears: 'Desde 2020 fornecendo mão de obra de alvenaria com excelência e pontualidade',
+      teamExpertise: 'Pedreiros com formação prática sólida em assentamento de tijolos, blocos de concreto e reboco desempenado',
       abntNorms: [
-        { code: 'ABNT NBR 15961', title: 'Alvenaria estrutural — Blocos de concreto e cerâmicos' },
+        { code: 'ABNT NBR 8545', title: 'Execução de alvenaria sem função estrutural de tijolos e blocos' },
         { code: 'ABNT NBR 13749', title: 'Revestimento de paredes e tetos de argamassas inorgânicas' }
       ],
-      technicalResponsibility: 'Conferência de vigas de transição e vergas/contravergas em todos os vãos',
-      safetyAndInsurance: 'EPIs completos, escoramentos metálicos de segurança e proteção de áreas vizinhas',
-      guaranteePeriod: 'Garantia de estabilidade estrutural e aderência de rebocos',
-      taxCompliance: 'Contrato formal e emissão de nota fiscal'
+      technicalResponsibility: 'Fiscalização contínua por mestre de obras para evitar desperdício de insumos',
+      safetyAndInsurance: 'Uso rigoroso de botas com biqueira de aço, luvas e óculos de proteção',
+      guaranteePeriod: 'Garantia estrutural de estabilidade e ausência de trincas por retração',
+      taxCompliance: 'Contratos formais com recibos e emissão de notas fiscais regulares'
     },
-    overview: 'A alvenaria é a base de sustentação e divisão de qualquer construção. Erros no prumo de paredes ou na composição da argamassa causam trincas futuras, descolamento de azulejos e prejuízos. Os pedreiros da Revitta trabalham com esquadros milimétricos, vergas e contravergas nas janelas e portas e contrapisos rigorosamente desempenados.',
+    overview: 'Encontrar um pedreiro pontual, caprichoso e que respeite o cronograma é o maior desafio em obras civis. A Revitta Caxias resolve isso oferecendo uma equipe selecionada, uniformizada e supervisionada. Nossos trabalhos de alvenaria entregam paredes perfeitamente aprumadas e em esquadro, facilitando a aplicação de massa e pintura.',
     scopeIncluded: [
-      'Demolições manuais e mecânicas com ensacamento e descarte legal',
-      'Construção de paredes em tijolos cerâmicos, blocos de concreto ou celular',
-      'Abertura e fechamento de vãos para portas, janelas e passa-pratos',
-      'Execução de vergas, contravergas e cintas de amarração armada',
-      'Reboco paulista e reboco sarrafeado com acabamento desempenado',
-      'Contrapisos nivelados e com caimento correto para ralos em banheiros e sacadas',
-      'Construção de muros de contenção, muretas e bancadas de alvenaria'
+      'Levantamento de paredes de vedação com tijolos cerâmicos, blocos de concreto e bloco celular',
+      'Execução de chapisco aderente, emboço e reboco desempenado e feltrado',
+      'Construção de muros de divisa, baldrames impermeabilizados e pilares de amarração',
+      'Execução de contrapisos autonivelantes ou farofa para pisos vinílicos e laminados',
+      'Abertura e fechamento de vãos para novas portas, janelas e claraboias',
+      'Construção e reforma de churrasqueiras, bancadas e fornos rústicos',
+      'Demolições seguras com escoramento preventivo de lajes'
     ],
     materialsAndTech: [
-      'Cimento CP-IV ou CP-II com traço equilibrado e aditivos plastificantes',
-      'Níveis a laser autonivelantes de 360° para alinhamento e esquadro',
-      'Telas eletrossoldadas para junção de alvenaria e estrutura de concreto',
-      'Betoneiras e misturadores industriais para homogeneidade da massa'
+      'Níveis a laser autonivelantes de 360 graus para esquadro milimétrico',
+      'Impermeabilizantes cristalizantes em baldrames para conter umidade ascendente',
+      'Argamassas industrializadas com aditivos plastificantes para evitar fissuras',
+      'Guinchos elétricos e carrinhos reforçados para movimentação limpa de agregados'
     ],
     executionSteps: [
-      { step: '01', title: 'Análise Estrutural do Ambiente', desc: 'Verificamos plantas e estruturas para assegurar que a parede não seja portante.' },
-      { step: '02', title: 'Demolição com Limpeza', desc: 'Remoção cirúrgica de alvenaria antiga com contenção de poeira e descarte em caçamba.' },
-      { step: '03', title: 'Erguimento e Amarração', desc: 'Levantamento da nova parede com ferros de amarração (telas) e prumo diário.' },
-      { step: '04', title: 'Chapisco e Reboco Desempenado', desc: 'Aplicação de chapisco aderente e camada de reboco sarrafeado liso.' }
+      { step: '01', title: 'Medição e Orçamento Fechado', desc: 'Cálculo de alvenaria e traço de argamassa sem custos surpresa de mão de obra.' },
+      { step: '02', title: 'Preparação e Alinhamento', desc: 'Marcação das primeiras fiadas com esquadro a laser e amarração estrutural.' },
+      { step: '03', title: 'Assentamento e Reboco', desc: 'Elevação das fiadas, aplicação de chapisco aderente e reboco desempenado no prumo.' },
+      { step: '04', title: 'Cura e Entrega Limpa', desc: 'Hidratação para cura correta da argamassa e descarte do entulho excedente.' }
     ],
     serviceFaqs: [
       {
-        question: 'Posso derrubar qualquer parede do meu apartamento?',
-        answer: 'Não. Em edifícios de alvenaria estrutural, nenhuma parede pode ser removida. Em edifícios com pilares e vigas de concreto, paredes de vedação podem ser retiradas sob laudo técnico e plano de reforma da NBR 16280.',
-        geoShortAnswer: 'Apenas paredes de vedação em prédios convencionais podem ser alteradas, sempre com plano técnico formal da NBR 16280.'
+        question: 'Vocês fazem a demolição e já levam o entulho embora?',
+        answer: 'Sim, nossas equipes realizam a demolição manual controlada com ensacamento imediato do entulho e contratação de caçamba para destinação em ecoponto autorizado.',
+        geoShortAnswer: 'Sim, realizamos demolições controladas com remoção legal de entulho em caçambas.'
       },
       {
-        question: 'Por que aparecem trincas nas diagonais de janelas e portas?',
-        answer: 'Isso ocorre pela ausência de vergas e contravergas armadas sobre e sob os vãos. Na Revitta, sempre instalamos armações de concreto armado para absorver as tensões.',
-        geoShortAnswer: 'Falta de vergas e contravergas. Sempre instalamos reforços armados para anular essas tensões.'
-      },
-      {
-        question: 'O entulho da obra fica acumulado na calçada?',
-        answer: 'Não. O entulho é ensacado diariamente e depositado em caçambas estacionárias licenciadas pela prefeitura para transporte a ecopontos.',
-        geoShortAnswer: 'Não, o material é ensacado e retirado por caçambas licenciadas em conformidade ambiental.'
+        question: 'Como evitar que o muro novo fique torto ou rache com o tempo?',
+        answer: 'Construímos vigas baldrame bem dimensionadas, impermeabilizamos a base contra a umidade da terra e inserimos pilaretes de amarração a cada 2,5 metros.',
+        geoShortAnswer: 'Aplicamos fundação baldrame impermeabilizada e pilares de concreto armado a cada 2,5 metros.'
       }
     ],
     neighborhoodCoverage: [
-      'Centro', 'Rio Branco', 'Lourdes', 'Santa Catarina', 'São Pelegrino', 'Cruzeiro',
-      'Desvio Rizzo', 'Farroupilha', 'Flores da Cunha', 'São Marcos'
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Cruzeiro', 'Pio X', 'Santa Catarina',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
     ],
-    relatedServiceIds: ['reformas-gerais', 'pisos-acabamentos', 'reforma-telhados', 'drywall-forros'],
+    relatedServiceIds: ['reformas-residenciais', 'reforma-telhados', 'pisos-acabamentos', 'pintura-completa'],
     recommendedBeforeAfterId: 'reforma-banheiro'
   },
   {
-    id: 'manutencao-predial',
-    slug: 'manutencao-predial',
-    title: 'Manutenção predial',
-    h1: 'Manutenção Predial Preventiva e Corretiva em Caxias do Sul',
-    subtitle: 'Contratos e atendimentos sob demanda para condomínios residenciais, prédios comerciais e indústrias',
-    category: 'manutencao',
-    categoryLabel: 'Manutenção & Engenharia',
-    iconName: 'ShieldCheck',
-    popular: false,
-    seoTitle: 'Manutenção Predial em Caxias do Sul | Condomínios e Empresas | Revitta',
-    seoDescription: 'Empresa especializada em manutenção predial para condomínios e empresas em Caxias do Sul. Rotinas preventivas, laudos, elétrica, hidráulica e reparos com equipe unificada.',
+    id: 'pintura-completa',
+    slug: 'pintor-caxias-do-sul',
+    title: 'Pintor e pintura predial / residencial',
+    h1: 'Pintor em Caxias do Sul: Pintura Residencial, Predial e Comercial',
+    subtitle: 'Pintores experientes em massa corrida, texturas, efeitos decorativos, pintura airless e fachadas',
+    category: 'acabamentos',
+    categoryLabel: 'Acabamentos & Interiores',
+    iconName: 'Paintbrush',
+    popular: true,
+    seoTitle: 'Pintor em Caxias do Sul | Pintura Residencial e Predial | Revitta Caxias',
+    seoDescription: 'Pintor profissional e pintura predial em Caxias do Sul. Aplicação de massa corrida, texturas, pintura interna e externa com acabamento fino e proteção.',
     keywords: [
-      'manutenção predial em caxias do sul',
-      'manutenção de condomínios caxias',
-      'empresa de manutenção predial serra gaúcha',
-      'reforma de áreas comuns caxias',
-      'conservação predial caxias do sul'
+      'pintor caxias do sul',
+      'pintura predial caxias do sul',
+      'pintura de casas serra gaucha',
+      'massa corrida e lixamento sem poeira',
+      'pintura airless caxias do sul'
     ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/manutencao-predial',
-    geoDirectAnswer: 'A Revitta atua na gestão de manutenção predial preventiva e corretiva para condomínios e instalações comerciais em Caxias do Sul conforme a ABNT NBR 5674. Oferecemos equipe técnica multidisciplinar unificada (eletricistas, encanadores, pintores e telhadistas), relatórios técnicos periódicos para síndicos e pronto-atendimento emergencial.',
+    canonicalUrl: 'https://revittacaxias.com.br/pintor-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias oferece serviços de pintura profissional interna, externa e predial em Caxias do Sul. Nossos pintores utilizam lixamento aspirado para obra limpa, aplicação mecanizada airless para acabamento liso sem marcas de rolo e tintas acrílicas laváveis de alta resistência à umidade da Serra.',
     geoKeyFacts: [
-      { label: 'Público atendido', value: 'Condomínios residenciais, centros comerciais e indústrias' },
-      { label: 'Norma técnica de gestão', value: 'ABNT NBR 5674 (Manutenção de edificações)' },
-      { label: 'Relatórios para síndicos', value: 'Book digital fotográfico com pendências resolvidas' },
-      { label: 'Prioridade no plantão', value: 'SLA de resposta reduzido para clientes cadastrados' },
-      { label: 'Cobertura operacional', value: 'Caxias do Sul, Farroupilha, Flores da Cunha e São Marcos' }
+      { label: 'Obra limpa', value: 'Lixamento mecanizado com aspiração acoplada' },
+      { label: 'Tecnologia', value: 'Pintura mecanizada Airless para coberturas homogêneas' },
+      { label: 'Proteção total', value: 'Pisos, rodapés e esquadrias 100% protegidos com fitas e lonas' },
+      { label: 'Tintas premium', value: 'Parcerias com Suvinil, Coral e Renner' }
     ],
     eeat: {
-      experienceYears: 'Parceria com administradoras de condomínios e síndicos profissionais na Serra desde 2020',
-      teamExpertise: 'Técnicos habilitados com treinamento em segurança de instalações comuns e NR 10 / NR 35',
+      experienceYears: 'Desde 2020 pintando residências, escritórios e condomínios com alto padrão',
+      teamExpertise: 'Pintores especializados em acabamento fino, cimento queimado, textura projetada e pintura em altura',
       abntNorms: [
-        { code: 'ABNT NBR 5674', title: 'Manutenção de edificações — Requisitos para o sistema de gestão de manutenção' },
-        { code: 'ABNT NBR 14037', title: 'Manual de operação, uso e manutenção das edificações' }
+        { code: 'ABNT NBR 13245', title: 'Execução de pinturas em edificações não industriais' },
+        { code: 'ABNT NBR 11702', title: 'Tintas para construção civil — Tintas e vernizes' }
       ],
-      technicalResponsibility: 'Emissão de ordens de serviço (OS) com detalhamento técnico para prestação de contas em assembleias',
-      safetyAndInsurance: 'Equipe própria uniformizada com crachá e seguro de responsabilidade civil em áreas comuns',
-      guaranteePeriod: 'Garantia contratual contínua com histórico técnico arquivado por imóvel',
-      taxCompliance: 'Faturamento formal em nome do condomínio com emissão de nota fiscal eletrônica'
+      technicalResponsibility: 'Preparação rigorosa do substrato (selador, fundo preparador e cura de rebocos)',
+      safetyAndInsurance: 'Uso de máscaras de carbono ativado e balancins certificados para fachadas',
+      guaranteePeriod: 'Garantia contratual formal contra descascamentos prematuros e bolhas',
+      taxCompliance: 'Orçamentos discriminados e nota fiscal para condomínios e clientes particulares'
     },
-    overview: 'Síndicos e gestores prediais enfrentam o desgaste de gerenciar múltiplos prestadores autônomos sem garantia técnica. A Revitta centraliza todas as demandas de conservação do edifício em uma única empresa sólida: revisões elétricas de bombas e portões, detecção de infiltrações de garagens, pintura de corredores e fachadas, com prestação de contas clara para aprovação em assembleia.',
+    overview: 'Uma boa pintura não serve apenas para embelezar o ambiente, mas também para impermeabilizar paredes e proteger o patrimônio contra fungos e intempéries. Em Caxias do Sul, a alta umidade exige produtos com aditivos anti-mofo e preparo impecável do reboco. A Revitta Caxias entrega superfícies perfeitamente lisas.',
     scopeIncluded: [
-      'Inspeção preventiva periódica de prumadas e barriletes hidráulicos',
-      'Revisão e manutenção de quadros elétricos de comando e bombas de recalque',
-      'Reparos de alvenaria e impermeabilização em subsolos, poços de elevador e caixas d’água',
-      'Restauração de pinturas de halls, garagens, salões de festas e escadarias de emergência',
-      'Manutenção e desobstrução de calhas, rufos e ralos pluviais de coberturas',
-      'Adequação de rotas de fuga, corrimãos e sinalização de segurança',
-      'Atendimento prioritário para emergências de vazamentos e curtos nas áreas comuns'
+      'Proteção completa de rodapés, esquadrias, vidros, pisos e móveis com papelão ondulado e fitas',
+      'Aplicação de fundo preparador de paredes para fixação de partículas soltas',
+      'Emassamento com massa corrida ou acrílica e lixamento aspirado sem poeira',
+      'Pintura de paredes e tetos com tintas acetinadas, foscas ou semi-brilho premium',
+      'Pintura de portas, marcos, corrimãos e rodapés em esmalte sintético base água',
+      'Aplicação de efeitos decorativos modernos (cimento queimado, linho, mármore)',
+      'Pintura de fachadas com tintas elastoméricas que acompanham microfissuras'
     ],
     materialsAndTech: [
-      'Plataforma digital de abertura e monitoramento de ordens de serviço',
-      'Câmeras termográficas para localização de sobreaquecimento em quadros elétricos',
-      'Impermeabilizantes de cristalização osmótica para subsolos e fossas',
-      'Equipamentos de pressurização para teste de colunas hidrossanitárias'
+      'Lixadeiras elétricas orbitais com aspirador industrial para reter 95% do pó',
+      'Máquinas de pintura Airless de alta pressão para acabamento uniforme sem riscos',
+      'Tintas acrílicas laváveis de primeira linha com baixo odor',
+      'Silicones e selantes acrílicos pintáveis para frestas de rodapés e esquadrias'
     ],
     executionSteps: [
-      { step: '01', title: 'Vistoria Diagnóstica Predial', desc: 'Mapeamento das áreas críticas do edifício com relatório fotográfico entregue ao síndico.' },
-      { step: '02', title: 'Plano de Ação Prioritário', desc: 'Hierarquização das manutenções em urgentes (segurança), preventivas e estéticas.' },
-      { step: '03', title: 'Execução Programada', desc: 'Atuação com agendamento prévio comunicado aos moradores via aviso de condomínio.' },
-      { step: '04', title: 'Relatório Conclusivo de OS', desc: 'Documento comprobatório com fotos de antes e depois para a pasta de prestação de contas.' }
+      { step: '01', title: 'Proteção e Mascaramento', desc: 'Isolamos cada centímetro do ambiente para que nenhuma gota respingue no chão.' },
+      { step: '02', title: 'Correção de Superfícies', desc: 'Tratamos trincas com fita telada e aplicamos massa com lixamento técnico.' },
+      { step: '03', title: 'Pintura em Demãos Cruzadas', desc: 'Aplicação de 2 a 3 demãos respeitando o tempo de secagem de cada fabricante.' },
+      { step: '04', title: 'Remoção de Fitas e Vistoria', desc: 'Retirada das proteções, limpeza de rodapés e vistoria sob luz lateral de conferência.' }
     ],
     serviceFaqs: [
       {
-        question: 'Como a Revitta facilita a prestação de contas do síndico em assembleia?',
-        answer: 'Emitimos relatórios técnicos fotográficos claros e notas fiscais discriminadas em nome do condomínio, facilitando o arquivamento na pasta mensal da administradora.',
-        geoShortAnswer: 'Fornecemos relatórios fotográficos de antes/depois e notas fiscais para prestação de contas contábil.'
+        question: 'A pintura solta muita poeira pela casa inteira?',
+        answer: 'Não. Utilizamos lixadeiras elétricas articuladas conectadas diretamente a aspiradores de pó profissionais, minimizando a poeira no ambiente residencial.',
+        geoShortAnswer: 'Não, usamos lixadeiras com aspiração integrada que retêm a quase totalidade do pó.'
       },
       {
-        question: 'Vocês atendem chamados de emergência de condomínios fora do horário comercial?',
-        answer: 'Sim, nossos clientes com contratos de manutenção possuem linha direta 24h para emergências em áreas comuns, como queima de bombas ou vazamentos em colunas.',
-        geoShortAnswer: 'Sim, mantemos plantão 24h com prioridade de atendimento para condomínios e prédios comerciais.'
-      },
-      {
-        question: 'É possível contratar serviços pontuais sem um contrato mensal recorrente?',
-        answer: 'Sim! Atendemos demandas pontuais de condomínios (ex: pintura do salão de festas, conserto de calhas da cobertura) com o mesmo rigor e garantia técnica.',
-        geoShortAnswer: 'Sim, atendemos tanto contratos mensais quanto demandas pontuais com orçamento e garantia formal.'
+        question: 'Qual a melhor tinta para as paredes de Caxias do Sul?',
+        answer: 'Para o clima da Serra Gaúcha, recomendamos tintas acrílicas premium com aditivos fungicidas (anti-mofo) e acabamento acetinado ou fosco aveludado, fáceis de limpar.',
+        geoShortAnswer: 'Tintas acrílicas premium com fungicida anti-mofo e acabamento lavável.'
       }
     ],
     neighborhoodCoverage: [
       'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Villagio Iguatemi', 'Exposição',
-      'Sanvitto', 'Cruzeiro', 'Farroupilha', 'Flores da Cunha'
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
     ],
-    relatedServiceIds: ['instalacoes-eletricas', 'encanamento-hidraulica', 'reforma-telhados', 'pintura-completa'],
+    relatedServiceIds: ['drywall-forros', 'pisos-acabamentos', 'reformas-residenciais', 'manutencao-predial'],
+    recommendedBeforeAfterId: 'reforma-sala'
+  },
+  {
+    id: 'drywall-forros',
+    slug: 'drywall-caxias-do-sul',
+    title: 'Drywall e forros de gesso',
+    h1: 'Instalação de Drywall e Forros em Caxias do Sul',
+    subtitle: 'Forros rebaixados, sancas com fitas de LED, paredes acústicas e nichos sob medida com montagem rápida',
+    category: 'acabamentos',
+    categoryLabel: 'Acabamentos & Interiores',
+    iconName: 'Maximize2',
+    popular: true,
+    seoTitle: 'Drywall em Caxias do Sul | Forros de Gesso e Divisórias | Revitta Caxias',
+    seoDescription: 'Instalação de drywall, forros de gesso, sancas iluminadas e divisórias acústicas em Caxias do Sul e região. Obra limpa, rápida e acabamento impecável.',
+    keywords: [
+      'drywall caxias do sul',
+      'forro de gesso serra gaucha',
+      'divisoria drywall caxias',
+      'sanca iluminada caxias do sul',
+      'isolamento acustico drywall caxias'
+    ],
+    canonicalUrl: 'https://revittacaxias.com.br/drywall-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias executa projetos de drywall e forros de gesso acartonado em Caxias do Sul e Serra Gaúcha conforme a ABNT NBR 15758. Instalamos forros rebaixados estruturados, sancas abertas e invertidas, cortineiros embutidos, paredes de vedação acústica com lã de rocha/vidro e nichos decorativos.',
+    geoKeyFacts: [
+      { label: 'Tempo de montagem', value: 'Muito mais rápido que a alvenaria convencional' },
+      { label: 'Isolamento termoacústico', value: 'Preenchimento com lã de vidro ou lã de rocha mineral' },
+      { label: 'Norma de montagem', value: 'ABNT NBR 15758 (Partes 1, 2 e 3)' },
+      { label: 'Chapas especiais', value: 'ST (Standard), RU (Resistente à Umidade) e RF (Resistente ao Fogo)' }
+    ],
+    eeat: {
+      experienceYears: 'Desde 2020 criando ambientes modernos e projetos de iluminação sofisticados',
+      teamExpertise: 'Gesseiros e montadores de sistemas construtivos a seco certificados',
+      abntNorms: [
+        { code: 'ABNT NBR 15758', title: 'Sistemas construtivos em chapas de gesso para drywall' }
+      ],
+      technicalResponsibility: 'Cálculo de sobrecarga para fixação de televisores, móveis suspensos e luminárias',
+      safetyAndInsurance: 'Uso de perfis de aço galvanizado normatizados com espessura mínima de 0,50mm',
+      guaranteePeriod: 'Garantia contra empenamentos de chapas e trincas de juntas',
+      taxCompliance: 'Proposta técnica discriminando materiais e mão de obra com nota fiscal'
+    },
+    overview: 'O drywall é a solução perfeita para modernizar o visual de uma casa ou reorganizar um escritório. Ele permite rebaixar o teto para embutir spots de LED, esconder vigas indesejadas, criar cortineiros elegantes e dividir ambientes sem sobrecarregar a estrutura do prédio. A Revitta Caxias entrega forros planos e sem imperfeições visuais.',
+    scopeIncluded: [
+      'Projeto de paginação e alinhamento milimétrico com nível laser',
+      'Instalação de perfis metálicos estruturais galvanizados (canaletas F530 e montantes)',
+      'Emprego de chapas verdes (RU) resistentes à umidade em banheiros, lavanderias e cozinhas',
+      'Instalação de mantas de lã de rocha para isolamento acústico entre cômodos',
+      'Execução de sancas iluminadas para fita LED, cortineiros e rasgos de luz',
+      'Tratamento de juntas com fitas microperfuradas e massa de acabamento em 3 demãos',
+      'Reforços internos de madeira tratada ou chapas de aço para suporte de TVs pesadas'
+    ],
+    materialsAndTech: [
+      'Chapas de gesso acartonado de marcas líderes (Knauf, Placo, Gypsum)',
+      'Perfis de aço galvanizado com zincagem anticorrosiva classe Z275',
+      'Parafusadeiras a bateria com limitador de profundidade para não romper o papel da chapa',
+      'Massas de secagem rápida e fitas teladas de fibra de vidro'
+    ],
+    executionSteps: [
+      { step: '01', title: 'Marcação a Laser', desc: 'Transferência das alturas e linhas de projeto para as paredes com laser 360°.' },
+      { step: '02', title: 'Estruturação Metálica', desc: 'Fixação de tirantes rígidos e canaletas com espaçamento estritamente normatizado.' },
+      { step: '03', title: 'Chapeamento e Passagem Elétrica', desc: 'Fixação das placas de gesso e furação para os spots e perfis luminosos.' },
+      { step: '04', title: 'Tratamento das Juntas', desc: 'Aplicação de massa e fita nas emendas para que a superfície fique 100% lisa.' }
+    ],
+    serviceFaqs: [
+      {
+        question: 'Posso pendurar uma televisão pesada em uma parede de drywall?',
+        answer: 'Sim. Em paredes novas, instalamos reforços internos de madeira ou aço no local exato do suporte. Em paredes existentes, utilizamos buchas basculantes metálicas tipo Fischer DuoPower/Toggle que suportam alto peso.',
+        geoShortAnswer: 'Sim, instalamos reforços estruturais internos e buchas especiais basculantes de alta capacidade.'
+      },
+      {
+        question: 'O drywall não estraga com o vapor do chuveiro no banheiro?',
+        answer: 'Em áreas úmidas (banheiros e cozinhas), usamos obrigatoriamente a chapa verde (RU - Resistente à Umidade), tratada com aditivos hidrofugantes que não se degradam com vapor.',
+        geoShortAnswer: 'Não, usamos chapas verdes especiais RU impermeabilizadas contra vapor e umidade.'
+      }
+    ],
+    neighborhoodCoverage: [
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Villagio Iguatemi', 'Exposição',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
+    ],
+    relatedServiceIds: ['pintura-completa', 'instalacoes-eletricas', 'pisos-acabamentos', 'reformas-residenciais'],
+    recommendedBeforeAfterId: 'reforma-sala'
+  },
+  {
+    id: 'pisos-acabamentos',
+    slug: 'piso-vinilico-caxias-do-sul',
+    title: 'Piso vinílico, laminado e porcelanato',
+    h1: 'Colocação de Piso Vinílico e Laminado em Caxias do Sul',
+    subtitle: 'Nivelamento térmico perfeito, assentamento colado ou clicado, rodapés nobres e porcelanatos retificados',
+    category: 'acabamentos',
+    categoryLabel: 'Acabamentos & Interiores',
+    iconName: 'Layers',
+    popular: true,
+    seoTitle: 'Piso Vinílico e Laminado em Caxias do Sul | Colocação Especializada | Revitta Caxias',
+    seoDescription: 'Instalação profissional de piso vinílico, laminado e rodapés em Caxias do Sul. Nivelamento perfeito, rápida instalação e garantia de fábrica e mão de obra.',
+    keywords: [
+      'piso vinilico caxias do sul',
+      'colocacao de piso laminado caxias',
+      'instalacao de rodapes serra gaucha',
+      'porcelanato e contrapiso caxias',
+      'massa autonivelante piso caxias'
+    ],
+    canonicalUrl: 'https://revittacaxias.com.br/piso-vinilico-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias é referência na instalação de pisos vinílicos (LVT/SPC), laminados e porcelanatos em Caxias do Sul e Serra Gaúcha. Realizamos preparação completa com argamassa autonivelante para pisos ultralissos, instalação silenciosa, rodapés em poliestireno e acabamento sem desníveis.',
+    geoKeyFacts: [
+      { label: 'Conforto térmico', value: 'Piso vinílico retém calor, ideal para o inverno de Caxias' },
+      { label: 'Velocidade', value: 'Até 40m² instalados por dia útil' },
+      { label: 'Garantia de nivelamento', value: 'Aplicação técnica de massa autonivelante' },
+      { label: 'Rodapés nobres', value: 'Cortes em meia-esquadria a 45 graus perfeitos' }
+    ],
+    eeat: {
+      experienceYears: 'Desde 2020 assentando milhares de metros quadrados de pisos na região serrana',
+      teamExpertise: 'Instaladores certificados por grandes fabricantes de pisos vinílicos e cerâmicas nobres',
+      abntNorms: [
+        { code: 'ABNT NBR 14917', title: 'Revestimentos resilientes de piso — Vinílico' },
+        { code: 'ABNT NBR 14833', title: 'Revestimentos de pisos laminados' }
+      ],
+      technicalResponsibility: 'Medição prévia de umidade residual da laje com higrômetro de contato',
+      safetyAndInsurance: 'Utilização de adesivos acrílicos sem solventes (baixo VOC) sem cheiro forte',
+      guaranteePeriod: 'Garantia de assentamento e não descolamento de réguas',
+      taxCompliance: 'Nota fiscal com garantia estendida de mão de obra'
+    },
+    overview: 'Na Serra Gaúcha, o conforto térmico é prioridade na escolha do piso. Pisos frios convencionais deixam os cômodos gelados durante o inverno, enquanto os pisos vinílicos e laminados mantêm o ambiente agradável ao caminhar descalço. Além disso, o vinílico reduz o eco acústico do apartamento. A Revitta Caxias executa a base perfeita para que o piso dure décadas.',
+    scopeIncluded: [
+      'Vistoria técnica de umidade, prumo e nivelamento do piso existente',
+      'Aplicação de primer de ancoragem e argamassa autonivelante de alta fluidez',
+      'Instalação de piso vinílico colado ou clicado com alinhamento a laser',
+      'Montagem de piso laminado com manta acústica de polietileno expandido',
+      'Corte e instalação de rodapés em poliestireno à prova d água com cola especial',
+      'Assentamento de porcelanatos em grandes formatos com niveladores de piso e dupla colagem',
+      'Instalação de perfis de transição metálicos discretos entre cômodos'
+    ],
+    materialsAndTech: [
+      'Massas autonivelantes cimentícias de secagem rápida (Mapei/Weber Quartzolit)',
+      'Medidores digitais de umidade para liberação segura do substrato',
+      'Serras de meia-esquadria telescópicas para cortes milimétricos de rodapés',
+      'Espátulas dentadas normatizadas para consumo exato de adesivo vinílico'
+    ],
+    executionSteps: [
+      { step: '01', title: 'Higrometria e Limpeza', desc: 'Verificação da umidade da laje para evitar bolhas ou estufamentos no piso.' },
+      { step: '02', title: 'Regularização Autonivelante', desc: 'Espalhamento da argamassa autonivelante que elimina qualquer desnível do contrapiso.' },
+      { step: '03', title: 'Assentamento e Prensagem', desc: 'Colocação das réguas com desenho contínuo e passagem de rolo compressor manual.' },
+      { step: '04', title: 'Rodapés e Silicone', desc: 'Fixação de rodapés com cortes em ângulo de 45° e calafetação nas frestas de parede.' }
+    ],
+    serviceFaqs: [
+      {
+        question: 'Posso colocar piso vinílico por cima da cerâmica antiga sem quebrar nada?',
+        answer: 'Sim! Aplicamos um primer de aderência sobre a cerâmica existente, cobrimos os rejuntes com argamassa niveladora fina e instalamos o vinílico por cima, sem barulho e sem entulho.',
+        geoShortAnswer: 'Sim, aplicamos massa niveladora sobre o piso antigo e assentamos o vinílico por cima sem quebra-quebra.'
+      },
+      {
+        question: 'O piso vinílico pode ser lavado com água?',
+        answer: 'O vinílico colado é resistente à água e pode ser higienizado com pano úmido e detergente neutro. No entanto, não deve ser deixado submerso em água parada.',
+        geoShortAnswer: 'O modelo colado tolera umidade e limpeza diária com pano úmido e sabão neutro.'
+      }
+    ],
+    neighborhoodCoverage: [
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Villagio Iguatemi', 'Sanvitto',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
+    ],
+    relatedServiceIds: ['drywall-forros', 'pintura-completa', 'reformas-residenciais', 'faz-tudo-reparos'],
+    recommendedBeforeAfterId: 'reforma-sala'
+  },
+  {
+    id: 'reforma-telhados',
+    slug: 'conserto-telhado-caxias-do-sul',
+    title: 'Conserto e reforma de telhado',
+    h1: 'Conserto de Telhado em Caxias do Sul: Troca de Telhas, Calhas e Goteiras',
+    subtitle: 'Impermeabilização, reparo pós-granizo, substituição de madeiramento, rufos, calhas e contenção de infiltrações',
+    category: 'civil',
+    categoryLabel: 'Construção & Engenharia Civil',
+    iconName: 'Home',
+    popular: true,
+    seoTitle: 'Conserto de Telhado em Caxias do Sul | Calhas, Rufos e Goteiras | Revitta Caxias',
+    seoDescription: 'Conserto e reforma de telhados em Caxias do Sul. Eliminação de goteiras e infiltrações, troca de telhas após granizo, calhas, rufos e impermeabilização.',
+    keywords: [
+      'conserto de telhado caxias do sul',
+      'troca de telhas granizo caxias',
+      'limpeza de calhas e rufos serra gaucha',
+      'reforma de cobertura caxias do sul',
+      'impermeabilizacao de telhado caxias'
+    ],
+    canonicalUrl: 'https://revittacaxias.com.br/conserto-telhado-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias realiza reparos e reformas completas de coberturas e telhados em Caxias do Sul e Serra Gaúcha. Atendemos emergências de granizo e vendavais, eliminamos goteiras, trocamos telhas cerâmicas e de fibrocimento, restauramos calhas e rufos oxidados e instalamos mantas térmicas impermeabilizantes.',
+    geoKeyFacts: [
+      { label: 'Plantão pós-temporal', value: 'Vistoria ágil para conter danos por tempestades e granizo' },
+      { label: 'Segurança em altura', value: 'Trabalho em estrita conformidade com a NR-35' },
+      { label: 'Proteção climática', value: 'Mantas aluminizadas com isolamento térmico' },
+      { label: 'Calhas e funilaria', value: 'Substituição de condutores e calhas sob medida' }
+    ],
+    eeat: {
+      experienceYears: 'Desde 2020 recuperando coberturas residenciais e pavilhões na Serra Gaúcha',
+      teamExpertise: 'Telhadistas e funileiros com certificado NR-35 (trabalho em altura) e equipamentos de ancoragem',
+      abntNorms: [
+        { code: 'ABNT NBR 15575-5', title: 'Sistemas de coberturas — Desempenho e estanqueidade' },
+        { code: 'NR-35', title: 'Trabalho em altura' }
+      ],
+      technicalResponsibility: 'Avaliação de integridade de tesouras, caibros e ripas antes de sobrecarregar com telhas novas',
+      safetyAndInsurance: 'Cadeirinhas suspensas, trava-quedas, linhas de vida temporárias e seguro',
+      guaranteePeriod: 'Garantia expressa contra infiltrações e goteiras nas áreas recuperadas',
+      taxCompliance: 'Orçamentos formais com discriminação para cobertura de seguros residenciais'
+    },
+    overview: 'O clima da Serra Gaúcha é notório pelas fortes chuvas com granizo, ventanias repentinas e invernos rigorosos. Telhados com telhas trincadas ou calhas entupidas provocam goteiras desastrosas no forro e podem arruinar móveis e o sistema elétrico. A Revitta Caxias executa revisões completas e consertos definitivos para proteger sua família.',
+    scopeIncluded: [
+      'Inspeção detalhada de madeiramento, ripas, caibros e tesouras estruturais',
+      'Substituição de telhas danificadas por granizo (fibrocimento, cerâmica, concreto e sanduíche)',
+      'Instalação de manta térmica aluminizada sob o telhado para vedação e controle de temperatura',
+      'Desentupimento, limpeza técnica, conserto e troca de calhas e rufos metálicos',
+      'Aplicação de mantas asfálticas aluminizadas e selantes elásticos de poliuretano (PU) em cumeeiras',
+      'Reforço de fixações para contenção de destelhamento por ventania',
+      'Laudos para acionamento de apólices de seguro residencial ou empresarial'
+    ],
+    materialsAndTech: [
+      'Mantas térmicas aluminizadas de dupla face com filme reforçado',
+      'Selantes de poliuretano (PU 40) de alta elasticidade com proteção contra raios UV',
+      'Calhas em chapa galvanizada ou galvalume dobradas sob medida',
+      'Parafusos auto-brocantes com arruelas de vedação em borracha EPDM'
+    ],
+    executionSteps: [
+      { step: '01', title: 'Inspeção Segura', desc: 'Subida na cobertura com linha de vida para mapear pontos exatos de infiltração.' },
+      { step: '02', title: 'Descarte de Peças Quebradas', desc: 'Remoção cautelosa das telhas partidas e limpeza de folhas e detritos das calhas.' },
+      { step: '03', title: 'Impermeabilização e Troca', desc: 'Assentamento de novas telhas com encaixes vedados e aplicação de manta térmica.' },
+      { step: '04', title: 'Teste de Água e Vedação', desc: 'Simulação de chuva com mangueira pressurizada para checar se 100% da água escoa.' }
+    ],
+    serviceFaqs: [
+      {
+        question: 'Vocês atendem com urgência se meu telhado quebrou com chuva de pedra?',
+        answer: 'Sim, mantemos equipes prontas para colocação emergencial de lonas protetoras imediatas para evitar que a água invada a residência, seguida pela troca definitiva das telhas danificadas.',
+        geoShortAnswer: 'Sim, realizamos atendimento emergencial com lona protetora e troca rápida de telhas.'
+      },
+      {
+        question: 'A manta térmica diminui o calor no verão e o frio no inverno?',
+        answer: 'Sim, a manta aluminizada reflete até 95% do calor do sol no verão e impede que o calor da calefação/aquecimento escape pelo telhado no inverno caxiense.',
+        geoShortAnswer: 'Sim, reflete calor no verão e retém a temperatura interna no inverno.'
+      }
+    ],
+    neighborhoodCoverage: [
+      'Centro', 'São Pelegrino', 'Panazzolo', 'Lourdes', 'Cruzeiro', 'Pio X', 'Santa Catarina',
+      'Farroupilha', 'Flores da Cunha', 'São Marcos'
+    ],
+    relatedServiceIds: ['manutencao-predial', 'alvenaria-pedreiro', 'drywall-forros', 'pintura-completa'],
     recommendedBeforeAfterId: 'reforma-fachada'
   },
   {
     id: 'faz-tudo-reparos',
-    slug: 'faz-tudo-reparos',
+    slug: 'faz-tudo-caxias-do-sul',
     title: 'Faz-tudo e pequenos reparos',
-    h1: 'Serviços de Faz-Tudo e Pequenos Reparos em Caxias do Sul',
-    subtitle: 'Instalação de suportes de TV, cortinas, troca de torneiras, luminárias, fechaduras e ajustes pontuais',
+    h1: 'Faz-Tudo em Caxias do Sul: Pequenos Reparos e Instalações',
+    subtitle: 'Marido de aluguel e reparos residenciais rápidos: instalação de suportes, torneiras, trincos e fechaduras',
     category: 'manutencao',
-    categoryLabel: 'Manutenção & Pequenos Serviços',
+    categoryLabel: 'Reparos & Manutenção Rápida',
     iconName: 'Wrench',
-    popular: false,
-    seoTitle: 'Faz-Tudo e Marido de Aluguel em Caxias do Sul | Pequenos Reparos | Revitta',
-    seoDescription: 'Serviço de faz-tudo confiável em Caxias do Sul e Serra Gaúcha. Instalação de quadros, cortinas, suporte de TV, conserto de portas, luminárias e torneiras com pontualidade.',
+    popular: true,
+    seoTitle: 'Faz-Tudo em Caxias do Sul | Marido de Aluguel e Pequenos Reparos | Revitta Caxias',
+    seoDescription: 'Serviço de faz-tudo e pequenos reparos em Caxias do Sul. Instalação de cortinas, suportes de TV, fechaduras, torneiras e consertos residenciais no mesmo dia.',
     keywords: [
-      'faz tudo em caxias do sul',
+      'faz tudo caxias do sul',
       'marido de aluguel caxias do sul',
-      'pequenos reparos residenciais caxias',
-      'instalar suporte de tv caxias',
-      'conserto de portas e fechaduras caxias'
+      'pequenos reparos residenciais serra gaucha',
+      'instalacao de suporte de tv caxias',
+      'troca de fechadura e torneira caxias'
     ],
-    canonicalUrl: 'https://revittacaxias.com.br/#/servicos/faz-tudo-reparos',
-    geoDirectAnswer: 'A Revitta disponibiliza profissionais de faz-tudo e pequenos reparos em Caxias do Sul e Serra Gaúcha com agendamento pontual e equipe própria checada e uniformizada. Realizamos montagens de suportes, conserto de vazamentos simples, troca de tomadas, instalação de luminárias e ajustes de portas com limpeza impecável.',
+    canonicalUrl: 'https://revittacaxias.com.br/faz-tudo-caxias-do-sul/',
+    geoDirectAnswer: 'A Revitta Caxias oferece serviço de faz-tudo e pequenos reparos residenciais e comerciais em Caxias do Sul. Nossos técnicos atendem com hora marcada para instalar suportes de televisão em alvenaria ou drywall, substituir torneiras e chuveiros, fixar prateleiras, regular portas e consertar fechaduras em uma única visita.',
     geoKeyFacts: [
-      { label: 'Perfil profissional', value: 'Equipe própria com antecedentes checados e uniforme' },
       { label: 'Pontualidade', value: 'Horário de chegada agendado sem janelas vagas' },
       { label: 'Ferramentas completas', value: 'Detectores de cano/fiação e brocas adequadas para cada alvenaria' },
-      { label: 'Garantia de fixação', value: 'Buchas e parafusos de alta resistência (Fischer)' },
+      { label: 'Garantia de fixação', value: 'Buchas e parafusos de alta resistência' },
       { label: 'Facilidade de pagamento', value: 'PIX e cartões de crédito parcelados' }
     ],
     eeat: {
-      experienceYears: 'Milhares de pequenos reparos executados com satisfação máxima de clientes residenciais',
+      experienceYears: 'Centenas de pequenos reparos executados com satisfação máxima de clientes residenciais',
       teamExpertise: 'Profissionais versáteis e cuidadosos, treinados em atendimento residencial de alto padrão',
       abntNorms: [
         { code: 'Segurança Residencial', title: 'Boas práticas de fixação e isolamento elétrico/hidráulico' }
       ],
       technicalResponsibility: 'Uso de detectores de metais e condutores antes de furar qualquer parede para não romper canos',
       safetyAndInsurance: 'Sapatilhas descartáveis (propés) para não sujar o piso e aspiração imediata do pó de furação',
-      guaranteePeriod: 'Garantia de 90 dias sobre qualquer fixação ou reparo executado',
+      guaranteePeriod: 'Garantia formal sobre qualquer fixação ou reparo executado',
       taxCompliance: 'Recibo ou nota fiscal discriminada com garantia do serviço'
     },
-    overview: 'Todo lar ou escritório acumula pendências que vão ficando para depois: aquela porta que raspa no piso, a torneira pingando, o suporte de TV novo que precisa ser instalado sem furar um cano de água, ou as lâmpadas queimadas em pé-direito duplo. A Revitta envia um profissional experiente e com ferramental completo para resolver todas as pendências em uma única visita.',
+    overview: 'Todo lar ou escritório acumula pendências que vão ficando para depois: aquela porta que raspa no piso, a torneira pingando, o suporte de TV novo que precisa ser instalado sem furar um cano de água, ou as lâmpadas queimadas em pé-direito duplo. A Revitta Caxias envia um profissional experiente e com ferramental completo para resolver tudo de uma vez.',
     scopeIncluded: [
       'Instalação de suportes articulados ou fixos de TV em alvenaria ou drywall com buchas específicas',
       'Fixação de prateleiras, espelhos pesados, quadros e cortinas/persianas',
@@ -861,9 +892,53 @@ export const DETAILED_SERVICES: ServiceDetailed[] = [
   }
 ];
 
+export const LEGACY_SLUG_MAP: Record<string, string> = {
+  // Legacy service IDs / slugs to clean standardized slugs
+  'reformas-gerais': 'reformas-residenciais-caxias-do-sul',
+  'reformas-residenciais-comerciais': 'reformas-residenciais-caxias-do-sul',
+  'reformas-residenciais': 'reformas-residenciais-caxias-do-sul',
+  'reformas-comerciais': 'reformas-comerciais-caxias-do-sul',
+  'reformas-comerciais-em-caxias-do-sul-lojas-escritorios-e-salas-or-revitta': 'reformas-comerciais-caxias-do-sul',
+  'reforma-comercial-em-caxias-do-sul-agilidade-e-projetos': 'reformas-comerciais-caxias-do-sul',
+  'instalacoes-eletricas': 'eletricista-caxias-do-sul',
+  'manutencao-eletrica-caxias-do-sul': 'eletricista-caxias-do-sul',
+  'eletricista': 'eletricista-caxias-do-sul',
+  'encanamento-hidraulica': 'encanador-caxias-do-sul',
+  'encanador': 'encanador-caxias-do-sul',
+  'alvenaria-pedreiro': 'pedreiro-caxias-do-sul',
+  'pedreiro-em-caxias-do-sul': 'pedreiro-caxias-do-sul',
+  'pedreiro-alvenaria-caxias-do-sul': 'pedreiro-caxias-do-sul',
+  'pedreiro': 'pedreiro-caxias-do-sul',
+  'pintura-completa': 'pintor-caxias-do-sul',
+  'pintor': 'pintor-caxias-do-sul',
+  'drywall-forros': 'drywall-caxias-do-sul',
+  'drywall-e-forros': 'drywall-caxias-do-sul',
+  'drywall': 'drywall-caxias-do-sul',
+  'pisos-acabamentos': 'piso-vinilico-caxias-do-sul',
+  'pisos-e-acabamentos': 'piso-vinilico-caxias-do-sul',
+  'piso-vinilico': 'piso-vinilico-caxias-do-sul',
+  'reforma-telhados': 'conserto-telhado-caxias-do-sul',
+  'conserto-telhado': 'conserto-telhado-caxias-do-sul',
+  'manutencao-predial': 'manutencao-predial-caxias-do-sul',
+  'faz-tudo-reparos': 'faz-tudo-caxias-do-sul',
+  'faz-tudo': 'faz-tudo-caxias-do-sul'
+};
+
 export function getServiceBySlugOrId(identifier: string): ServiceDetailed | undefined {
-  const clean = identifier.toLowerCase().trim();
-  return DETAILED_SERVICES.find(s => s.id === clean || s.slug === clean);
+  if (!identifier) return undefined;
+  const clean = identifier.toLowerCase().replace(/^\/+|\/+$/g, '').trim();
+  
+  // 1. Direct match by slug or id
+  const direct = DETAILED_SERVICES.find(s => s.id === clean || s.slug === clean);
+  if (direct) return direct;
+
+  // 2. Check legacy map
+  const mappedSlug = LEGACY_SLUG_MAP[clean];
+  if (mappedSlug) {
+    return DETAILED_SERVICES.find(s => s.slug === mappedSlug || s.id === mappedSlug);
+  }
+
+  return undefined;
 }
 
 export function getAllServicesDetailed(): ServiceDetailed[] {

@@ -37,39 +37,55 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const navLinks = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Serviços', href: '#servicos' },
-    { label: 'Atendimento', href: '#atendimento' },
-    { label: 'Processo', href: '#processo' },
-    { label: 'Obras', href: '#obras' },
-    { label: 'Sobre Nós', href: '#sobre' },
-    { label: 'Cidades', href: '#areas' },
-    { label: 'Depoimentos', href: '#depoimentos' },
-    { label: 'Dúvidas', href: '#faq' },
-    { label: 'Trabalhe Conosco', href: '#/trabalhe-conosco', highlight: true },
+    { label: 'Início', href: '/' },
+    { label: 'Serviços', href: '/#servicos' },
+    { label: 'Atendimento', href: '/#atendimento' },
+    { label: 'Processo', href: '/#processo' },
+    { label: 'Obras', href: '/#obras' },
+    { label: 'Sobre Nós', href: '/#sobre' },
+    { label: 'Cidades', href: '/#areas' },
+    { label: 'Depoimentos', href: '/#depoimentos' },
+    { label: 'Dúvidas', href: '/#faq' },
+    { label: 'Trabalhe Conosco', href: '/trabalhe-conosco/', highlight: true },
   ];
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
 
-    if (href === '#/trabalhe-conosco') {
+    if (href === '/trabalhe-conosco/') {
       if (onNavigateTrabalheConosco) {
         onNavigateTrabalheConosco();
       } else {
-        window.location.hash = '#/trabalhe-conosco';
+        window.location.href = '/trabalhe-conosco/';
       }
       return;
     }
 
-    if ((isServicePage || isTrabalheConosco) && onNavigateHome) {
-      onNavigateHome();
-      // Delay slightly for render before scrolling to anchor
-      setTimeout(() => {
-        if (href.startsWith('#')) {
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (href === '/') {
+      if (onNavigateHome) {
+        onNavigateHome();
+      } else {
+        window.location.href = '/';
+      }
+      return;
+    }
+
+    if (href.startsWith('/#')) {
+      const anchor = href.replace('/', '');
+      if (isServicePage || isTrabalheConosco) {
+        if (onNavigateHome) {
+          onNavigateHome();
+          setTimeout(() => {
+            const el = document.querySelector(anchor);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 150);
+        } else {
+          window.location.href = href;
         }
-      }, 100);
+      } else {
+        const el = document.querySelector(anchor);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -102,15 +118,18 @@ export const Header: React.FC<HeaderProps> = ({
           isScrolled ? 'py-2 sm:py-2.5' : 'py-3 sm:py-3.5'
         }`}
       >
-        {/* Brand Logo */}
-        <button 
-          type="button" 
-          onClick={() => handleNavClick('#inicio')}
+        {/* Brand Logo with semantic link */}
+        <a 
+          href="/" 
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('/');
+          }}
           className="focus:outline-none focus:ring-2 focus:ring-indigo-700 rounded-lg text-left cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
-          aria-label="Ir para a página inicial da Revitta"
+          aria-label="Ir para a página inicial da Revitta Caxias"
         >
           <RevittaLogo />
-        </button>
+        </a>
 
         {/* Header Actions: Phone, WhatsApp CTA & Universal Menu Toggle */}
         <div className="flex items-center gap-2 sm:gap-3">
@@ -185,9 +204,7 @@ export const Header: React.FC<HeaderProps> = ({
                     key={link.href}
                     href={link.href}
                     onClick={(e) => {
-                      if (link.href.startsWith('#/')) {
-                        e.preventDefault();
-                      }
+                      e.preventDefault();
                       handleNavClick(link.href);
                     }}
                     className={`p-3 rounded-xl border text-sm font-semibold transition-all cursor-pointer flex items-center justify-between group ${

@@ -6,6 +6,7 @@ import {
   ArrowRight, Check, MapPin, Sparkles, Filter 
 } from 'lucide-react';
 import { SERVICES, CITIES, createWhatsAppUrl, createServiceCityWhatsAppUrl } from '../data/revittaData';
+import { getServiceBySlugOrId } from '../data/servicesDetailedData';
 import { SparkleIcon } from './SparkleIcon';
 import { SectionReveal } from './SectionReveal';
 
@@ -218,16 +219,25 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
 
                 {/* Navigation and WhatsApp CTA */}
                 <div className="mt-6 pt-4 border-t border-indigo-100 space-y-2.5">
-                  {onSelectService && (
-                    <button
-                      type="button"
-                      onClick={() => onSelectService(service.id)}
-                      className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-950 py-1.5 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer"
-                    >
-                      <span>Ver especificações e normas técnicas</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  )}
+                  {(() => {
+                    const detailedSrv = getServiceBySlugOrId(service.id);
+                    const targetSlug = detailedSrv?.slug || service.id;
+                    return (
+                      <a
+                        href={`/${targetSlug}/`}
+                        onClick={(e) => {
+                          if (onSelectService) {
+                            e.preventDefault();
+                            onSelectService(detailedSrv?.id || service.id);
+                          }
+                        }}
+                        className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-950 py-1.5 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer"
+                      >
+                        <span>Ver especificações e normas técnicas</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    );
+                  })()}
 
                   <motion.a
                     href={serviceWaUrl}

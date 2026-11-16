@@ -321,147 +321,11 @@ Encaminhado para: ${PARTNER_EMAIL}`;
           <p className="mt-4 text-base sm:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Conectamos profissionais liberais, técnicos autônomos e mestres de obra aos projetos residenciais e comerciais de alto padrão em Caxias do Sul. Tenha obras contínuas, materiais no canteiro e <strong className="text-indigo-950 font-semibold">pagamento pontual garantido</strong>.
           </p>
-
-          {/* Quick Metrics */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
-            <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
-              <Coins className="w-5 h-5 text-wa-green mx-auto mb-1.5" />
-              <div className="text-xs sm:text-sm font-bold text-indigo-950">Pagamento Pontual</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Por etapa e medição</div>
-            </div>
-            <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
-              <HardHat className="w-5 h-5 text-indigo-700 mx-auto mb-1.5" />
-              <div className="text-xs sm:text-sm font-bold text-indigo-950">Canteiro Organizado</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Materiais entregues</div>
-            </div>
-            <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
-              <ShieldCheck className="w-5 h-5 text-indigo-700 mx-auto mb-1.5" />
-              <div className="text-xs sm:text-sm font-bold text-indigo-950">Segurança Jurídica</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Contrato transparente</div>
-            </div>
-            <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
-              <Users className="w-5 h-5 text-indigo-700 mx-auto mb-1.5" />
-              <div className="text-xs sm:text-sm font-bold text-indigo-950">+50 Especialistas</div>
-              <div className="text-[11px] text-gray-500 mt-0.5">Rede ativa na região</div>
-            </div>
-          </div>
         </div>
-      </section>
 
-      {/* Main Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Column: Why Partner with Revitta & Guidance (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            {/* Why Partner Card */}
-            <div className="bg-white p-6 sm:p-7 rounded-3xl border border-indigo-100 shadow-xl shadow-indigo-950/5 space-y-5">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 shrink-0">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <h2 className="text-lg font-bold text-indigo-950 font-display">Vantagens para Você</h2>
-                  <p className="text-xs text-gray-500">Por que os melhores profissionais escolhem a Revitta</p>
-                </div>
-              </div>
-
-              <div className="space-y-4 pt-2 text-sm text-gray-600">
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-indigo-950 text-sm">Sem tempo ocioso entre obras</h3>
-                    <p className="text-xs text-gray-500 mt-0.5">Garantimos um fluxo frequente de projetos residenciais, prediais e comerciais em Caxias do Sul.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-indigo-950 text-sm">Você não gasta com materiais</h3>
-                    <p className="text-xs text-gray-500 mt-0.5">Toda a compra e transporte de insumos ficam sob responsabilidade da Revitta. Você traz seu conhecimento e ferramentas.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-indigo-950 text-sm">Respaldo técnico de Engenharia</h3>
-                    <p className="text-xs text-gray-500 mt-0.5">Projetos executivos bem desenhados, alinhamento técnico e equipe de engenharia para tirar dúvidas no canteiro.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-indigo-950 text-sm">Valorização da sua mão de obra</h3>
-                    <p className="text-xs text-gray-500 mt-0.5">Remuneração justa, prazos combinados sem improviso e reconhecimento para quem entrega com alto padrão.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Direct WhatsApp Callout for urgent inquiries */}
-              <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-100 flex items-center justify-between gap-3 text-xs">
-                <div>
-                  <span className="font-bold text-indigo-950 block">Dúvidas sobre o cadastro?</span>
-                  <span className="text-gray-600">Fale direto com nossa equipe.</span>
-                </div>
-                <a
-                  href={createWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-wa-green hover:bg-[#20bd5a] text-white font-bold py-2 px-3 rounded-xl transition-all shadow-sm active:scale-95 shrink-0"
-                >
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-
-            {/* Specialties Wanted List */}
-            <div className="bg-white p-6 rounded-3xl border border-indigo-100 shadow-sm space-y-3">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-indigo-950 font-display flex items-center gap-2">
-                <Wrench className="w-4 h-4 text-indigo-700" />
-                <span>Profissionais mais requisitados</span>
-              </h3>
-              <div className="flex flex-wrap gap-1.5 text-xs">
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Eletricistas Prediais</span>
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Encanadores & Caça-vazamento</span>
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Porcelanatistas</span>
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Pintores Airless & Fino</span>
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Drywall & Sancas</span>
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Telhadistas</span>
-                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Pedreiros de Acabamento</span>
-              </div>
-            </div>
-
-            {/* Address & Presence */}
-            <div className="bg-indigo-950 text-indigo-100 p-6 rounded-3xl shadow-xl space-y-3 text-xs">
-              <div className="flex items-center gap-2 text-wa-green font-bold text-sm">
-                <MapPin className="w-4 h-4" />
-                <span>Sede Revitta em Caxias do Sul</span>
-              </div>
-              <p className="text-indigo-200 leading-relaxed">
-                {COMPANY_INFO.fullAddress}
-              </p>
-              <div className="pt-3 border-t border-indigo-900 flex flex-col sm:flex-row items-center justify-between gap-2 text-indigo-300">
-                <span>Nossas redes & Google:</span>
-                <SocialLinksRow variant="header" />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Dedicated Partnership Form (7 cols) */}
-          <div className="lg:col-span-7">
-            <div className="bg-white p-6 sm:p-9 rounded-3xl border border-indigo-100 shadow-2xl shadow-indigo-950/10 relative">
+        {/* Dedicated Partnership Form positioned directly below the supporting line */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-10 relative z-10">
+          <div className="bg-white p-6 sm:p-9 rounded-3xl border border-indigo-100 shadow-2xl shadow-indigo-950/10 relative">
               
               {/* Form Title & Subtitle */}
               <div className="mb-6 pb-5 border-b border-indigo-100">
@@ -917,6 +781,142 @@ Encaminhado para: ${PARTNER_EMAIL}`;
                   </div>
                 </form>
               )}
+            </div>
+          </div>
+      </section>
+
+      {/* Main Container: Quick Metrics, Benefits & Guidance */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 relative z-20">
+        {/* Quick Metrics */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-10">
+          <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
+            <Coins className="w-5 h-5 text-wa-green mx-auto mb-1.5" />
+            <div className="text-xs sm:text-sm font-bold text-indigo-950">Pagamento Pontual</div>
+            <div className="text-[11px] text-gray-500 mt-0.5">Por etapa e medição</div>
+          </div>
+          <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
+            <HardHat className="w-5 h-5 text-indigo-700 mx-auto mb-1.5" />
+            <div className="text-xs sm:text-sm font-bold text-indigo-950">Canteiro Organizado</div>
+            <div className="text-[11px] text-gray-500 mt-0.5">Materiais entregues</div>
+          </div>
+          <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
+            <ShieldCheck className="w-5 h-5 text-indigo-700 mx-auto mb-1.5" />
+            <div className="text-xs sm:text-sm font-bold text-indigo-950">Segurança Jurídica</div>
+            <div className="text-[11px] text-gray-500 mt-0.5">Contrato transparente</div>
+          </div>
+          <div className="bg-white p-4 rounded-2xl border border-indigo-100 shadow-sm text-center">
+            <Users className="w-5 h-5 text-indigo-700 mx-auto mb-1.5" />
+            <div className="text-xs sm:text-sm font-bold text-indigo-950">+50 Especialistas</div>
+            <div className="text-[11px] text-gray-500 mt-0.5">Rede ativa na região</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Why Partner with Revitta (7 cols) */}
+          <div className="lg:col-span-7">
+            <div className="bg-white p-6 sm:p-7 rounded-3xl border border-indigo-100 shadow-xl shadow-indigo-950/5 space-y-5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 shrink-0">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-indigo-950 font-display">Vantagens para Você</h2>
+                  <p className="text-xs text-gray-500">Por que os melhores profissionais escolhem a Revitta</p>
+                </div>
+              </div>
+
+              <div className="space-y-4 pt-2 text-sm text-gray-600">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-indigo-950 text-sm">Sem tempo ocioso entre obras</h3>
+                    <p className="text-xs text-gray-500 mt-0.5">Garantimos um fluxo frequente de projetos residenciais, prediais e comerciais em Caxias do Sul.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-indigo-950 text-sm">Você não gasta com materiais</h3>
+                    <p className="text-xs text-gray-500 mt-0.5">Toda a compra e transporte de insumos ficam sob responsabilidade da Revitta. Você traz seu conhecimento e ferramentas.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-indigo-950 text-sm">Respaldo técnico de Engenharia</h3>
+                    <p className="text-xs text-gray-500 mt-0.5">Projetos executivos bem desenhados, alinhamento técnico e equipe de engenharia para tirar dúvidas no canteiro.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-wa-green/10 flex items-center justify-center text-wa-green shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-indigo-950 text-sm">Valorização da sua mão de obra</h3>
+                    <p className="text-xs text-gray-500 mt-0.5">Remuneração justa, prazos combinados sem improviso e reconhecimento para quem entrega com alto padrão.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Direct WhatsApp Callout for urgent inquiries */}
+              <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-100 flex items-center justify-between gap-3 text-xs">
+                <div>
+                  <span className="font-bold text-indigo-950 block">Dúvidas sobre o cadastro?</span>
+                  <span className="text-gray-600">Fale direto com nossa equipe.</span>
+                </div>
+                <a
+                  href={createWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-wa-green hover:bg-[#20bd5a] text-white font-bold py-2 px-3 rounded-xl transition-all shadow-sm active:scale-95 shrink-0"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Specialties & Address (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Specialties Wanted List */}
+            <div className="bg-white p-6 rounded-3xl border border-indigo-100 shadow-sm space-y-3">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-indigo-950 font-display flex items-center gap-2">
+                <Wrench className="w-4 h-4 text-indigo-700" />
+                <span>Profissionais mais requisitados</span>
+              </h3>
+              <div className="flex flex-wrap gap-1.5 text-xs">
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Eletricistas Prediais</span>
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Encanadores & Caça-vazamento</span>
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Porcelanatistas</span>
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Pintores Airless & Fino</span>
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Drywall & Sancas</span>
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Telhadistas</span>
+                <span className="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-medium">Pedreiros de Acabamento</span>
+              </div>
+            </div>
+
+            {/* Address & Presence */}
+            <div className="bg-indigo-950 text-indigo-100 p-6 rounded-3xl shadow-xl space-y-3 text-xs">
+              <div className="flex items-center gap-2 text-wa-green font-bold text-sm">
+                <MapPin className="w-4 h-4" />
+                <span>Sede Revitta em Caxias do Sul</span>
+              </div>
+              <p className="text-indigo-200 leading-relaxed">
+                {COMPANY_INFO.fullAddress}
+              </p>
+              <div className="pt-3 border-t border-indigo-900 flex flex-col sm:flex-row items-center justify-between gap-2 text-indigo-300">
+                <span>Nossas redes & Google:</span>
+                <SocialLinksRow variant="header" />
+              </div>
             </div>
           </div>
         </div>

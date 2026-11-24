@@ -1,20 +1,17 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { CITIES, createWhatsAppUrl } from '../data/revittaData';
 import { SparkleIcon } from './SparkleIcon';
-import { MapPin, MessageSquare, ArrowRight, Building } from 'lucide-react';
+import { MapPin, ArrowRight, Building } from 'lucide-react';
 import { SectionReveal } from './SectionReveal';
 
 export const Areas: React.FC = () => {
   return (
-    <section 
-      id="areas" 
+    <section
+      id="areas"
       className="bg-mist relative"
       style={{ paddingTop: '40px', paddingBottom: '40px' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header with Reveal */}
         <SectionReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100/90 text-indigo-700 text-xs font-bold tracking-wide uppercase mb-3 border border-indigo-200/50">
@@ -30,64 +27,57 @@ export const Areas: React.FC = () => {
           </div>
         </SectionReveal>
 
-        {/* 4 Cities Cards with Motion Stagger */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CITIES.map((city, index) => {
             const cityWaUrl = createWhatsAppUrl();
 
             return (
-              <motion.div 
-                key={city.name}
-                id={`card-cidade-${city.name.toLowerCase().replace(/\s+/g, '-')}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-indigo-100 shadow-sm hover:shadow-xl hover:shadow-indigo-950/6 hover:border-indigo-300 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center group-hover:bg-indigo-700 group-hover:text-white transition-colors duration-300 shadow-sm">
-                      <MapPin className="w-5 h-5" />
+              <SectionReveal key={city.name} delay={index * 0.06}>
+                <div
+                  id={`card-cidade-${city.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="bg-white rounded-3xl p-6 sm:p-7 border border-indigo-100 shadow-sm hover:shadow-xl hover:shadow-indigo-950/6 hover:border-indigo-300 hover:-translate-y-1.5 transition-all duration-200 flex flex-col justify-between group h-full"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center group-hover:bg-indigo-700 group-hover:text-white transition-colors duration-300 shadow-sm">
+                        <MapPin className="w-5 h-5" />
+                      </div>
+                      <span className="text-[11px] font-bold text-gray-600 bg-mist px-2.5 py-1 rounded-md border border-indigo-100/60">
+                        CEP {city.cep}
+                      </span>
                     </div>
-                    <span className="text-[11px] font-bold text-gray-600 bg-mist px-2.5 py-1 rounded-md border border-indigo-100/60">
-                      CEP {city.cep}
-                    </span>
+
+                    <h3 className="text-xl font-bold font-display text-indigo-950 group-hover:text-indigo-700 transition-colors">
+                      {city.name}
+                    </h3>
+
+                    <p className="text-xs text-indigo-700 font-semibold mt-1">
+                      {city.highlight}
+                    </p>
+
+                    <p className="text-xs text-gray-600 mt-3 border-t border-indigo-50 pt-3 leading-relaxed">
+                      <strong>Foco operacional:</strong> {city.focus}
+                    </p>
                   </div>
 
-                  <h3 className="text-xl font-bold font-display text-indigo-950 group-hover:text-indigo-700 transition-colors">
-                    {city.name}
-                  </h3>
-
-                  <p className="text-xs text-indigo-700 font-semibold mt-1">
-                    {city.highlight}
-                  </p>
-
-                  <p className="text-xs text-gray-600 mt-3 border-t border-indigo-50 pt-3 leading-relaxed">
-                    <strong>Foco operacional:</strong> {city.focus}
-                  </p>
+                  <div className="mt-6 pt-4 border-t border-indigo-100">
+                    <a
+                      href={cityWaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100/80 text-indigo-950 font-bold py-2.5 px-3 rounded-xl text-xs transition-all active:scale-[0.98] border border-indigo-200/60 group-hover:border-indigo-300 cursor-pointer"
+                    >
+                      <span>Avaliação em {city.name}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-indigo-700" />
+                    </a>
+                  </div>
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-indigo-100">
-                  <motion.a
-                    href={cityWaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full flex items-center justify-center gap-2 bg-indigo-50 hover:bg-indigo-100/80 text-indigo-950 font-bold py-2.5 px-3 rounded-xl text-xs transition-all border border-indigo-200/60 group-hover:border-indigo-300 cursor-pointer"
-                  >
-                    <span>Avaliação em {city.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-indigo-700" />
-                  </motion.a>
-                </div>
-              </motion.div>
+              </SectionReveal>
             );
           })}
         </div>
 
-        {/* Local presence guarantee box */}
-        <SectionReveal delay={0.2}>
+        <SectionReveal delay={0.15}>
           <div className="mt-12 p-6 bg-white rounded-3xl border border-indigo-100 shadow-sm max-w-3xl mx-auto text-center text-xs sm:text-sm text-gray-600">
             <div className="flex items-center justify-center gap-2 text-indigo-950 font-bold text-sm mb-1.5">
               <Building className="w-4 h-4 text-indigo-700" />

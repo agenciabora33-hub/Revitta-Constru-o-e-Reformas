@@ -44,21 +44,35 @@ h1, h2, h3, .font-display {
   letter-spacing: 0.03em;
 }
 
-/* WhatsApp pulse animation specified in PRD §8 */
-@keyframes wa-pulse {
+/* GPU-composited WhatsApp pulse ring (transform + opacity only, zero repaints) */
+@keyframes wa-pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    transform: scale(1);
+    opacity: 0.65;
   }
   70% {
-    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+    transform: scale(1.45);
+    opacity: 0;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    transform: scale(1.45);
+    opacity: 0;
   }
 }
 
 .wa-pulse {
-  animation: wa-pulse 3s infinite;
+  position: relative;
+}
+
+.wa-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 3px solid rgba(37, 211, 102, 0.7);
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: wa-pulse-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 /* Details summary remove marker */
@@ -76,7 +90,8 @@ details summary::-webkit-details-marker {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .wa-pulse {
+  .wa-pulse::after {
     animation: none !important;
+    display: none !important;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { COMPANY_INFO, createWhatsAppUrl } from '../data/revittaData';
-import { DETAILED_SERVICES } from '../data/servicesDetailedData';
+import { COMPANY_INFO } from '../data/revittaData';
+import { SERVICE_LINKS } from '../data/serviceLinks';
 import { RevittaLogo } from './RevittaLogo';
 import { SparkleIcon } from './SparkleIcon';
 import { SocialLinksRow } from './SocialLogos';
@@ -226,7 +226,7 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 text-xs">
-            {DETAILED_SERVICES.map((s) => (
+            {SERVICE_LINKS.map((s) => (
               <a
                 key={s.id}
                 href={`/${s.slug}/`}

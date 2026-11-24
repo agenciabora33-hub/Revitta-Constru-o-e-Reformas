@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { FAQ_ITEMS, createWhatsAppUrl } from '../data/revittaData';
 import { SparkleIcon } from './SparkleIcon';
 import { ChevronDown, MessageSquare } from 'lucide-react';
@@ -7,14 +6,12 @@ import { SectionReveal } from './SectionReveal';
 
 export const FaqSection: React.FC = () => {
   return (
-    <section 
-      id="faq" 
+    <section
+      id="faq"
       className="bg-mist relative"
       style={{ paddingTop: '40px', paddingBottom: '40px' }}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header with Reveal */}
         <SectionReveal>
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100/90 text-indigo-700 text-xs font-bold tracking-wide uppercase mb-3 border border-indigo-200/50">
@@ -30,13 +27,12 @@ export const FaqSection: React.FC = () => {
           </div>
         </SectionReveal>
 
-        {/* Semantic <details> Accordion List with Luxury Styling */}
         <div className="space-y-3.5">
           {FAQ_ITEMS.map((faq, index) => (
-            <SectionReveal key={index} delay={index * 0.04} yOffset={12}>
+            <SectionReveal key={index} delay={index * 0.03} yOffset={12}>
               <details
                 className="group bg-white rounded-2xl border border-indigo-100 shadow-xs hover:border-indigo-300 hover:shadow-md transition-all overflow-hidden"
-                open={index === 0} // First one open by default for immediate preview
+                open={index === 0}
               >
                 <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none focus:outline-none focus:ring-2 focus:ring-indigo-700 rounded-2xl">
                   <div className="flex items-center gap-3.5 pr-4">
@@ -66,24 +62,25 @@ export const FaqSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Support Box with Reveal */}
-        <SectionReveal delay={0.2}>
+        <SectionReveal delay={0.15}>
           <div className="mt-12 p-6 sm:p-8 bg-white rounded-3xl border border-indigo-100 shadow-md text-center flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="text-left">
-              <h3 className="text-base sm:text-lg font-bold text-indigo-950">Ficou com alguma dúvida sobre seu imóvel?</h3>
-              <p className="text-xs sm:text-sm text-gray-700 mt-1">Nosso time técnico atende diretamente pelo WhatsApp com respostas rápidas e sem compromisso.</p>
+              <h3 className="text-base sm:text-lg font-bold text-indigo-950">
+                Ficou com alguma dúvida sobre seu imóvel?
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-700 mt-1">
+                Nosso time técnico atende diretamente pelo WhatsApp com respostas rápidas e sem compromisso.
+              </p>
             </div>
-            <motion.a
+            <a
               href={createWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center gap-2 bg-wa-green hover:bg-[#20bd5a] text-white font-extrabold py-3 px-6 rounded-xl text-xs sm:text-sm shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-wa-green hover:bg-[#20bd5a] text-white font-extrabold py-3 px-6 rounded-xl text-xs sm:text-sm shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shrink-0 cursor-pointer"
             >
               <MessageSquare className="w-4 h-4 fill-white" />
               <span>Tirar Dúvida no WhatsApp</span>
-            </motion.a>
+            </a>
           </div>
         </SectionReveal>
       </div>

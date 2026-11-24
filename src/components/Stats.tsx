@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { STATS } from '../data/revittaData';
 import { SparkleIcon } from './SparkleIcon';
 import { AnimatedCounter } from './AnimatedCounter';
@@ -7,8 +6,8 @@ import { SectionReveal } from './SectionReveal';
 
 export const Stats: React.FC = () => {
   return (
-    <section 
-      id="numeros" 
+    <section
+      id="numeros"
       className="bg-indigo-950 text-white relative overflow-hidden"
       style={{ paddingTop: '30px', paddingBottom: '30px' }}
     >
@@ -36,31 +35,26 @@ export const Stats: React.FC = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {STATS.map((stat, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-indigo-900/60 backdrop-blur-sm border border-indigo-800/80 rounded-2xl p-5 sm:p-7 hover:border-indigo-600/70 hover:shadow-xl hover:shadow-indigo-950/40 transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight flex items-baseline gap-1">
-                  <AnimatedCounter value={stat.value} duration={2.2} />
-                  <span className="text-wa-green text-2xl font-sans inline-block group-hover:scale-125 transition-transform duration-300">•</span>
+            <SectionReveal key={idx} delay={idx * 0.08}>
+              <div className="bg-indigo-900/60 backdrop-blur-sm border border-indigo-800/80 rounded-2xl p-5 sm:p-7 hover:border-indigo-600/70 hover:shadow-xl hover:shadow-indigo-950/40 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group h-full">
+                <div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight flex items-baseline gap-1">
+                    <AnimatedCounter value={stat.value} duration={1.6} />
+                    <span className="text-wa-green text-2xl font-sans inline-block group-hover:scale-125 transition-transform duration-300">
+                      •
+                    </span>
+                  </div>
+                  <h3 className="text-sm sm:text-base font-bold text-indigo-200 mt-2">
+                    {stat.label}
+                  </h3>
                 </div>
-                <h3 className="text-sm sm:text-base font-bold text-indigo-200 mt-2">
-                  {stat.label}
-                </h3>
+                <p className="text-xs text-indigo-300/80 mt-4 pt-3.5 border-t border-indigo-800/60 leading-relaxed">
+                  {stat.detail}
+                </p>
               </div>
-              <p className="text-xs text-indigo-300/80 mt-4 pt-3.5 border-t border-indigo-800/60 leading-relaxed">
-                {stat.detail}
-              </p>
-            </motion.div>
+            </SectionReveal>
           ))}
         </div>
-
       </div>
     </section>
   );

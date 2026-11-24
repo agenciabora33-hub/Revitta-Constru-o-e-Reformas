@@ -1,17 +1,52 @@
-import React, { useState, useRef } from 'react';
-import { motion } from 'motion/react';
-import { 
-  MessageSquare, ShieldCheck, Clock, Users, 
-  CreditCard, CheckCircle2, Star, 
-  ChevronRight, Play, Pause, Volume2, VolumeX
+import React, { useState, useRef, useEffect } from 'react';
+import {
+  MessageSquare,
+  ShieldCheck,
+  Clock,
+  Users,
+  CreditCard,
+  CheckCircle2,
+  Star,
+  ChevronRight,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
 import { createWhatsAppUrl } from '../data/revittaData';
 
 export const Hero: React.FC = () => {
   const heroWhatsAppUrl = createWhatsAppUrl();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [videoReady, setVideoReady] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+
+  // Defer compressed video loading until right after first paint so LCP poster paints unhindered
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const prefersReduced =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    let timerId = 0;
+    const rafId = window.requestAnimationFrame(() => {
+      timerId = window.setTimeout(() => {
+        const isMobile = window.innerWidth < 768;
+        setVideoSrc(
+          isMobile
+            ? '/assets/hero-banheiro-mobile.mp4'
+            : '/assets/hero-banheiro-desktop.mp4'
+        );
+      }, 120);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      if (timerId) window.clearTimeout(timerId);
+    };
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -35,52 +70,85 @@ export const Hero: React.FC = () => {
   const trustBadges = [
     {
       icon: Clock,
-      title: "Desde 2020",
-      sub: "Solidez e mais de 380 obras na Serra Gaúcha"
+      title: 'Desde 2020',
+      sub: 'Solidez e mais de 380 obras na Serra Gaúcha',
     },
     {
       icon: ShieldCheck,
-      title: "Garantia Contratual",
-      sub: "Prazo assinado em contrato e ART / RRT formal"
+      title: 'Garantia Contratual',
+      sub: 'Prazo assinado em contrato e ART / RRT formal',
     },
     {
       icon: Users,
-      title: "+50 Especialistas",
-      sub: "Equipe própria, uniformizada e sem terceirização"
+      title: '+50 Especialistas',
+      sub: 'Equipe própria, uniformizada e sem terceirização',
     },
     {
       icon: CreditCard,
-      title: "Pagamento Flexível",
-      sub: "PIX e cartões parcelados com nota fiscal"
-    }
+      title: 'Pagamento Flexível',
+      sub: 'PIX e cartões parcelados com nota fiscal',
+    },
   ];
 
   const clientAvatars = [
-    { name: 'Ricardo S.', city: 'Caxias do Sul', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80' },
-    { name: 'Mariana B.', city: 'Farroupilha', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80' },
-    { name: 'Carlos E.', city: 'Caxias do Sul', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80' },
-    { name: 'Patrícia M.', city: 'Flores da Cunha', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80' }
+    {
+      name: 'Ricardo S.',
+      city: 'Caxias do Sul',
+      img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=72&h=72&q=75&fm=webp',
+    },
+    {
+      name: 'Mariana B.',
+      city: 'Farroupilha',
+      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=72&h=72&q=75&fm=webp',
+    },
+    {
+      name: 'Carlos E.',
+      city: 'Caxias do Sul',
+      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=72&h=72&q=75&fm=webp',
+    },
+    {
+      name: 'Patrícia M.',
+      city: 'Flores da Cunha',
+      img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=72&h=72&q=75&fm=webp',
+    },
   ];
 
   return (
-    <section 
-      id="inicio" 
+    <section
+      id="inicio"
       className="relative overflow-hidden bg-slate-950 text-white min-h-[580px] sm:min-h-[640px] flex flex-col justify-center"
       style={{ paddingTop: '30px', paddingBottom: '30px' }}
     >
-      {/* Background Video with Cinematic Scrims */}
+      {/* Background LCP Image + Deferred Compressed Video with Cinematic Scrims */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted={isMuted}
-          playsInline
-          poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80&fm=webp"
+        <img
+          src="/img/hero-poster-mobile.webp"
+          srcSet="/img/hero-poster-mobile.webp 720w, /img/hero-poster-desktop.webp 1280w"
+          sizes="100vw"
+          width={1344}
+          height={768}
+          alt=""
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-        >
-          <source src="/assets/aistudio/V_deo_Banheiro_7127e1ad.mp4" type="video/mp4" />
-        </video>
+        />
+
+        {videoSrc && (
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="metadata"
+            onCanPlay={() => setVideoReady(true)}
+            className={`absolute inset-0 w-full h-full object-cover object-center scale-105 transition-opacity duration-500 ${
+              videoReady ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        )}
 
         {/* Balanced cinematic scrim to ensure crystal-clear video visibility while maintaining text legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/50 to-slate-950/15 lg:to-transparent" />
@@ -109,38 +177,41 @@ export const Hero: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-wa-green animate-pulse" />
             <span className="font-semibold text-slate-200">Reforma em Ação</span>
             <span className="text-slate-600">·</span>
-            <button 
+            <button
               type="button"
               onClick={togglePlay}
               className="hover:text-white transition-colors flex items-center gap-1 cursor-pointer focus:outline-none"
-              title={isPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
-              aria-label={isPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
+              title={isPlaying ? 'Pausar vídeo' : 'Reproduzir vídeo'}
+              aria-label={isPlaying ? 'Pausar vídeo' : 'Reproduzir vídeo'}
             >
-              {isPlaying ? <Pause className="w-3.5 h-3.5 text-slate-300" /> : <Play className="w-3.5 h-3.5 text-wa-green" />}
+              {isPlaying ? (
+                <Pause className="w-3.5 h-3.5 text-slate-300" />
+              ) : (
+                <Play className="w-3.5 h-3.5 text-wa-green" />
+              )}
               <span>{isPlaying ? 'Pausar' : 'Play'}</span>
             </button>
             <span className="text-slate-600">·</span>
-            <button 
+            <button
               type="button"
               onClick={toggleMute}
               className="hover:text-white transition-colors flex items-center gap-1 cursor-pointer focus:outline-none"
-              title={isMuted ? "Ativar som" : "Desativar som"}
-              aria-label={isMuted ? "Ativar som" : "Desativar som"}
+              title={isMuted ? 'Ativar som' : 'Desativar som'}
+              aria-label={isMuted ? 'Ativar som' : 'Desativar som'}
             >
-              {isMuted ? <VolumeX className="w-3.5 h-3.5 text-slate-400" /> : <Volume2 className="w-3.5 h-3.5 text-wa-green" />}
+              {isMuted ? (
+                <VolumeX className="w-3.5 h-3.5 text-slate-400" />
+              ) : (
+                <Volume2 className="w-3.5 h-3.5 text-wa-green" />
+              )}
               <span>{isMuted ? 'Mudo' : 'Som'}</span>
             </button>
           </div>
         </div>
 
-        {/* Main Hero Copy - Spacious & Elegant */}
+        {/* Main Hero Copy - Painted immediately at FCP (no opacity: 0 delay) */}
         <div className="max-w-3xl lg:max-w-4xl py-4 sm:py-6">
-          <motion.div 
-            className="space-y-5 sm:space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <div className="space-y-5 sm:space-y-6">
             {/* Exact H1 requested with font-display */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.12] tracking-tight font-display drop-shadow-lg">
               Reformas e Construção em <span className="text-wa-green drop-shadow-md">Caxias do Sul</span>
@@ -148,37 +219,35 @@ export const Hero: React.FC = () => {
 
             {/* Reduced supporting line highlighting key points */}
             <p className="text-base sm:text-lg md:text-xl text-slate-100 leading-relaxed max-w-2xl font-medium drop-shadow-md">
-              Obras residenciais e comerciais com <strong className="font-bold text-white">equipe própria</strong>, <strong className="font-bold text-white">prazo garantido em contrato</strong> e <strong className="font-bold text-white">orçamento transparente</strong> na Serra Gaúcha.
+              Obras residenciais e comerciais com <strong className="font-bold text-white">equipe própria</strong>,{' '}
+              <strong className="font-bold text-white">prazo garantido em contrato</strong> e{' '}
+              <strong className="font-bold text-white">orçamento transparente</strong> na Serra Gaúcha.
             </p>
 
             {/* Dual CTAs: High-Converting WhatsApp Button + Secondary Explore Services */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
-              <motion.a
+              <a
                 id="hero-cta-whatsapp"
                 href={heroWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-wa-green to-[#20bd5a] hover:from-[#20bd5a] hover:to-wa-green text-white font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl shadow-wa-green/35 hover:shadow-2xl hover:shadow-wa-green/50 transition-all cursor-pointer overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-wa-green to-[#20bd5a] hover:from-[#20bd5a] hover:to-wa-green text-white font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-xl shadow-wa-green/35 hover:shadow-2xl hover:shadow-wa-green/50 transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer overflow-hidden"
               >
                 {/* Subtle highlight sheen effect */}
                 <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
-                
+
                 <MessageSquare className="w-6 h-6 fill-white text-white shrink-0 group-hover:rotate-6 transition-transform" />
                 <span className="relative z-10">Solicitar Orçamento no WhatsApp</span>
-              </motion.a>
+              </a>
 
-              <motion.a
+              <a
                 id="hero-cta-servicos"
                 href="#obras"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-base px-6 py-4 rounded-2xl border border-slate-700/80 shadow-md hover:border-slate-500 hover:shadow-lg transition-all cursor-pointer backdrop-blur-md"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-base px-6 py-4 rounded-2xl border border-slate-700/80 shadow-md hover:border-slate-500 hover:shadow-lg transition-all duration-200 hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer backdrop-blur-md"
               >
                 <span>Conhecer nossos serviços</span>
                 <ChevronRight className="w-4.5 h-4.5 text-wa-green" />
-              </motion.a>
+              </a>
             </div>
 
             {/* Social Proof & Google Rating Cluster */}
@@ -187,14 +256,15 @@ export const Hero: React.FC = () => {
                 {/* Stack of customer avatars */}
                 <div className="flex -space-x-2.5 overflow-hidden">
                   {clientAvatars.map((client, i) => (
-                    <img 
+                    <img
                       key={i}
                       src={client.img}
                       alt={client.name}
                       width={36}
                       height={36}
                       className="inline-block w-9 h-9 rounded-full ring-2 ring-slate-900 object-cover shadow-xs"
-                      loading="lazy"
+                      loading="eager"
+                      decoding="async"
                     />
                   ))}
                 </div>
@@ -227,7 +297,7 @@ export const Hero: React.FC = () => {
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* 4 Architectural Trust Pillars */}
@@ -236,14 +306,9 @@ export const Hero: React.FC = () => {
           {trustBadges.map((badge, idx) => {
             const Icon = badge.icon;
             return (
-              <motion.div 
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                className="bg-slate-900/70 border border-slate-800/80 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-lg flex flex-col items-start sm:flex-row sm:items-start gap-3 hover:border-slate-600 hover:bg-slate-900/90 transition-all h-full group"
+                className="bg-slate-900/70 border border-slate-800/80 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-lg flex flex-col items-start sm:flex-row sm:items-start gap-3 hover:border-slate-600 hover:bg-slate-900/90 hover:-translate-y-1 transition-all duration-200 h-full group"
               >
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-wa-green shrink-0 group-hover:bg-wa-green group-hover:text-slate-950 transition-colors duration-300">
                   <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
@@ -256,7 +321,7 @@ export const Hero: React.FC = () => {
                     {badge.sub}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

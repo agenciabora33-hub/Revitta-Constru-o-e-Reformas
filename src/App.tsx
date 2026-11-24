@@ -14,33 +14,50 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { CookieBanner } from './components/CookieBanner';
 import { AtendimentoTransparencia } from './components/AtendimentoTransparencia';
-import { ServicePage } from './components/ServicePage';
-import { TrabalheConosco } from './components/TrabalheConosco';
-import { NotFoundPage } from './components/NotFoundPage';
-import { getServiceBySlugOrId } from './data/servicesDetailedData';
+import { resolveServiceLink } from './data/serviceLinks';
 
+const LazyServicePage = lazy(() =>
+  import('./components/ServicePage').then((module) => ({ default: module.ServicePage }))
+);
+const LazyTrabalheConosco = lazy(() =>
+  import('./components/TrabalheConosco').then((module) => ({ default: module.TrabalheConosco }))
+);
+const LazyNotFoundPage = lazy(() =>
+  import('./components/NotFoundPage').then((module) => ({ default: module.NotFoundPage }))
+);
 const PrivacyPolicyModal = lazy(() =>
   import('./components/PrivacyPolicyModal').then((module) => ({ default: module.PrivacyPolicyModal }))
 );
 
-interface AppProps {
-  ssrPath?: string;
+export interface AppSsrComponents {
+  ServicePage?: React.ComponentType<{
+    serviceId?: string;
+    onBackToHome: () => void;
+    onNavigateToService: (serviceId: string) => void;
+  }>;
+  TrabalheConosco?: React.ComponentType<{
+    onBackToHome: () => void;
+  }>;
+  NotFoundPage?: React.ComponentType;
 }
 
-export default function App({ ssrPath }: AppProps) {
+interface AppProps {
+  ssrPath?: string;
+  ssrComponents?: AppSsrComponents;
+}
+
+export default function App({ ssrPath, ssrComponents }: AppProps) {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
 
-  // Helper to resolve route from current pathname or SSR path
   const resolveCurrentRoute = useCallback(() => {
     let rawPath = '';
     if (ssrPath) {
       rawPath = ssrPath;
     } else if (typeof window !== 'undefined') {
-      // Check if user came with legacy hash router like #/servicos/... or #/trabalhe-conosco
       const hash = window.location.hash || '';
       if (hash.startsWith('#/servicos/')) {
         const slug = hash.replace('#/servicos/', '').split('?')[0].split('/')[0];
-        const srv = getServiceBySlugOrId(slug);
+        const srv = resolveServiceLink(slug);
         if (srv) {
           try {
             window.history.replaceState(null, '', `/${srv.slug}/`);
@@ -65,7 +82,6 @@ export default function App({ ssrPath }: AppProps) {
       rawPath = '/';
     }
 
-    // Normalize path
     const trimmed = rawPath.replace(/^\/+|\/+$/g, '').trim();
 
     if (!trimmed || trimmed === 'index.html') {
@@ -80,19 +96,16 @@ export default function App({ ssrPath }: AppProps) {
       return { type: '404' as const, serviceId: null };
     }
 
-    // Check service
-    const foundService = getServiceBySlugOrId(trimmed);
+    const foundService = resolveServiceLink(trimmed);
     if (foundService) {
       return { type: 'service' as const, serviceId: foundService.id };
     }
 
-    // Unknown route
     return { type: '404' as const, serviceId: null };
   }, [ssrPath]);
 
   const [routeState, setRouteState] = useState(() => resolveCurrentRoute());
 
-  // Listen to browser back/forward and hash changes
   useEffect(() => {
     const handleLocationChange = () => {
       setRouteState(resolveCurrentRoute());
@@ -108,7 +121,7 @@ export default function App({ ssrPath }: AppProps) {
   }, [resolveCurrentRoute]);
 
   const navigateToService = (serviceId: string) => {
-    const srv = getServiceBySlugOrId(serviceId);
+    const srv = resolveServiceLink(serviceId);
     if (srv) {
       if (typeof window !== 'undefined') {
         window.history.pushState(null, '', `/${srv.slug}/`);
@@ -140,93 +153,84 @@ export default function App({ ssrPath }: AppProps) {
     }
   };
 
-  const currentService = routeState.type === 'service' && routeState.serviceId 
-    ? getServiceBySlugOrId(routeState.serviceId) 
-    : null;
+  const ActiveServicePage = ssrComponents?.ServicePage ?? LazyServicePage;
+  const ActiveTrabalheConosco = ssrComponents?.TrabalheConosco ?? LazyTrabalheConosco;
+  const ActiveNotFoundPage = ssrComponents?.NotFoundPage ?? LazyNotFoundPage;
 
   return (
     <div className="min-h-screen flex flex-col bg-mist text-indigo-950 font-sans selection:bg-indigo-200 selection:text-indigo-950 relative">
-      {/* Sticky Header with universal navigation */}
-      <Header 
-        onNavigateHome={navigateToHome} 
+      <Header
+        onNavigateHome={navigateToHome}
         onNavigateTrabalheConosco={navigateToTrabalheConosco}
         isServicePage={routeState.type === 'service'}
         isTrabalheConosco={routeState.type === 'trabalhe-conosco'}
       />
 
-      {/* Main Content Area */}
       <main id="main-content" className="flex-grow pt-16 sm:pt-20">
         {routeState.type === 'trabalhe-conosco' ? (
-          /* Dedicated Trabalhe Conosco Page */
-          <TrabalheConosco onBackToHome={navigateToHome} />
-        ) : routeState.type === 'service' && currentService ? (
-          /* Dedicated Service Page */
-          <ServicePage
-            service={currentService}
-            onBackToHome={navigateToHome}
-            onNavigateToService={navigateToService}
-          />
+          ssrComponents?.TrabalheConosco ? (
+            <ActiveTrabalheConosco onBackToHome={navigateToHome} />
+          ) : (
+            <Suspense fallback={<div className="min-h-[60vh] bg-mist" />}>
+              <ActiveTrabalheConosco onBackToHome={navigateToHome} />
+            </Suspense>
+          )
+        ) : routeState.type === 'service' && routeState.serviceId ? (
+          ssrComponents?.ServicePage ? (
+            <ActiveServicePage
+              serviceId={routeState.serviceId}
+              onBackToHome={navigateToHome}
+              onNavigateToService={navigateToService}
+            />
+          ) : (
+            <Suspense fallback={<div className="min-h-[60vh] bg-mist" />}>
+              <ActiveServicePage
+                serviceId={routeState.serviceId}
+                onBackToHome={navigateToHome}
+                onNavigateToService={navigateToService}
+              />
+            </Suspense>
+          )
         ) : routeState.type === '404' ? (
-          /* Real 404 Not Found Page */
-          <NotFoundPage />
+          ssrComponents?.NotFoundPage ? (
+            <ActiveNotFoundPage />
+          ) : (
+            <Suspense fallback={<div className="min-h-[60vh] bg-mist" />}>
+              <ActiveNotFoundPage />
+            </Suspense>
+          )
         ) : (
-          /* Main Architectural One-Page Content Flow */
           <>
-            {/* #inicio (Hero with trust badges & primary WhatsApp CTA) */}
             <Hero />
-
-            {/* #numeros (Social proof metrics) */}
             <Stats />
-
-            {/* #servicos (11 service cards with dedicated page links & WhatsApp selector) */}
             <Services onSelectService={navigateToService} />
-
-            {/* #atendimento (Atendimento no Endereço do Cliente & Transparência) */}
             <AtendimentoTransparencia />
-
-            {/* #processo (4 structured steps from evaluation to guaranteed delivery) */}
             <Process />
-
-            {/* #obras (Interactive Before/After comparison slider) */}
             <BeforeAfterGallery />
-
-            {/* #sobre (E-E-A-T company foundation, specialists, technical manager) */}
             <About />
-
-            {/* #areas (Coverage cards for Caxias do Sul, Farroupilha, São Marcos, Flores da Cunha) */}
             <Areas />
-
-            {/* #depoimentos (Verified Google Business Profile reviews) */}
             <Testimonials />
-
-            {/* #faq (GEO direct answer-first with semantic accordion) */}
             <FaqSection />
-
-            {/* #contato (Final high-converting CTA section) */}
             <CtaFinal />
           </>
         )}
       </main>
 
-      {/* Footer with full NAP, business hours, emergency info, and dedicated service links */}
-      <Footer 
-        onOpenPrivacyPolicy={() => setPrivacyModalOpen(true)} 
+      <Footer
+        onOpenPrivacyPolicy={() => setPrivacyModalOpen(true)}
         onSelectService={navigateToService}
         onNavigateTrabalheConosco={navigateToTrabalheConosco}
       />
 
-      {/* Fixed WhatsApp Floating Conversion Button */}
       <FloatingWhatsApp />
 
-      {/* LGPD Cookie Consent Banner */}
       <CookieBanner onOpenPrivacyPolicy={() => setPrivacyModalOpen(true)} />
 
-      {/* Privacy Policy Modal */}
       {privacyModalOpen && (
         <Suspense fallback={null}>
-          <PrivacyPolicyModal 
-            isOpen={privacyModalOpen} 
-            onClose={() => setPrivacyModalOpen(false)} 
+          <PrivacyPolicyModal
+            isOpen={privacyModalOpen}
+            onClose={() => setPrivacyModalOpen(false)}
           />
         </Suspense>
       )}

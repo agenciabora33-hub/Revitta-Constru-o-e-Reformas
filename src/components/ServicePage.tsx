@@ -26,16 +26,19 @@ const iconComponents: Record<string, React.ElementType> = {
 };
 
 interface ServicePageProps {
-  service: ServiceDetailed;
+  service?: ServiceDetailed;
+  serviceId?: string;
   onBackToHome: () => void;
   onNavigateToService: (serviceId: string) => void;
 }
 
 export const ServicePage: React.FC<ServicePageProps> = ({ 
-  service, 
+  service: serviceProp,
+  serviceId,
   onBackToHome,
   onNavigateToService 
 }) => {
+  const service = serviceProp ?? DETAILED_SERVICES.find((s) => s.id === serviceId) ?? DETAILED_SERVICES[0];
   const [selectedCity, setSelectedCity] = useState<string>(CITIES[0].name);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -575,6 +578,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 <img 
                   src={beforeAfterCase.beforeImg} 
                   alt={`Antes: ${beforeAfterCase.title}`} 
+                  width={720}
+                  height={450}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-56 sm:h-72 object-cover"
                 />
                 <span className="absolute top-3 left-3 bg-red-600/90 text-white text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-xs">
@@ -585,6 +592,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 <img 
                   src={beforeAfterCase.afterImg} 
                   alt={`Depois: ${beforeAfterCase.title}`} 
+                  width={720}
+                  height={450}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-56 sm:h-72 object-cover"
                 />
                 <span className="absolute top-3 left-3 bg-wa-green/90 text-white text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-xs">

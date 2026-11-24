@@ -36,17 +36,15 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- Preconnect & DNS-Prefetch for External Critical Domains (Max 3-4 origins per PageSpeed) -->
+    <!-- Preconnect & DNS-Prefetch for External Critical Domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://i.ibb.co" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <link rel="dns-prefetch" href="https://i.ibb.co" />
 
     <!-- Preload Critical Logo Asset -->
-    <link rel="preload" as="image" href="/logo-revitta.png" />
+    <link rel="preload" as="image" href="/img/logo-revitta-80.webp" type="image/webp" />
 
     <!-- Google Fonts: Asynchronous Non-Render-Blocking Loading with Font Display Swap -->
     <link
@@ -67,11 +65,21 @@
       />
     </noscript>
 
-    <!-- High-priority Preload for Hero LCP Image -->
+    <!-- High-priority Preload for Local Hero LCP Poster Image (Responsive Mobile / Desktop) -->
     <link
       rel="preload"
       as="image"
-      href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=720&q=75&fm=webp"
+      href="/img/hero-poster-mobile.webp"
+      type="image/webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/img/hero-poster-desktop.webp"
+      type="image/webp"
+      media="(min-width: 768px)"
       fetchpriority="high"
     />
 

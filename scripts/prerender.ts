@@ -4,6 +4,9 @@ import { fileURLToPath } from 'node:url';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import App from '../src/App';
+import { ServicePage } from '../src/components/ServicePage';
+import { TrabalheConosco } from '../src/components/TrabalheConosco';
+import { NotFoundPage } from '../src/components/NotFoundPage';
 import { DETAILED_SERVICES } from '../src/data/servicesDetailedData';
 import { COMPANY_INFO } from '../src/data/revittaData';
 
@@ -76,7 +79,12 @@ async function runPrerender() {
   for (const route of routes) {
     try {
       // Render component tree to static string
-      const appHtml = renderToString(React.createElement(App, { ssrPath: route.path }));
+      const appHtml = renderToString(
+        React.createElement(App, {
+          ssrPath: route.path,
+          ssrComponents: { ServicePage, TrabalheConosco, NotFoundPage }
+        })
+      );
 
       let html = baseTemplate;
 

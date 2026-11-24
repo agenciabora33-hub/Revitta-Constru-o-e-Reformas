@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { 
   Briefcase, HardHat, CheckCircle2, ShieldCheck, Clock, 
   Coins, Users, Wrench, Sparkles, MapPin, ArrowLeft, Send, 
@@ -347,11 +346,7 @@ Encaminhado para: ${PARTNER_EMAIL}`;
                   const { subject: mailSubject, body: mailBody } = generateEmailPayload(formData, submittedData.protocol);
                   const mailtoHref = `mailto:${PARTNER_EMAIL}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
                   return (
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="py-6 px-5 sm:px-7 rounded-2xl bg-gradient-to-br from-indigo-50/90 to-emerald-50/50 border border-wa-green/30 text-center space-y-4"
-                    >
+                    <div className="py-6 px-5 sm:px-7 rounded-2xl bg-gradient-to-br from-indigo-50/90 to-emerald-50/50 border border-wa-green/30 text-center space-y-4">
                       <div className="w-16 h-16 rounded-full bg-wa-green/15 text-wa-green flex items-center justify-center mx-auto shadow-inner">
                         <CheckCircle2 className="w-9 h-9" />
                       </div>
@@ -427,7 +422,7 @@ Encaminhado para: ${PARTNER_EMAIL}`;
                           Cadastrar Outro Profissional
                         </button>
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })()
               ) : (

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useInView, animate } from 'motion/react';
+import React, { useEffect, useRef } from 'react';
 
 interface AnimatedCounterProps {
   value: string;
@@ -7,48 +6,83 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ 
-  value, 
-  duration = 2.0,
-  className = ''
+export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+  value,
+  duration = 1.6,
+  className = '',
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-40px' });
 
   useEffect(() => {
-    if (!isInView || !ref.current) return;
+    const el = ref.current;
+    if (!el || typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
 
-    // Check for plus prefix
     const hasPlus = value.startsWith('+');
-    // Extract numerical digits
     const digitsOnly = value.replace(/\D/g, '');
-    const num = parseInt(digitsOnly, 10);
+    const targetNum = parseInt(digitsOnly, 10);
 
-    if (isNaN(num)) {
-      if (ref.current) ref.current.textContent = value;
+    if (isNaN(targetNum)) {
+      el.textContent = value;
       return;
     }
 
-    // Extract any trailing suffix (e.g. "h" in "24h")
     const matchSuffix = value.match(/[a-zA-Z%]+$/);
     const suffix = matchSuffix ? matchSuffix[0] : '';
 
-    const controls = animate(0, num, {
-      duration,
-      ease: [0.16, 1, 0.3, 1], // Luxury deceleration curve
-      onUpdate: (latest) => {
+    let rafId = 0;
+    let hasAnimated = false;
+
+    const startAnimation = () => {
+      if (hasAnimated) return;
+      hasAnimated = true;
+
+      const prefersReduced =
+        window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        const formatted =
+          targetNum >= 1000 ? targetNum.toLocaleString('pt-BR') : targetNum.toString();
+        el.textContent = `${hasPlus ? '+' : ''}${formatted}${suffix}`;
+        return;
+      }
+
+      const startTime = performance.now();
+      const durationMs = duration * 1000;
+
+      const tick = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / durationMs, 1);
+        // Smooth cubic ease-out
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const rounded = Math.round(eased * targetNum);
+        const formatted = rounded >= 1000 ? rounded.toLocaleString('pt-BR') : rounded.toString();
         if (ref.current) {
-          const rounded = Math.round(latest);
-          const formatted = rounded >= 1000 
-            ? rounded.toLocaleString('pt-BR')
-            : rounded.toString();
           ref.current.textContent = `${hasPlus ? '+' : ''}${formatted}${suffix}`;
         }
-      }
-    });
+        if (progress < 1) {
+          rafId = requestAnimationFrame(tick);
+        }
+      };
 
-    return () => controls.stop();
-  }, [isInView, value, duration]);
+      rafId = requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          startAnimation();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-40px 0px', threshold: 0.1 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [value, duration]);
 
   return (
     <span ref={ref} className={className}>

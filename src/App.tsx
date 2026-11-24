@@ -28,6 +28,9 @@ const LazyNotFoundPage = lazy(() =>
 const PrivacyPolicyModal = lazy(() =>
   import('./components/PrivacyPolicyModal').then((module) => ({ default: module.PrivacyPolicyModal }))
 );
+const LazyBioPage = lazy(() =>
+  import('./components/BioPage').then((module) => ({ default: module.BioPage }))
+);
 
 export interface AppSsrComponents {
   ServicePage?: React.ComponentType<{
@@ -39,6 +42,7 @@ export interface AppSsrComponents {
     onBackToHome: () => void;
   }>;
   NotFoundPage?: React.ComponentType;
+  BioPage?: React.ComponentType;
 }
 
 interface AppProps {
@@ -90,6 +94,10 @@ export default function App({ ssrPath, ssrComponents }: AppProps) {
 
     if (trimmed === 'trabalhe-conosco') {
       return { type: 'trabalhe-conosco' as const, serviceId: null };
+    }
+
+    if (trimmed === 'bio') {
+      return { type: 'bio' as const, serviceId: null };
     }
 
     if (trimmed === '404' || trimmed === '404.html') {
@@ -156,6 +164,18 @@ export default function App({ ssrPath, ssrComponents }: AppProps) {
   const ActiveServicePage = ssrComponents?.ServicePage ?? LazyServicePage;
   const ActiveTrabalheConosco = ssrComponents?.TrabalheConosco ?? LazyTrabalheConosco;
   const ActiveNotFoundPage = ssrComponents?.NotFoundPage ?? LazyNotFoundPage;
+  const ActiveBioPage = ssrComponents?.BioPage ?? LazyBioPage;
+
+  if (routeState.type === 'bio') {
+    if (ssrComponents?.BioPage) {
+      return <ActiveBioPage />;
+    }
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-[#170F3D]" />}>
+        <ActiveBioPage />
+      </Suspense>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-mist text-indigo-950 font-sans selection:bg-indigo-200 selection:text-indigo-950 relative">

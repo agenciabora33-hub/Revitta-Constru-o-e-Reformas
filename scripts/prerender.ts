@@ -7,6 +7,7 @@ import App from '../src/App';
 import { ServicePage } from '../src/components/ServicePage';
 import { TrabalheConosco } from '../src/components/TrabalheConosco';
 import { NotFoundPage } from '../src/components/NotFoundPage';
+import { BioPage } from '../src/components/BioPage';
 import { DETAILED_SERVICES } from '../src/data/servicesDetailedData';
 import { COMPANY_INFO } from '../src/data/revittaData';
 
@@ -77,6 +78,14 @@ async function runPrerender() {
       canonical: 'https://revittacaxias.com.br/trabalhe-conosco/',
     },
     {
+      path: '/bio',
+      outputFile: path.resolve(distDir, 'bio', 'index.html'),
+      title: 'Revitta Caxias — Links oficiais e avaliação',
+      description:
+        'Fale com a Revitta no WhatsApp, acesse nosso site, redes sociais e avalie nosso atendimento. Reformas e manutenção em Caxias do Sul e Serra Gaúcha.',
+      canonical: 'https://revittacaxias.com.br/bio',
+    },
+    {
       path: '/404.html',
       outputFile: path.resolve(distDir, '404.html'),
       title: 'Página não encontrada (404) | Revitta Caxias',
@@ -110,7 +119,7 @@ async function runPrerender() {
       const appHtml = renderToString(
         React.createElement(App, {
           ssrPath: route.path,
-          ssrComponents: { ServicePage, TrabalheConosco, NotFoundPage },
+          ssrComponents: { ServicePage, TrabalheConosco, NotFoundPage, BioPage },
         })
       );
 
@@ -325,6 +334,27 @@ async function runPrerender() {
         };
         const jsonLdTag = `<!-- Schema.org Structured Data (JSON-LD) -->\n    <script id="prerender-structured-data" type="application/ld+json">\n${JSON.stringify(trabalheSchema, null, 2)}\n    </script>`;
         html = html.replace(homeJsonLdRegex, jsonLdTag);
+      } else if (route.path === '/bio') {
+        html = html.replace(
+          /<meta name="robots" content=".*?" \/>/i,
+          '<meta name="robots" content="index,follow" />'
+        );
+        const bioSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          '@id': 'https://revittacaxias.com.br/bio#webpage',
+          url: 'https://revittacaxias.com.br/bio',
+          name: route.title,
+          description: route.description,
+          inLanguage: 'pt-BR',
+          isPartOf: {
+            '@type': 'WebSite',
+            url: COMPANY_INFO.website,
+            name: COMPANY_INFO.brand,
+          },
+        };
+        const jsonLdTag = `<!-- Schema.org Structured Data (JSON-LD) -->\n    <script id="prerender-structured-data" type="application/ld+json">\n${JSON.stringify(bioSchema, null, 2)}\n    </script>`;
+        html = html.replace(homeJsonLdRegex, jsonLdTag);
       }
 
       const targetDir = path.dirname(route.outputFile);
@@ -355,7 +385,8 @@ function generateSitemap(canonicalRoutes: RouteConfig[]) {
   for (const route of canonicalRoutes) {
     const isHome = route.path === '/';
     const isTrabalhe = route.path === '/trabalhe-conosco/';
-    const priority = isHome ? '1.0' : isTrabalhe ? '0.8' : '0.9';
+    const isBio = route.path === '/bio';
+    const priority = isHome ? '1.0' : isTrabalhe ? '0.8' : isBio ? '0.7' : '0.9';
     const changefreq = isHome ? 'weekly' : 'monthly';
 
     xml += `  <url>\n`;

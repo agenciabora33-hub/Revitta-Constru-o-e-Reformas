@@ -125,11 +125,69 @@ export const Header: React.FC<HeaderProps> = ({
             e.preventDefault();
             handleNavClick('/');
           }}
-          className="focus:outline-none focus:ring-2 focus:ring-indigo-700 rounded-lg text-left cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
+          className="focus:outline-none focus:ring-2 focus:ring-indigo-700 rounded-lg text-left cursor-pointer transition-transform duration-300 hover:scale-[1.02] shrink-0"
           aria-label="Ir para a página inicial da Revitta Caxias"
         >
           <RevittaLogo />
         </a>
+
+        {/* Visible Semantic Desktop Navigation for Instant Crawlability & UX */}
+        <nav aria-label="Navegação Principal" className="hidden lg:flex items-center gap-5 xl:gap-6">
+          <a
+            href="/#servicos"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/#servicos');
+            }}
+            className="text-xs font-bold text-indigo-950 hover:text-indigo-700 transition-colors whitespace-nowrap"
+          >
+            Serviços
+          </a>
+          <a
+            href="/#obras"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/#obras');
+            }}
+            className="text-xs font-bold text-indigo-950 hover:text-indigo-700 transition-colors whitespace-nowrap"
+          >
+            Obras
+          </a>
+          <a
+            href="/#sobre"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/#sobre');
+            }}
+            className="text-xs font-bold text-indigo-950 hover:text-indigo-700 transition-colors whitespace-nowrap"
+          >
+            Sobre Nós
+          </a>
+          <a
+            href="/#faq"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/#faq');
+            }}
+            className="text-xs font-bold text-indigo-950 hover:text-indigo-700 transition-colors whitespace-nowrap"
+          >
+            Dúvidas
+          </a>
+          <a
+            href="/trabalhe-conosco/"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('/trabalhe-conosco/');
+            }}
+            className={`text-xs font-bold px-2.5 py-1 rounded-lg transition-colors whitespace-nowrap ${
+              isTrabalheConosco
+                ? 'bg-indigo-900 text-white'
+                : 'text-indigo-800 bg-indigo-50 hover:bg-indigo-100'
+            }`}
+          >
+            Trabalhe Conosco
+          </a>
+        </nav>
 
         {/* Header Actions: Phone, WhatsApp CTA & Universal Menu Toggle */}
         <div className="flex items-center gap-2 sm:gap-3">

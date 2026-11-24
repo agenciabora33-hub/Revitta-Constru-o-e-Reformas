@@ -42,7 +42,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
   const [selectedCity, setSelectedCity] = useState<string>(CITIES[0].name);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Dynamic SEO, Title, Meta and Schema.org injection
+  // Dynamic SEO, Title, Meta, Canonical and Schema.org sync (no duplicate JSON-LD on SSG load)
   useEffect(() => {
     const originalTitle = document.title;
     document.title = service.seoTitle;
@@ -59,106 +59,133 @@ export const ServicePage: React.FC<ServicePageProps> = ({
       document.head.appendChild(metaDesc);
     }
 
-    // Schema.org Service, BreadcrumbList & FAQPage
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.id = 'service-structured-data';
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "@id": `${service.canonicalUrl}#service`,
-          "name": service.title,
-          "serviceType": service.categoryLabel,
-          "description": service.geoDirectAnswer,
-          "provider": {
-            "@type": "GeneralContractor",
-            "name": COMPANY_INFO.brand,
-            "url": COMPANY_INFO.website,
-            "telephone": `+${COMPANY_INFO.phoneRaw}`,
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": COMPANY_INFO.address,
-              "addressLocality": COMPANY_INFO.city,
-              "addressRegion": COMPANY_INFO.state,
-              "postalCode": COMPANY_INFO.cep,
-              "addressCountry": "BR"
-            },
-            "taxID": COMPANY_INFO.cnpj
-          },
-          "areaServed": [
-            { "@type": "City", "name": "Caxias do Sul" },
-            { "@type": "City", "name": "Farroupilha" },
-            { "@type": "City", "name": "Flores da Cunha" },
-            { "@type": "City", "name": "São Marcos" }
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": `Escopo de ${service.title}`,
-            "itemListElement": service.scopeIncluded.map((item, idx) => ({
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": item
+    // Update Canonical & Open Graph tags during SPA transitions
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    const originalCanonical = canonicalEl?.getAttribute('href') || '';
+    if (canonicalEl) canonicalEl.setAttribute('href', service.canonicalUrl);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const originalOgTitle = ogTitle?.getAttribute('content') || '';
+    if (ogTitle) ogTitle.setAttribute('content', service.seoTitle);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    const originalOgDesc = ogDesc?.getAttribute('content') || '';
+    if (ogDesc) ogDesc.setAttribute('content', service.seoDescription);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    const originalOgUrl = ogUrl?.getAttribute('content') || '';
+    if (ogUrl) ogUrl.setAttribute('content', service.canonicalUrl);
+
+    // Check if prerendered JSON-LD already matches this exact service URL
+    const prerenderScript = document.getElementById('prerender-structured-data');
+    const alreadyPrerenderedForService =
+      prerenderScript && prerenderScript.textContent?.includes(service.canonicalUrl);
+
+    let injectedScript: HTMLScriptElement | null = null;
+    if (!alreadyPrerenderedForService) {
+      const existingDynamic = document.getElementById('service-structured-data');
+      if (existingDynamic) existingDynamic.remove();
+
+      const schemaScript = document.createElement('script');
+      schemaScript.type = 'application/ld+json';
+      schemaScript.id = 'service-structured-data';
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "@id": `${service.canonicalUrl}#service`,
+            "name": service.title,
+            "serviceType": service.categoryLabel,
+            "description": service.geoDirectAnswer,
+            "provider": {
+              "@type": "GeneralContractor",
+              "name": COMPANY_INFO.brand,
+              "url": COMPANY_INFO.website,
+              "telephone": `+${COMPANY_INFO.phoneRaw}`,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": COMPANY_INFO.address,
+                "addressLocality": COMPANY_INFO.city,
+                "addressRegion": COMPANY_INFO.state,
+                "postalCode": COMPANY_INFO.cep,
+                "addressCountry": "BR"
               },
-              "position": idx + 1
+              "taxID": COMPANY_INFO.cnpj
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Caxias do Sul" },
+              { "@type": "City", "name": "Farroupilha" },
+              { "@type": "City", "name": "Flores da Cunha" },
+              { "@type": "City", "name": "São Marcos" }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": `Escopo de ${service.title}`,
+              "itemListElement": service.scopeIncluded.map((item, idx) => ({
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": item
+                },
+                "position": idx + 1
+              }))
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${service.canonicalUrl}#breadcrumb`,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": COMPANY_INFO.website
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Serviços",
+                "item": `${COMPANY_INFO.website}#servicos`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": service.title,
+                "item": service.canonicalUrl
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": `${service.canonicalUrl}#faq`,
+            "mainEntity": service.serviceFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
             }))
           }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": `${service.canonicalUrl}#breadcrumb`,
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Início",
-              "item": COMPANY_INFO.website
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Serviços",
-              "item": `${COMPANY_INFO.website}#servicos`
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": service.title,
-              "item": service.canonicalUrl
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "@id": `${service.canonicalUrl}#faq`,
-          "mainEntity": service.serviceFaqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer
-            }
-          }))
-        }
-      ]
-    };
-    schemaScript.text = JSON.stringify(structuredData);
-    document.head.appendChild(schemaScript);
+        ]
+      };
+      schemaScript.text = JSON.stringify(structuredData);
+      document.head.appendChild(schemaScript);
+      injectedScript = schemaScript;
+    }
 
     // Scroll to top upon opening page
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     return () => {
       document.title = originalTitle;
-      if (metaDesc && originalDesc) {
-        metaDesc.setAttribute('content', originalDesc);
-      }
-      const existingScript = document.getElementById('service-structured-data');
-      if (existingScript) {
-        existingScript.remove();
-      }
+      if (metaDesc && originalDesc) metaDesc.setAttribute('content', originalDesc);
+      if (canonicalEl && originalCanonical) canonicalEl.setAttribute('href', originalCanonical);
+      if (ogTitle && originalOgTitle) ogTitle.setAttribute('content', originalOgTitle);
+      if (ogDesc && originalOgDesc) ogDesc.setAttribute('content', originalOgDesc);
+      if (ogUrl && originalOgUrl) ogUrl.setAttribute('content', originalOgUrl);
+      if (injectedScript) injectedScript.remove();
     };
   }, [service]);
 

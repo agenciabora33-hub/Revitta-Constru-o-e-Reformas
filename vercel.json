@@ -3,95 +3,114 @@
   "trailingSlash": true,
   "cleanUrls": true,
   "redirects": [
-    {
-      "source": "/pedreiro-em-caxias-do-sul",
-      "destination": "/pedreiro-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/pedreiro-alvenaria-caxias-do-sul",
-      "destination": "/pedreiro-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/reformas-comerciais-em-caxias-do-sul-lojas-escritorios-e-salas-or-revitta",
-      "destination": "/reformas-comerciais-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/reforma-comercial-em-caxias-do-sul-agilidade-e-projetos",
-      "destination": "/reformas-comerciais-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/manutencao-eletrica-caxias-do-sul",
-      "destination": "/eletricista-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/reformas-residenciais-comerciais",
-      "destination": "/reformas-residenciais-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/instalacoes-eletricas",
-      "destination": "/eletricista-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/encanamento-hidraulica",
-      "destination": "/encanador-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/reforma-telhados",
-      "destination": "/conserto-telhado-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/pisos-e-acabamentos",
-      "destination": "/piso-vinilico-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/drywall-e-forros",
-      "destination": "/drywall-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/drywall-forros",
-      "destination": "/drywall-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/pintura-completa",
-      "destination": "/pintor-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/alvenaria-pedreiro",
-      "destination": "/pedreiro-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/manutencao-predial",
-      "destination": "/manutencao-predial-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/faz-tudo-reparos",
-      "destination": "/faz-tudo-caxias-do-sul/",
-      "permanent": true
-    },
-    {
-      "source": "/servicos/:slug",
-      "destination": "/:slug/",
-      "permanent": true
-    }
+    { "source": "/manutencao-predial-e-em-condom(.*)nios-em-caxias-do-sul-revitta", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-predial-e-em-condom(.*)nios-em-caxias-do-sul-revitta/", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-predial-condominios-caxias-do-sul", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-predial-condominios-caxias-do-sul/", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-predial-em-caxias-do-sul", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-predial-em-caxias-do-sul/", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/eletricista-em-caxias-do-sul", "destination": "/eletricista-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/eletricista-em-caxias-do-sul/", "destination": "/eletricista-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-eletrica-caxias-do-sul", "destination": "/eletricista-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-eletrica-caxias-do-sul/", "destination": "/eletricista-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/pedreiro-alvenaria-caxias-do-sul", "destination": "/pedreiro-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/pedreiro-alvenaria-caxias-do-sul/", "destination": "/pedreiro-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/pedreiro-em-caxias-do-sul", "destination": "/pedreiro-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/pedreiro-em-caxias-do-sul/", "destination": "/pedreiro-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/pintor-em-caxias-do-sul", "destination": "/pintor-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/pintor-em-caxias-do-sul/", "destination": "/pintor-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/pintura-interna-externa-fachadas-industrial-caxias-do-sul", "destination": "/pintor-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/pintura-interna-externa-fachadas-industrial-caxias-do-sul/", "destination": "/pintor-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/encanador-em-caxias-do-sul", "destination": "/encanador-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/encanador-em-caxias-do-sul/", "destination": "/encanador-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-hidraulica-desentupimento-caxias-do-sul", "destination": "/encanador-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-hidraulica-desentupimento-caxias-do-sul/", "destination": "/encanador-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/reforma-residencial-caxias-do-sul", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reforma-residencial-caxias-do-sul/", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reformas-residenciais-em-caxias-do-sul", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reformas-residenciais-em-caxias-do-sul/", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/quanto-custa-reformar-em-caxias-do-sul-guia-precos", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/quanto-custa-reformar-em-caxias-do-sul-guia-precos/", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/manutencao-reforma-industrial-caxias-do-sul", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-reforma-industrial-caxias-do-sul/", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reformas-comerciais-em-caxias-do-sul-lojas-escritorios-e-salas-or-revitta", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reformas-comerciais-em-caxias-do-sul-lojas-escritorios-e-salas-or-revitta/", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reforma-comercial-em-caxias-do-sul-agilidade-e-projetos", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reforma-comercial-em-caxias-do-sul-agilidade-e-projetos/", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reformas-comerciais-em-caxias-do-sul", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reformas-comerciais-em-caxias-do-sul/", "destination": "/reformas-comerciais-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/manutencao-reforma-telhados-impermeabilizacao-caxias-do-sul", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/manutencao-reforma-telhados-impermeabilizacao-caxias-do-sul/", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/conserto-telhado-em-caxias-do-sul", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/conserto-telhado-em-caxias-do-sul/", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reforma-telhado-caxias-do-sul", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/reforma-telhado-caxias-do-sul/", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/drywall-em-caxias-do-sul", "destination": "/drywall-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/drywall-em-caxias-do-sul/", "destination": "/drywall-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/piso-vinilico-em-caxias-do-sul", "destination": "/piso-vinilico-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/piso-vinilico-em-caxias-do-sul/", "destination": "/piso-vinilico-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/faz-tudo-em-caxias-do-sul", "destination": "/faz-tudo-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/faz-tudo-em-caxias-do-sul/", "destination": "/faz-tudo-caxias-do-sul/", "statusCode": 301 },
+
+    { "source": "/todos-os-servicos-de-manutencao-e-reforma-em-caxias-do-sul-residencial-comercial-e-industrial-or-revitta", "destination": "/", "statusCode": 301 },
+    { "source": "/todos-os-servicos-de-manutencao-e-reforma-em-caxias-do-sul-residencial-comercial-e-industrial-or-revitta/", "destination": "/", "statusCode": 301 },
+    { "source": "/revitta-especialistas-em-reformas-em-caxias-do-sul", "destination": "/", "statusCode": 301 },
+    { "source": "/revitta-especialistas-em-reformas-em-caxias-do-sul/", "destination": "/", "statusCode": 301 },
+    { "source": "/blog-post", "destination": "/", "statusCode": 301 },
+    { "source": "/blog-post/", "destination": "/", "statusCode": 301 },
+    { "source": "/blog", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/", "destination": "/", "statusCode": 301 },
+    { "source": "/trabalhe-conosco.html", "destination": "/trabalhe-conosco/", "statusCode": 301 },
+
+    { "source": "/servicos", "destination": "/", "statusCode": 301 },
+    { "source": "/servicos/", "destination": "/", "statusCode": 301 },
+    { "source": "/servicos/reformas-residenciais-comerciais", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/reformas-residenciais-comerciais/", "destination": "/reformas-residenciais-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/instalacoes-eletricas", "destination": "/eletricista-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/instalacoes-eletricas/", "destination": "/eletricista-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/encanamento-hidraulica", "destination": "/encanador-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/encanamento-hidraulica/", "destination": "/encanador-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/reforma-telhados", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/reforma-telhados/", "destination": "/conserto-telhado-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/pisos-e-acabamentos", "destination": "/piso-vinilico-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/pisos-e-acabamentos/", "destination": "/piso-vinilico-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/pisos-acabamentos", "destination": "/piso-vinilico-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/pisos-acabamentos/", "destination": "/piso-vinilico-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/drywall-e-forros", "destination": "/drywall-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/drywall-e-forros/", "destination": "/drywall-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/drywall-forros", "destination": "/drywall-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/drywall-forros/", "destination": "/drywall-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/pintura-completa", "destination": "/pintor-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/pintura-completa/", "destination": "/pintor-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/alvenaria-pedreiro", "destination": "/pedreiro-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/alvenaria-pedreiro/", "destination": "/pedreiro-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/manutencao-predial", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/manutencao-predial/", "destination": "/manutencao-predial-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/faz-tudo-reparos", "destination": "/faz-tudo-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/faz-tudo-reparos/", "destination": "/faz-tudo-caxias-do-sul/", "statusCode": 301 },
+    { "source": "/servicos/:slug", "destination": "/:slug/", "statusCode": 301 },
+    { "source": "/servicos/:slug/", "destination": "/:slug/", "statusCode": 301 }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

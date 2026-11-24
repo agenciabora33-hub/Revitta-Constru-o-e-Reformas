@@ -916,8 +916,44 @@ Encaminhado para: ${PARTNER_EMAIL}`;
           </div>
         </div>
 
-        {/* FAQ Section for Liberal Professionals */}
-        <div className="mt-16 bg-white rounded-3xl border border-indigo-100 p-6 sm:p-10 shadow-sm max-w-4xl mx-auto">
+        {/* Accreditation Criteria & Regional Coverage Content (SEO Depth) */}
+        <section className="mt-12 bg-white rounded-3xl border border-indigo-100 p-6 sm:p-10 shadow-sm max-w-4xl mx-auto space-y-6">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 block mb-1">
+              Padrão de Qualidade & Segurança na Obra
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-indigo-950 font-display">
+              Como funciona o credenciamento de prestadores na Serra Gaúcha
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">
+              A Revitta Caxias mantém uma rede ativa de profissionais autônomos e microempreendedores individuais (MEI) para atender demandas contínuas de reformas residenciais, comerciais e manutenção predial em <strong className="text-indigo-950">Caxias do Sul, Farroupilha, Flores da Cunha e São Marcos</strong>.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <div className="p-4 rounded-2xl bg-mist border border-indigo-100">
+              <div className="font-bold text-indigo-950 mb-1">1. Análise & Triagem Técnica</div>
+              <p className="text-gray-600 text-xs leading-relaxed">
+                Avaliamos portfólio de obras executadas, especialidade principal, ferramental próprio e referências profissionais na região.
+              </p>
+            </div>
+            <div className="p-4 rounded-2xl bg-mist border border-indigo-100">
+              <div className="font-bold text-indigo-950 mb-1">2. Alinhamento & Contrato</div>
+              <p className="text-gray-600 text-xs leading-relaxed">
+                Definimos escopo fechado por empreitada ou diária técnica, normas ABNT aplicáveis (NBR 5410, NR-10, NR-35) e prazos de entrega.
+              </p>
+            </div>
+            <div className="p-4 rounded-2xl bg-mist border border-indigo-100">
+              <div className="font-bold text-indigo-950 mb-1">3. Obra Assistida & PIX</div>
+              <p className="text-gray-600 text-xs leading-relaxed">
+                Materiais entregues no local pela Revitta, suporte de engenharia no canteiro e repasse pontual via PIX após conferência da etapa.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Semantic FAQ Section for Liberal Professionals (100% crawlable in SSR HTML) */}
+        <div className="mt-10 bg-white rounded-3xl border border-indigo-100 p-6 sm:p-10 shadow-sm max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-800 text-xs font-semibold mb-2">
               <HelpCircle className="w-3.5 h-3.5" />
@@ -932,29 +968,24 @@ Encaminhado para: ${PARTNER_EMAIL}`;
           </div>
 
           <div className="space-y-3">
-            {faqPartner.map((item, index) => {
-              const isOpen = faqOpenIndex === index;
-              return (
-                <div 
-                  key={index}
-                  className="rounded-2xl border border-indigo-100/80 overflow-hidden transition-all bg-indigo-50/20"
+            {faqPartner.map((item, index) => (
+              <details
+                key={index}
+                open={index === 0}
+                className="group rounded-2xl border border-indigo-100/80 overflow-hidden transition-all bg-indigo-50/20"
+              >
+                <summary
+                  onClick={() => setFaqOpenIndex(faqOpenIndex === index ? null : index)}
+                  className="w-full text-left p-4 sm:p-4.5 flex items-center justify-between gap-4 text-xs sm:text-sm font-bold text-indigo-950 hover:text-indigo-700 transition-colors cursor-pointer list-none select-none"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setFaqOpenIndex(isOpen ? null : index)}
-                    className="w-full text-left p-4 sm:p-4.5 flex items-center justify-between gap-4 text-xs sm:text-sm font-bold text-indigo-950 hover:text-indigo-700 transition-colors cursor-pointer"
-                  >
-                    <span>{item.q}</span>
-                    <ChevronDown className={`w-4 h-4 text-indigo-600 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  {isOpen && (
-                    <div className="px-4 pb-4 sm:px-4.5 sm:pb-4.5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-indigo-50 pt-3">
-                      {item.a}
-                    </div>
-                  )}
+                  <span>{item.q}</span>
+                  <ChevronDown className="w-4 h-4 text-indigo-600 shrink-0 transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                <div className="px-4 pb-4 sm:px-4.5 sm:pb-4.5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-indigo-50 pt-3">
+                  {item.a}
                 </div>
-              );
-            })}
+              </details>
+            ))}
           </div>
         </div>
 

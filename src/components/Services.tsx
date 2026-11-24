@@ -226,19 +226,50 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-indigo-100 space-y-2.5">
-                  <a
-                    href={`/${targetSlug}/`}
-                    onClick={(e) => {
-                      if (onSelectService) {
-                        e.preventDefault();
-                        onSelectService(detailedSrv?.id || service.id);
-                      }
-                    }}
-                    className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-950 py-1.5 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer"
-                  >
-                    <span>Ver especificações e normas técnicas</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  {service.id === 'reformas-gerais' ? (
+                    <div className="grid grid-cols-2 gap-1.5">
+                      <a
+                        href="/reformas-residenciais-caxias-do-sul/"
+                        onClick={(e) => {
+                          if (onSelectService) {
+                            e.preventDefault();
+                            onSelectService('reformas-residenciais');
+                          }
+                        }}
+                        className="flex items-center justify-center gap-1 text-[11px] font-bold text-indigo-700 hover:text-indigo-950 py-1.5 px-2 rounded-lg bg-indigo-50/70 hover:bg-indigo-100/80 transition-colors cursor-pointer"
+                      >
+                        <span>Residenciais</span>
+                        <ArrowRight className="w-3 h-3 shrink-0" />
+                      </a>
+                      <a
+                        href="/reformas-comerciais-caxias-do-sul/"
+                        onClick={(e) => {
+                          if (onSelectService) {
+                            e.preventDefault();
+                            onSelectService('reformas-comerciais');
+                          }
+                        }}
+                        className="flex items-center justify-center gap-1 text-[11px] font-bold text-indigo-700 hover:text-indigo-950 py-1.5 px-2 rounded-lg bg-indigo-50/70 hover:bg-indigo-100/80 transition-colors cursor-pointer"
+                      >
+                        <span>Comerciais</span>
+                        <ArrowRight className="w-3 h-3 shrink-0" />
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={`/${targetSlug}/`}
+                      onClick={(e) => {
+                        if (onSelectService) {
+                          e.preventDefault();
+                          onSelectService(detailedSrv?.id || service.id);
+                        }
+                      }}
+                      className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-950 py-1.5 rounded-lg hover:bg-indigo-50 transition-colors cursor-pointer"
+                    >
+                      <span>Ver especificações e normas técnicas</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
 
                   <a
                     href={serviceWaUrl}

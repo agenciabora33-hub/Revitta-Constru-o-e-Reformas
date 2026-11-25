@@ -116,12 +116,13 @@ async function runPrerender() {
 
   for (const route of routes) {
     try {
-      const appHtml = renderToString(
+      const rawAppHtml = renderToString(
         React.createElement(App, {
           ssrPath: route.path,
           ssrComponents: { ServicePage, TrabalheConosco, NotFoundPage, BioPage },
         })
       );
+      const appHtml = rawAppHtml.replace(/<link\b[^>]*\/>/gi, '');
 
       let html = baseTemplate;
 
